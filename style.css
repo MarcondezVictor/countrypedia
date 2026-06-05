@@ -1,0 +1,1174 @@
+/* ------------------------------------------------------------
+   VARIÁVEIS GLOBAIS
+   Definimos aqui todas as cores e valores que se repetem
+   no site. Mudar uma variável atualiza tudo automaticamente.
+   ------------------------------------------------------------ */
+
+:root {
+    /* Cores principais do Windows 95 */
+    --bg:           #c0c0c0;  /* cinzento base — fundo de tudo */
+    --bg-dark:      #808080;  /* cinzento escuro — sombras */
+    --bg-white:     #ffffff;  /* branco — fundos de inputs e listas */
+    --bg-desktop:   #008080;  /* verde azulado — cor do "desktop" Win95 */
+
+    /* Cores de texto */
+    --text:         #000000;  /* preto — texto principal */
+    --text-white:   #ffffff;  /* branco — texto em fundos escuros */
+    --text-muted:   #808080;  /* cinzento — texto secundário */
+
+    /* Barra de título (azul Win95) */
+    --titlebar:     #000080;  /* azul escuro — barra de título das janelas */
+    --titlebar-end: #1084d0;  /* azul claro — gradiente da barra de título */
+
+    /* Bordas — o truque principal do efeito Win95
+       raised = elemento parece saltar para fora
+       inset  = elemento parece estar afundado */
+    --border-light:  #ffffff;  /* branco — bordas de cima e esquerda (raised) */
+    --border-dark:   #808080;  /* cinzento — bordas de baixo e direita (raised) */
+    --border-darker: #000000;  /* preto — bordas externas mais marcadas */
+
+    /* Tipografia — Arial é o mais próximo do MS Sans Serif original */
+    --font: Arial, 'MS Sans Serif', sans-serif;
+
+    /* Tamanhos de fonte */
+    --text-sm:   12px;
+    --text-base: 14px;  /* Win95 usava fontes pequenas */
+    --text-md:   16px;
+    --text-lg:   18px;
+    --text-xl:   24px;
+}
+
+
+/* ------------------------------------------------------------
+   RESET
+   Os browsers adicionam margens e paddings por padrão.
+   Aqui zeramos tudo para ter controlo total.
+   ------------------------------------------------------------ */
+
+*, *::before, *::after {
+    /* box-sizing: border-box faz com que padding e border
+       sejam incluídos na largura/altura do elemento.
+       Sem isto os cálculos de layout ficam confusos */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove o sublinhado e cor padrão dos links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Remove os bullets das listas */
+ul, ol {
+    list-style: none;
+}
+
+/* Imagens nunca ultrapassam o container pai */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Botões herdam a fonte do site (por padrão não herdam) */
+button {
+    font-family: var(--font);
+    cursor: pointer;
+}
+
+/* Inputs herdam a fonte do site */
+input {
+    font-family: var(--font);
+}
+
+/* ------------------------------------------------------------
+   BASE GLOBAL
+   Estilos aplicados ao corpo inteiro da página
+   ------------------------------------------------------------ */
+
+html {
+    /* scroll-behavior smooth faz o scroll animado
+       quando se clica em âncoras (#secção) */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font);
+    font-size: var(--text-base);
+    color: var(--text);
+
+    /* O fundo do body é o verde do desktop Win95.
+       As "janelas" (containers) é que são cinzentas */
+    background-color: var(--bg-desktop);
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+
+/* ------------------------------------------------------------
+   CONTAINER
+   Limita a largura máxima do conteúdo e centra na página.
+   Usado em todas as secções para manter alinhamento.
+   ------------------------------------------------------------ */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+
+    /* auto nas laterais centra o elemento horizontalmente */
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+
+/* ------------------------------------------------------------
+   EFEITOS WIN95
+   Classes reutilizáveis para o efeito de relevo.
+   Aplicar .raised a qualquer elemento dá-lhe o aspeto
+   de botão/painel Win95.
+   ------------------------------------------------------------ */
+
+/* Efeito raised — elemento parece saltar para fora da página
+   Branco em cima e esquerda, cinzento em baixo e direita */
+.raised {
+    border-top:    2px solid var(--border-light);
+    border-left:   2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-dark);
+    border-right:  2px solid var(--border-dark);
+}
+
+/* Efeito inset — elemento parece estar afundado na página
+   Invertemos as cores em relação ao raised */
+.inset {
+    border-top:    2px solid var(--border-dark);
+    border-left:   2px solid var(--border-dark);
+    border-bottom: 2px solid var(--border-light);
+    border-right:  2px solid var(--border-light);
+}
+
+/* Versão mais marcada do raised — borda dupla
+   O Win95 usava isto em janelas e painéis principais */
+.raised-outer {
+    border-top:    2px solid var(--border-light);
+    border-left:   2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-darker);
+    border-right:  2px solid var(--border-darker);
+    outline: 1px solid var(--border-dark);
+}
+
+
+/* ------------------------------------------------------------
+   NAVBAR
+   A barra de navegação no topo da página.
+   Fica fixa (sticky) para acompanhar o scroll.
+   ------------------------------------------------------------ */
+
+.navbar {
+    background-color: var(--bg);
+    padding: 4px 0;
+
+    /* sticky faz a navbar acompanhar o scroll sem sair do fluxo */
+    position: sticky;
+    top: 0;
+
+    /* z-index alto garante que fica por cima de tudo */
+    z-index: 100;
+
+    /* Borda inferior estilo Win95 */
+    border-bottom: 2px solid var(--border-dark);
+    outline: 1px solid var(--border-dark);
+}
+
+.navbar-inner {
+    /* flexbox para alinhar logo, pesquisa e links na mesma linha */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo do site */
+.navbar-logo {
+    font-size: var(--text-lg);
+    font-weight: bold;
+    color: var(--text);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    /* padding e bordas dão aspeto de botão Win95 */
+    padding: 2px 8px;
+}
+
+.navbar-logo:hover {
+    /* raised ao hover simula o botão a ser pressionado */
+    border-top:    2px solid var(--border-light);
+    border-left:   2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-dark);
+    border-right:  2px solid var(--border-dark);
+    /* compensamos o padding para não deslocar o layout */
+    margin: -2px;
+}
+
+.navbar-logo img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* Barra de pesquisa na navbar */
+.navbar-search {
+    /* flex: 1 faz a barra ocupar todo o espaço disponível */
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.navbar-search input {
+    width: 100%;
+    padding: 3px 6px;
+    font-size: var(--text-base);
+    background: var(--bg-white);
+    color: var(--text);
+    border: none;
+    outline: none;
+
+    /* inset nos inputs — parecem estar afundados */
+    border-top:    2px solid var(--border-dark);
+    border-left:   2px solid var(--border-dark);
+    border-bottom: 2px solid var(--border-light);
+    border-right:  2px solid var(--border-light);
+}
+
+.navbar-search button {
+    padding: 3px 10px;
+    background: var(--bg);
+    color: var(--text);
+    border: none;
+    font-size: var(--text-base);
+
+    /* raised nos botões */
+    border-top:    2px solid var(--border-light);
+    border-left:   2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-dark);
+    border-right:  2px solid var(--border-dark);
+}
+
+.navbar-search button:active {
+    /* quando se clica inverte o efeito — simula pressionar */
+    border-top:    2px solid var(--border-dark);
+    border-left:   2px solid var(--border-dark);
+    border-bottom: 2px solid var(--border-light);
+    border-right:  2px solid var(--border-light);
+}
+
+/* Links de navegação */
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    white-space: nowrap;
+}
+
+.navbar-links a {
+    padding: 3px 10px;
+    font-size: var(--text-base);
+    color: var(--text);
+    background: var(--bg);
+
+    /* raised nos links de navegação */
+    border-top:    2px solid var(--border-light);
+    border-left:   2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-dark);
+    border-right:  2px solid var(--border-dark);
+}
+
+.navbar-links a:hover {
+    background-color: var(--titlebar);
+    color: var(--text-white);
+}
+
+.navbar-links a.active {
+    background: var(--titlebar);
+    color: var(--text-white);
+    border-top:    2px solid var(--border-dark);
+    border-left:   2px solid var(--border-dark);
+    border-bottom: 2px solid var(--border-light);
+    border-right:  2px solid var(--border-light);
+}
+
+/* Hamburguer — só aparece em mobile */
+.navbar-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px;
+    background: var(--bg);
+    border: none;
+
+    border-top:    2px solid var(--border-light);
+    border-left:   2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-dark);
+    border-right:  2px solid var(--border-dark);
+}
+
+.navbar-hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--text);
+}
+
+
+/* ------------------------------------------------------------
+   JANELA WIN95
+   O elemento principal do site — simula uma janela do Win95.
+   Tem barra de título azul, área de conteúdo cinzenta.
+   ------------------------------------------------------------ */
+
+.window {
+    background: var(--bg);
+    margin: 24px auto;
+    max-width: 1200px;
+
+    /* raised-outer para a janela principal */
+    border-top:    2px solid var(--border-light);
+    border-left:   2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-darker);
+    border-right:  2px solid var(--border-darker);
+    outline: 1px solid var(--border-dark);
+}
+
+/* Barra de título da janela */
+.window-titlebar {
+    /* gradiente horizontal azul — característico do Win95/98 */
+    background: linear-gradient(to right, var(--titlebar), var(--titlebar-end));
+    color: var(--text-white);
+    font-weight: bold;
+    font-size: var(--text-base);
+    padding: 3px 6px;
+
+    /* flex para alinhar título e botões */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    user-select: none; /* impede selecionar o texto ao clicar */
+}
+
+.window-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Ícone na barra de título */
+.window-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+/* Botões da janela (minimizar, maximizar, fechar) */
+.window-buttons {
+    display: flex;
+    gap: 2px;
+}
+
+.window-btn {
+    width: 16px;
+    height: 14px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 10px;
+    font-weight: bold;
+    border: none;
+    line-height: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-top:    2px solid var(--border-light);
+    border-left:   2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-dark);
+    border-right:  2px solid var(--border-dark);
+}
+
+/* botão fechar fica vermelho */
+.window-btn:last-child {
+    color: darkred;
+    font-weight: 900;
+}
+
+.window-btn:active {
+    border-top:    2px solid var(--border-dark);
+    border-left:   2px solid var(--border-dark);
+    border-bottom: 2px solid var(--border-light);
+    border-right:  2px solid var(--border-light);
+}
+
+/* Área de conteúdo da janela */
+.window-content {
+    padding: 8px;
+}
+
+
+/* ------------------------------------------------------------
+   STATS
+   Linha de estatísticas no topo da home.
+   Ex: 9 países | 5 continentes
+   ------------------------------------------------------------ */
+
+.stats-bar {
+    display: flex;
+    gap: 2px;
+    padding: 4px 8px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border-dark);
+    font-size: var(--text-sm);
+    flex-wrap: wrap;
+}
+
+.stats-bar span {
+    padding: 2px 8px;
+
+    /* inset nos items de stat */
+    border-top:    1px solid var(--border-dark);
+    border-left:   1px solid var(--border-dark);
+    border-bottom: 1px solid var(--border-light);
+    border-right:  1px solid var(--border-light);
+}
+
+.stats-bar strong {
+    color: var(--titlebar);
+}
+
+
+/* ------------------------------------------------------------
+   TABS DE CONTINENTE
+   Filtro por continente acima da grelha.
+   A tab ativa fica "ligada" à área de conteúdo abaixo.
+   ------------------------------------------------------------ */
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 8px 8px 0;
+    border-bottom: 2px solid var(--border-dark);
+}
+
+.tab-btn {
+    padding: 4px 12px;
+    font-size: var(--text-sm);
+    background: var(--bg);
+    color: var(--text);
+    border: none;
+    cursor: pointer;
+    position: relative;
+
+    border-top:    2px solid var(--border-light);
+    border-left:   2px solid var(--border-light);
+    border-right:  2px solid var(--border-dark);
+
+    /* sem borda em baixo para "fundir" com o conteúdo */
+    border-bottom: none;
+
+    /* margin-bottom negativa para cobrir a borda do container */
+    margin-bottom: -2px;
+}
+
+.tab-btn:hover {
+    background: var(--bg-white);
+}
+
+/* Tab ativa — fundo branco e sem borda inferior */
+.tab-btn.active {
+    background: var(--bg);
+    font-weight: bold;
+    border-bottom: 2px solid var(--bg); /* esconde a borda de baixo */
+    z-index: 1; /* fica por cima da borda do container */
+}
+
+
+/* ------------------------------------------------------------
+   GRELHA DE PAÍSES
+   Layout em grelha estilo explorador de ficheiros Win95.
+   Cada país é um ícone com bandeira e nome.
+   ------------------------------------------------------------ */
+
+/* barra de ordenação */
+.sort-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    font-size: var(--text-sm);
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.sort-bar select {
+    font-family: var(--font);
+    font-size: var(--text-sm);
+    background: var(--bg-white);
+    color: var(--text);
+    padding: 2px 4px;
+    border-top:    2px solid var(--border-dark);
+    border-left:   2px solid var(--border-dark);
+    border-bottom: 2px solid var(--border-light);
+    border-right:  2px solid var(--border-light);
+}
+
+.countries-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 8px;
+}
+
+/* Cada card de país */
+.country-card {
+    /* largura fixa para manter a grelha uniforme */
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 4px;
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid transparent; /* borda transparente para não deslocar ao hover */
+    text-decoration: none;
+    color: var(--text);
+}
+
+.country-card:hover {
+    /* seleção azul ao hover — estilo Win95 */
+    background: var(--titlebar);
+    color: var(--text-white);
+
+    border-top:    2px solid var(--border-light);
+    border-left:   2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-dark);
+    border-right:  2px solid var(--border-dark);
+}
+
+/* Bandeira dentro do card */
+.country-card img {
+    width: 48px;
+    height: 32px;
+    object-fit: cover;
+
+    /* inset na bandeira — parece emoldurada */
+    border-top:    1px solid var(--border-dark);
+    border-left:   1px solid var(--border-dark);
+    border-bottom: 1px solid var(--border-light);
+    border-right:  1px solid var(--border-light);
+}
+
+/* Nome do país */
+.country-card span {
+    font-size: var(--text-sm);
+    line-height: 1.2;
+    /* limita a 2 linhas e corta com ... */
+    display: -webkit-box ;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+
+/* ------------------------------------------------------------
+   BARRA DE STATUS
+   A barra em baixo da janela — estilo Win95.
+   Mostra informação contextual (ex: "9 países encontrados")
+   ------------------------------------------------------------ */
+
+.statusbar {
+    display: flex;
+    gap: 2px;
+    padding: 2px 4px;
+    border-top: 2px solid var(--border-dark);
+    font-size: var(--text-sm);
+}
+
+.statusbar-item {
+    padding: 1px 6px;
+    flex: 1;
+
+    border-top:    1px solid var(--border-dark);
+    border-left:   1px solid var(--border-dark);
+    border-bottom: 1px solid var(--border-light);
+    border-right:  1px solid var(--border-light);
+}
+
+
+/* ------------------------------------------------------------
+   FOOTER
+   Rodapé simples no fundo da página.
+   ------------------------------------------------------------ */
+
+footer {
+    background: var(--bg);
+    text-align: center;
+    padding: 8px;
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-top: 16px;
+    border-top: 2px solid var(--border-dark);
+}
+
+
+/* ============================================================
+   RESPONSIVIDADE
+   Adaptações para ecrãs mais pequenos.
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 768px) {
+    /* Links da navbar escondem-se */
+    .navbar-links {
+        display: none;
+        position: fixed;
+        top: 40px;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        flex-direction: column;
+        padding: 4px;
+        border-bottom: 2px solid var(--border-dark);
+        z-index: 99;
+    }
+
+    /* Quando o menu está aberto */
+    .navbar-links.open {
+        display: flex;
+    }
+
+    .navbar-links a {
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Hamburguer aparece */
+    .navbar-hamburger {
+        display: flex;
+    }
+
+    /* Cards um pouco menores */
+    .country-card {
+        width: 85px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .window {
+        margin: 8px;
+    }
+
+    .country-card {
+        width: 75px;
+    }
+
+    /* Tabs fazem scroll horizontal em vez de quebrar linha */
+    .tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 0;
+    }
+}
+
+/* ============================================================
+   COUNTRY PAGE — estilos da página de detalhe de cada país
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   CABEÇALHO DO PAÍS
+   Bandeira grande + nome + tags no topo da página
+   ------------------------------------------------------------ */
+
+.country-header {
+    /* flex coloca bandeira e info lado a lado */
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 12px;
+    border-bottom: 2px solid var(--border-dark);
+}
+
+/* Bandeira grande no topo */
+.country-flag-large {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    flex-shrink: 0; /* impede a bandeira de encolher */
+
+    /* inset para parecer emoldurada */
+    border-top:    2px solid var(--border-dark);
+    border-left:   2px solid var(--border-dark);
+    border-bottom: 2px solid var(--border-light);
+    border-right:  2px solid var(--border-light);
+}
+
+.country-header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Nome do país grande */
+.country-name {
+    font-size: var(--text-xl);
+    font-weight: bold;
+    color: var(--text);
+}
+
+/* Gentílico por baixo do nome */
+.country-demonym {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+/* Container das tags */
+.country-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+/* Cada tag individual — estilo botão Win95 */
+.tag {
+    font-size: var(--text-sm);
+    padding: 2px 8px;
+    background: var(--bg);
+    color: var(--text);
+
+    border-top:    2px solid var(--border-light);
+    border-left:   2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-dark);
+    border-right:  2px solid var(--border-dark);
+}
+
+/* ------------------------------------------------------------
+   LAYOUT DUAS COLUNAS
+   Coluna esquerda mais larga, direita mais estreita
+   ------------------------------------------------------------ */
+
+.country-columns {
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    align-items: flex-start;
+}
+
+.country-col-left {
+    /* flex: 3 ocupa 3 partes do espaço disponível */
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0; /* evita overflow em ecrãs pequenos */
+}
+
+.country-col-right {
+    /* flex: 2 ocupa 2 partes — coluna mais estreita */
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+
+/* ------------------------------------------------------------
+   SECÇÕES
+   Cada bloco de conteúdo dentro das colunas
+   tem a sua própria janelinha com barra de título
+   ------------------------------------------------------------ */
+
+.country-section {
+    background: var(--bg);
+
+    border-top:    2px solid var(--border-light);
+    border-left:   2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-dark);
+    border-right:  2px solid var(--border-dark);
+}
+
+/* a barra de título dentro de cada secção
+   reutiliza o .window-titlebar que já existe no CSS */
+
+
+/* ------------------------------------------------------------
+   TABELA DE DADOS GERAIS
+   ------------------------------------------------------------ */
+
+.country-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+}
+
+.country-table tr {
+    /* linha alternada para facilitar leitura */
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.country-table tr:last-child {
+    border-bottom: none;
+}
+
+.country-table td {
+    padding: 4px 8px;
+    vertical-align: top;
+}
+
+/* primeira coluna — label */
+.country-table td:first-child {
+    font-weight: bold;
+    width: 45%;
+    color: var(--text);
+    white-space: nowrap;
+
+    /* fundo ligeiramente diferente para destacar o label */
+    background: var(--bg-dark);
+    color: var(--text-white);
+}
+
+/* segunda coluna — valor */
+.country-table td:last-child {
+    color: var(--text);
+    background: var(--bg-white);
+}
+
+
+/* ------------------------------------------------------------
+   LISTAS — Famous People, Cuisine, Cities, etc.
+   ------------------------------------------------------------ */
+
+.country-list {
+    list-style: none;
+    padding: 6px 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.country-list li {
+    font-size: var(--text-sm);
+    padding: 2px 8px;
+    background: var(--bg-white);
+
+    /* inset para parecer afundado */
+    border-top:    1px solid var(--border-dark);
+    border-left:   1px solid var(--border-dark);
+    border-bottom: 1px solid var(--border-light);
+    border-right:  1px solid var(--border-light);
+}
+
+/* versão mais pequena para subdivisões
+   que têm muitos items */
+.country-list-small li {
+    font-size: 11px;
+    padding: 1px 6px;
+}
+
+
+/* ------------------------------------------------------------
+   FRONTEIRAS — links para países vizinhos com bandeira
+   ------------------------------------------------------------ */
+
+.country-borders {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 8px;
+}
+
+/* cada link de fronteira tem bandeira + nome */
+.border-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    font-size: var(--text-sm);
+    background: var(--bg);
+    color: var(--text);
+    text-decoration: none;
+
+    border-top:    2px solid var(--border-light);
+    border-left:   2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-dark);
+    border-right:  2px solid var(--border-dark);
+}
+
+.border-link:hover {
+    background: var(--titlebar);
+    color: var(--text-white);
+}
+
+/* bandeira pequena dentro do link de fronteira */
+.border-link img {
+    width: 24px;
+    height: 16px;
+    object-fit: cover;
+
+    border-top:    1px solid var(--border-dark);
+    border-left:   1px solid var(--border-dark);
+    border-bottom: 1px solid var(--border-light);
+    border-right:  1px solid var(--border-light);
+}
+
+
+/* ============================================================
+   RESPONSIVIDADE — country page
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 768px) {
+    /* colunas passam a ser uma em cima da outra */
+    .country-columns {
+        flex-direction: column;
+    }
+
+    .country-flag-large {
+        width: 120px;
+        height: 80px;
+    }
+
+    .country-name {
+        font-size: var(--text-lg);
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .country-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .country-tags {
+        justify-content: center;
+    }
+
+    .country-flag-large {
+        width: 160px;
+        height: 107px;
+    }
+}
+
+/* ------------------------------------------------------------
+   TABELA DE PAÍSES — countries.html
+   ------------------------------------------------------------ */
+
+.countries-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+    table-layout: fixed;
+}
+
+/* larguras fixas aplicadas às colunas */
+.countries-table td:nth-child(1),
+.countries-table th:nth-child(1) { width: 45px; }   /* flag */
+
+.countries-table td:nth-child(2),
+.countries-table th:nth-child(2) { width: 180px; }  /* country */
+
+.countries-table td:nth-child(3),
+.countries-table th:nth-child(3) { width: 160px; }  /* capital */
+
+.countries-table td:nth-child(4),
+.countries-table th:nth-child(4) { width: 120px; }  /* population */
+
+.countries-table td:nth-child(5),
+.countries-table th:nth-child(5) { width: 110px; }  /* area */
+
+.countries-table td:nth-child(6),
+.countries-table th:nth-child(6) { width: 60px; }   /* hdi */
+
+.countries-table td:nth-child(7),
+.countries-table th:nth-child(7) { width: 130px; }  /* continent */
+
+.countries-table th {
+    background: var(--titlebar);
+    color: var(--text-white);
+    padding: 4px 8px;
+    text-align: left;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.countries-table th:hover {
+    background: var(--titlebar-end);
+}
+
+.countries-table td {
+    padding: 3px 8px;
+    border-bottom: 1px solid var(--border-dark);
+    vertical-align: middle;
+    overflow: hidden;         /* corta texto que ultrapasse a largura */
+    white-space: nowrap;      /* impede quebra de linha */
+    text-overflow: ellipsis;  /* mostra ... se o texto for demasiado longo */
+}
+
+.countries-table tr:hover {
+    background: #000080;
+    color: white;
+    cursor: pointer;
+}
+
+.countries-table tr:hover td {
+    color: white;
+}
+
+.countries-table img {
+    width: 32px;
+    height: 21px;
+    object-fit: cover;
+    display: block;
+    border-top:    1px solid var(--border-dark);
+    border-left:   1px solid var(--border-dark);
+    border-bottom: 1px solid var(--border-light);
+    border-right:  1px solid var(--border-light);
+}
+
+/* ------------------------------------------------------------
+   PAGINAÇÃO
+   ------------------------------------------------------------ */
+
+.pagination {
+    display: flex;
+    gap: 2px;
+    padding: 6px 8px;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--border-dark);
+}
+
+.page-btn {
+    padding: 2px 8px;
+    font-family: var(--font);
+    font-size: var(--text-sm);
+    background: var(--bg);
+    color: var(--text);
+    border: none;
+    cursor: pointer;
+
+    border-top:    2px solid var(--border-light);
+    border-left:   2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-dark);
+    border-right:  2px solid var(--border-dark);
+}
+
+.page-btn:hover {
+    background: var(--titlebar);
+    color: var(--text-white);
+}
+
+.page-btn.active {
+    background: var(--titlebar);
+    color: var(--text-white);
+    border-top:    2px solid var(--border-dark);
+    border-left:   2px solid var(--border-dark);
+    border-bottom: 2px solid var(--border-light);
+    border-right:  2px solid var(--border-light);
+}
+
+.page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ------------------------------------------------------------
+   CONTINENTES
+   ------------------------------------------------------------ */
+   
+.continents-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px;
+}
+
+.continent-card {
+    flex: 1 1 320px;
+    background: var(--bg);
+    cursor: pointer;
+    transition: none;
+}
+
+.continent-card:hover {
+    background: var(--bg-white);
+}
+
+.continent-card-header {
+    background: var(--titlebar);
+    color: var(--text-white);
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+}
+
+.continent-img {
+    width: 48px;
+    height: 32px;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* fica branco para contrastar com o fundo azul */
+}
+
+.continent-name {
+    font-size: var(--text-md);
+}
+
+.continent-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+}
+
+.continent-table tr {
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.continent-table tr:last-child {
+    border-bottom: none;
+}
+
+.continent-table td {
+    padding: 3px 8px;
+}
+
+.continent-table td:first-child {
+    color: var(--text-muted);
+    width: 50%;
+}
+
+.continent-card-footer {
+    padding: 4px 8px;
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-dark);
+    text-align: right;
+}

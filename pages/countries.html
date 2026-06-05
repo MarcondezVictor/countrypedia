@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries — world.com</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="../index.html" class="navbar-logo">
+                <img src="../images/logo.png" alt="world.com logo">
+                world.com
+            </a>
+            <div class="navbar-search">
+                <input type="text" id="searchInput" placeholder="Search countries...">
+                <button onclick="search()">Search</button>
+            </div>
+            <nav class="navbar-links" id="navLinks">
+                <a href="countries.html" class="active">Countries</a>
+                <a href="continents.html">Continents</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="#" onclick="randomCountry()">Random</a>
+            </nav>
+            <button class="navbar-hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="window">
+
+            <div class="window-titlebar">
+                <div class="window-title">
+                    <span>Countries List</span>
+                </div>
+                <div class="window-buttons">
+                    <button class="window-btn">_</button>
+                    <button class="window-btn">□</button>
+                    <button class="window-btn">✕</button>
+                </div>
+            </div>
+
+            <div class="window-content">
+
+                <!-- BARRA DE FERRAMENTAS -->
+                <div class="sort-bar">
+                    <span>Sort by:</span>
+                    <select id="sortSelect" onchange="changeSort()">
+                        <option value="name-asc">Name A → Z</option>
+                        <option value="name-desc">Name Z → A</option>
+                        <option value="population-desc">Most populated</option>
+                        <option value="population-asc">Least populated</option>
+                        <option value="area-desc">Largest area</option>
+                        <option value="area-asc">Smallest area</option>
+                        <option value="idh-desc">Highest HDI</option>
+                        <option value="idh-asc">Lowest HDI</option>
+                        <option value="continent-asc">Continent A → Z</option>
+                        <option value="continent-desc">Continent Z → A</option>
+                    </select>
+                    <span>Continent:</span>
+                    <select id="continentSelect" onchange="changeContinent()">
+                        <option value="All">All</option>
+                    </select>
+                    <span id="resultCount" style="margin-left:auto;"></span>
+                </div>
+
+                <!-- TABELA -->
+                <table class="countries-table" id="countriesTable" >
+                    <thead>
+                        <tr>
+                            <th>Flag</th>
+                            <th onclick="setSort('name-asc', 'name-desc')">Country ↕</th>
+                            <th onclick="setSort('name-asc', 'name-desc')">Capital ↕</th>
+                            <th onclick="setSort('population-desc', 'population-asc')">Population ↕</th>
+                            <th onclick="setSort('area-desc', 'area-asc')">Area ↕</th>
+                            <th onclick="setSort('idh-desc', 'idh-asc')">HDI ↕</th>
+                            <th onclick="setSort('continent-asc', 'continent-desc')">Continent ↕</th>
+                        </tr>
+                    </thead>
+                    <tbody id="countriesBody"></tbody>
+                </table>
+
+                <!-- PAGINAÇÃO -->
+                <div class="pagination" id="pagination"></div>
+
+                <!-- STATUS BAR -->
+                <div class="statusbar">
+                    <span class="statusbar-item" id="statusText">Loading...</span>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>world.com &copy; 2026 — The Country Encyclopedia</p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../js/countries.js"></script>
+
+</body>
+</html>

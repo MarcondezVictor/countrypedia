@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>world.com</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="../index.html" class="navbar-logo">
+                <img src="../images/logo.png" alt="world.com logo">
+                world.com
+            </a>
+            <div class="navbar-search">
+                <input type="text" id="searchInput" placeholder="Search countries...">
+                <button onclick="search()">Search</button>
+            </div>
+            <nav class="navbar-links" id="navLinks">
+                <a href="countries.html">Countries</a>
+                <a href="continents.html">Continents</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="#" onclick="randomCountry()">Random</a>
+            </nav>
+            <button class="navbar-hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- CONTEUDO GERADO PELO JS -->
+    <main class="container">
+        <div class="window" id="countryWindow">
+            <div class="window-titlebar">
+                <div class="window-title">
+                    <span id="windowTitle">Loading...</span>
+                </div>
+                <div class="window-buttons">
+                    <button class="window-btn">_</button>
+                    <button class="window-btn">□</button>
+                    <button class="window-btn">✕</button>
+                </div>
+            </div>
+
+            <div class="window-content" id="windowContent">
+                <!-- area onde o JS vai gerar o site -->
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>world.com &copy; 2026 - The Country Encyclopedia</p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../js/country.js"></script>
+</body>
+</html>

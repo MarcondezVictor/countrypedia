@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continents — world.com</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="../index.html" class="navbar-logo">
+                <img src="../images/logo.png" alt="world.com logo">
+                world.com
+            </a>
+            <div class="navbar-search">
+                <input type="text" id="searchInput" placeholder="Search countries...">
+                <button onclick="search()">Search</button>
+            </div>
+            <nav class="navbar-links" id="navLinks">
+                <a href="countries.html">Countries</a>
+                <a href="continents.html" class="active">Continents</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="#" onclick="randomCountry()">Random</a>
+            </nav>
+            <button class="navbar-hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <!-- JANELA DE CONTINENTES -->
+        <div class="window">
+            <div class="window-titlebar">
+                <div class="window-title">
+                    <span>Continents Charts</span>
+                </div>
+                <div class="window-buttons">
+                    <button class="window-btn">_</button>
+                    <button class="window-btn">□</button>
+                    <button class="window-btn">✕</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="continents-grid" id="continentsGrid"></div>
+                <div class="statusbar">
+                    <span class="statusbar-item">6 continents</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- JANELA DE PAÍSES DO CONTINENTE (aparece ao clicar) -->
+        <div class="window" id="continentWindow" style="display:none; margin-top:8px;">
+            <div class="window-titlebar">
+                <div class="window-title">
+                    <span id="continentWindowTitle">Countries</span>
+                </div>
+                <div class="window-buttons">
+                    <button class="window-btn" onclick="closeContinentWindow()">✕</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="countries-grid" id="continentCountriesGrid"></div>
+                <div class="statusbar">
+                    <span class="statusbar-item" id="continentStatusText"></span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>world.com &copy; 2026 — The Country Encyclopedia</p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../js/continents.js"></script>
+
+</body>
+</html>

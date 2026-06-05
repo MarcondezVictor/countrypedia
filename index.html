@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset ="UTF-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>World.com</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-inner">
+
+            <!-- LOGO -->
+            <a href="index.html" class="navbar-logo">
+                <img src="images/logo.png" alt="world.com logo">
+                world.com
+            </a>
+
+            <!-- BARRA DE PESQUISA -->
+            <div class="navbar-search">
+                <input type="text" id="searchInput" placeholder="Search countries...">
+                <button onclick="search()">Search</button>
+            </div>
+
+            <!-- LINKS -->
+            <nav class="navbar-links" id="navLinks">
+                <a href="pages/countries.html">Countries</a>
+                <a href="pages/continents.html">Continents</a>
+                <a href="pages/quiz.html">Quiz</a>
+                <a href="#" onclick="randomCountry()">Random</a>
+            </nav> 
+
+            <!-- HAMBURGER (só aparece em mobile) -->
+            <button class="navbar-hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="window">
+
+            <!-- BARRA DE TÍTULO -->
+            <div class="window-titlebar">
+                <div class="window-title">
+                    <span>World.com — Country Encyclopedia</span>
+                </div>
+                <div class ="window-buttons">
+                    <button class="window-btn">_</button>
+                    <button class="window-btn">□</button>
+                    <button class="window-btn">✕</button>
+                </div>
+            </div>
+
+            <!-- CONTEÚDO DA JANELA -->
+            <div class="window-content">
+
+                <!-- STATS BAR -->
+                <div class="stats-bar">
+                    <span>Countries: <strong id="totalCountries">0</strong></span>
+                    <span>Continents: <strong id="totalContinents">0</strong></span>
+                    <span>Last updated: <strong>June of 2026</strong></span>
+                </div>
+                
+                <!-- BARRA DE ORDENAÇÃO -->
+                <div class="sort-bar">
+                    <span>Sort by:</span>
+                    <select id="sortSelect" onchange="changeSort()">
+                        <option value="name-asc">Name A → Z</option>
+                        <option value="name-desc">Name Z → A</option>
+                        <option value="population-desc">Most populated</option>
+                        <option value="population-asc">Least populated</option>
+                        <option value="area-desc">Largest area</option>
+                        <option value="area-asc">Smallest area</option>
+                        <option value="idh-desc">Highest HDI</option>
+                        <option value="idh-asc">Lowest HDI</option>
+                    </select>
+                </div>
+
+                <!-- TABS -->
+                <div class="tabs" id="tabs"></div> 
+
+                <!-- GRELHA -->
+                <div class="countries-grid" id="countriesGrid"></div>
+                
+                <!-- STATUS BAR -->
+                <div class="statusbar">
+                    <span class="statusbar-item" id="statusText">Loading...</span>                </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>world.com &copy; 2026 - The Country Encyclopedia</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
