@@ -536,6 +536,7 @@ main {
     flex-wrap: wrap;
     gap: 8px;
     padding: 12px 8px;
+    justify-content: center;
 }
 
 /* Cada card de país */
