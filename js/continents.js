@@ -22,7 +22,10 @@ function buildContinents() {
 
     continents.forEach(cont => {
         // países deste continente
-        const contCountries = countries.filter(c => c.continent === cont);
+        const contCountries = countries.filter(c => 
+            c.continent === cont ||
+            (c.transcontinental && c.continents.includes(cont))
+        );
 
         // calcular stats
         const totalPop     = contCountries.reduce((sum, c) => sum + c.population, 0);
@@ -76,10 +79,13 @@ function buildContinents() {
 }
 
 // --- ABRIR CONTINENTE ---
-function openContinent(cont) {
-    const contCountries = countries
-        .filter(c => c.continent === cont)
-        .sort((a, b) => a.name.localeCompare(b.name));
+    function openContinent(cont) {
+        const contCountries = countries
+            .filter(c => 
+                c.continent === cont ||
+                (c.transcontinental && c.continents.includes(cont))
+            )
+            .sort((a, b) => a.name.localeCompare(b.name));
 
     const grid = document.getElementById("continentCountriesGrid");
     grid.innerHTML = "";

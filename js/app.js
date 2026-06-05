@@ -46,7 +46,10 @@ function buildGrid() {
     // filtra por continente
     const filtered = activeContinent === "All"
         ? countries
-        : countries.filter(c => c.continent === activeContinent);
+        : countries.filter(c => 
+            c.continent === activeContinent ||
+            (c.transcontinental && c.continents.includes(activeContinent))
+        );
 
     // ordena o resultado filtrado
     const sorted = sortCountries(filtered);

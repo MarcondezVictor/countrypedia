@@ -10,6 +10,8 @@ const countries = [
         name: "Brazil",
         anthem: "Hino Nacional Brasileiro",
         continent: "South America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Brasília",
             population: 3094325,
@@ -50,6 +52,8 @@ const countries = [
         name: "Argentina",
         anthem: "Himno Nacional Argentino",
         continent: "South America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Buenos Aires",
             population: 3075646,
@@ -89,6 +93,8 @@ const countries = [
         name: "Bolivia",
         anthem: "Canción Patriótica",
         continent: "South America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Sucre",
             population: 278906,
@@ -126,6 +132,8 @@ const countries = [
         name: "Chile",
         anthem: "Himno Nacional de Chile",
         continent: "South America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Santiago",
             population: 6310000,
@@ -164,6 +172,8 @@ const countries = [
         name: "Colombia",
         anthem: "Himno Nacional de Colombia",
         continent: "South America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Bogotá",
             population: 7412566,
@@ -203,6 +213,8 @@ const countries = [
         name: "Ecuador",
         anthem: "Salve, Oh Patria",
         continent: "South America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Quito",
             population: 1978376,
@@ -242,6 +254,8 @@ const countries = [
         name: "Guyana",
         anthem: "Dear Land of Guyana",
         continent: "South America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Georgetown",
             population: 235017,
@@ -280,6 +294,8 @@ const countries = [
         name: "Paraguay",
         anthem: "Himno Nacional de Paraguay",
         continent: "South America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Asunción",
             population: 524701,
@@ -318,6 +334,8 @@ const countries = [
         name: "Peru",
         anthem: "Himno Nacional del Perú",
         continent: "South America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Lima",
             population: 9674755,
@@ -357,6 +375,8 @@ const countries = [
         name: "Suriname",
         anthem: "God zij met ons Suriname",
         continent: "South America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Paramaribo",
             population: 241000,
@@ -394,6 +414,8 @@ const countries = [
         name: "Uruguay",
         anthem: "Himno Nacional de Uruguay",
         continent: "South America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Montevideo",
             population: 1319108,
@@ -432,6 +454,8 @@ const countries = [
         name: "Venezuela",
         anthem: "Gloria al Bravo Pueblo",
         continent: "South America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Caracas",
             population: 2900000,
@@ -476,6 +500,8 @@ const countries = [
         name: "Ukraine",
         anthem: "Shche ne vmerla Ukrainy",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Kyiv",
             population: 2952301,
@@ -515,6 +541,8 @@ const countries = [
         name: "Portugal",
         anthem: "A Portuguesa",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Lisbon",
             population: 545245,
@@ -553,6 +581,8 @@ const countries = [
         name: "Iceland",
         anthem: "Lofsöngur",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Reykjavik",
             population: 131136,
@@ -591,6 +621,8 @@ const countries = [
         name: "Norway",
         anthem: "Ja, vi elsker dette landet",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Oslo",
             population: 709037,
@@ -629,6 +661,8 @@ const countries = [
         name: "Sweden",
         anthem: "Du gamla, Du fria",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Stockholm",
             population: 975551,
@@ -668,6 +702,8 @@ const countries = [
         name: "Finland",
         anthem: "Maamme",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Helsinki",
             population: 658864,
@@ -707,6 +743,8 @@ const countries = [
         name: "Denmark",
         anthem: "Der er et yndigt land",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Copenhagen",
             population: 794128,
@@ -742,6 +780,8 @@ const countries = [
         name: "Ireland",
         anthem: "Amhrán na bhFiann",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Dublin",
             population: 1173179,
@@ -781,6 +821,8 @@ const countries = [
         name: "United Kingdom",
         anthem: "God Save the King",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "London",
             population: 8982000,
@@ -816,6 +858,8 @@ const countries = [
         name: "Netherlands",
         anthem: "Het Wilhelmus",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Amsterdam",
             population: 905234,
@@ -854,6 +898,8 @@ const countries = [
         name: "Belgium",
         anthem: "La Brabançonne",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Brussels",
             population: 1218255,
@@ -892,6 +938,8 @@ const countries = [
         name: "Luxembourg",
         anthem: "Ons Heemecht",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Luxembourg City",
             population: 132780,
@@ -930,6 +978,8 @@ const countries = [
         name: "France",
         anthem: "La Marseillaise",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Paris",
             population: 2161000,
@@ -969,6 +1019,8 @@ const countries = [
         name: "Monaco",
         anthem: "Hymne Monégasque",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Monaco",
             population: 38300,
@@ -1007,6 +1059,8 @@ const countries = [
         name: "Andorra",
         anthem: "El Gran Carlemany",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Andorra la Vella",
             population: 22886,
@@ -1042,6 +1096,8 @@ const countries = [
         name: "Spain",
         anthem: "Marcha Real",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Madrid",
             population: 3348536,
@@ -1080,6 +1136,8 @@ const countries = [
         name: "Germany",
         anthem: "Das Lied der Deutschen",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Berlin",
             population: 3769495,
@@ -1118,6 +1176,8 @@ const countries = [
         name: "Switzerland",
         anthem: "Schweizer Psalm",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Bern",
             population: 133883,
@@ -1157,6 +1217,8 @@ const countries = [
         name: "Liechtenstein",
         anthem: "Oben am jungen Rhein",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Vaduz",
             population: 5774,
@@ -1192,6 +1254,8 @@ const countries = [
         name: "Austria",
         anthem: "Land der Berge, Land am Strome",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Vienna",
             population: 1931593,
@@ -1227,6 +1291,8 @@ const countries = [
         name: "Italy",
         anthem: "Il Canto degli Italiani",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Rome",
             population: 2870493,
@@ -1265,6 +1331,8 @@ const countries = [
         name: "San Marino",
         anthem: "Inno Nazionale della Repubblica",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "City of San Marino",
             population: 4040,
@@ -1300,6 +1368,8 @@ const countries = [
         name: "Vatican City",
         anthem: "Inno e Marcia Pontificale",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Vatican City",
             population: 453,
@@ -1335,6 +1405,8 @@ const countries = [
         name: "Malta",
         anthem: "L-Innu Malti",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Valletta",
             population: 6444,
@@ -1377,6 +1449,8 @@ const countries = [
         name: "Slovenia",
         anthem: "Zdravljica",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Ljubljana",
             population: 295504,
@@ -1434,6 +1508,8 @@ const countries = [
         name: "Croatia",
         anthem: "Lijepa naša domovino",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Zagreb",
             population: 769944,
@@ -1473,6 +1549,8 @@ const countries = [
         name: "Bosnia and Herzegovina",
         anthem: "Državna himna Bosne i Hercegovine",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Sarajevo",
             population: 275524,
@@ -1508,6 +1586,8 @@ const countries = [
         name: "Serbia",
         anthem: "Bože pravde",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Belgrade",
             population: 1378682,
@@ -1547,6 +1627,8 @@ const countries = [
         name: "Montenegro",
         anthem: "Oj, svijetla majska zoro",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Podgorica",
             population: 150977,
@@ -1586,6 +1668,8 @@ const countries = [
         name: "Kosovo",
         anthem: "Europe",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Pristina",
             population: 198897,
@@ -1621,6 +1705,8 @@ const countries = [
         name: "North Macedonia",
         anthem: "Denes nad Makedonija",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Skopje",
             population: 526502,
@@ -1656,6 +1742,8 @@ const countries = [
         name: "Albania",
         anthem: "Himni i Flamurit",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Tirana",
             population: 557422,
@@ -1691,6 +1779,8 @@ const countries = [
         name: "Greece",
         anthem: "Hymn to Liberty",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Athens",
             population: 664046,
@@ -1729,6 +1819,8 @@ const countries = [
         name: "Bulgaria",
         anthem: "Mila Rodino",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Sofia",
             population: 1241675,
@@ -1768,6 +1860,8 @@ const countries = [
         name: "Romania",
         anthem: "Deșteaptă-te, române!",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Bucharest",
             population: 1716961,
@@ -1808,6 +1902,8 @@ const countries = [
         name: "Moldova",
         anthem: "Limba noastră",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Chișinău",
             population: 532513,
@@ -1848,6 +1944,8 @@ const countries = [
         name: "Hungary",
         anthem: "Himnusz",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Budapest",
             population: 1706851,
@@ -1887,6 +1985,8 @@ const countries = [
         name: "Slovakia",
         anthem: "Nad Tatrou sa blýska",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Bratislava",
             population: 475503,
@@ -1922,6 +2022,8 @@ const countries = [
         name: "Czech Republic",
         anthem: "Kde domov můj",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Prague",
             population: 1357326,
@@ -1960,6 +2062,8 @@ const countries = [
         name: "Poland",
         anthem: "Mazurek Dąbrowskiego",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Warsaw",
             population: 1860281,
@@ -1998,6 +2102,8 @@ const countries = [
         name: "Lithuania",
         anthem: "Tautiška giesmė",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Vilnius",
             population: 581475,
@@ -2033,6 +2139,8 @@ const countries = [
         name: "Latvia",
         anthem: "Dievs, svētī Latviju!",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Riga",
             population: 605802,
@@ -2068,6 +2176,8 @@ const countries = [
         name: "Estonia",
         anthem: "Mu isamaa, mu õnn ja rõõm",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Tallinn",
             population: 437619,
@@ -2106,6 +2216,8 @@ const countries = [
         name: "Belarus",
         anthem: "My Belarusy",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Minsk",
             population: 1996553,
@@ -2141,6 +2253,8 @@ const countries = [
         name: "Russia",
         anthem: "State Anthem of the Russian Federation",
         continent: "Europe",
+        transcontinental: true,
+        continents: ["Europe", "Asia"],
         capital: {
             name: "Moscow",
             population: 12655050,
@@ -2185,6 +2299,8 @@ const countries = [
         name: "Cyprus",
         anthem: "Hymn to Liberty",
         continent: "Europe",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Nicosia",
             population: 269000,
@@ -2225,6 +2341,8 @@ const countries = [
         name: "Canada",
         anthem: "O Canada",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Ottawa",
             population: 1017449,
@@ -2263,6 +2381,8 @@ const countries = [
         name: "Mexico",
         anthem: "Mexican National Anthem",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Mexico City",
             population: 9209944,
@@ -2303,6 +2423,8 @@ const countries = [
         name: "Guatemala",
         anthem: "Guatemala Feliz",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Guatemala City",
             population: 994938,
@@ -2342,6 +2464,8 @@ const countries = [
         name: "Belize",
         anthem: "Land of the Free",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Belmopan",
             population: 17222,
@@ -2377,6 +2501,8 @@ const countries = [
         name: "Honduras",
         anthem: "Himno Nacional de Honduras",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Tegucigalpa",
             population: 1444589,
@@ -2415,6 +2541,8 @@ const countries = [
         name: "El Salvador",
         anthem: "Himno Nacional de El Salvador",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "San Salvador",
             population: 567698,
@@ -2453,6 +2581,8 @@ const countries = [
         name: "Nicaragua",
         anthem: "Salve a ti, Nicaragua",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Managua",
             population: 1055247,
@@ -2491,6 +2621,8 @@ const countries = [
         name: "Costa Rica",
         anthem: "Noble patria, tu hermosa bandera",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "San José",
             population: 347172,
@@ -2526,6 +2658,8 @@ const countries = [
         name: "Panama",
         anthem: "Himno Istmeño",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Panama City",
             population: 880691,
@@ -2564,6 +2698,8 @@ const countries = [
         name: "Cuba",
         anthem: "La Bayamesa",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Havana",
             population: 2132183,
@@ -2602,6 +2738,8 @@ const countries = [
         name: "Jamaica",
         anthem: "Jamaica, Land We Love",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Kingston",
             population: 671781,
@@ -2640,6 +2778,8 @@ const countries = [
         name: "Haiti",
         anthem: "La Dessalinienne",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Port-au-Prince",
             population: 987310,
@@ -2675,6 +2815,8 @@ const countries = [
         name: "Dominican Republic",
         anthem: "Quisqueyanos valientes",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Santo Domingo",
             population: 1033000,
@@ -2715,6 +2857,8 @@ const countries = [
         name: "Trinidad and Tobago",
         anthem: "Forged from the Love of Liberty",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Port of Spain",
             population: 37074,
@@ -2753,6 +2897,8 @@ const countries = [
         name: "Barbados",
         anthem: "In Plenty and In Time of Need",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Bridgetown",
             population: 110000,
@@ -2791,6 +2937,8 @@ const countries = [
         name: "Saint Lucia",
         anthem: "Sons and Daughters of Saint Lucia",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Castries",
             population: 22000,
@@ -2826,6 +2974,8 @@ const countries = [
         name: "Saint Vincent and the Grenadines",
         anthem: "Saint Vincent! Land So Beautiful!",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Kingstown",
             population: 25000,
@@ -2861,6 +3011,8 @@ const countries = [
         name: "Grenada",
         anthem: "Hail Grenada",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Saint George's",
             population: 33734,
@@ -2896,6 +3048,8 @@ const countries = [
         name: "Antigua and Barbuda",
         anthem: "Fair Antigua, We Salute Thee",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Saint John's",
             population: 22193,
@@ -2931,6 +3085,8 @@ const countries = [
         name: "Saint Kitts and Nevis",
         anthem: "O Land of Beauty!",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Basseterre",
             population: 14000,
@@ -2970,6 +3126,8 @@ const countries = [
         name: "Dominica",
         anthem: "Isle of Beauty, Isle of Splendour",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Roseau",
             population: 16582,
@@ -3008,6 +3166,8 @@ const countries = [
         name: "Bahamas",
         anthem: "March On, Bahamaland",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Nassau",
             population: 280000,
@@ -3049,6 +3209,8 @@ const countries = [
         name: "United States",
         anthem: "The Star-Spangled Banner",
         continent: "North America",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Washington D.C.",
             population: 689545,
@@ -3095,6 +3257,8 @@ const countries = [
         name: "Türkiye",
         anthem: "İstiklal Marşı",
         continent: "Asia",
+        transcontinental: true,
+        continents: ["Asia", "Europe"],
         capital: {
             name: "Ankara",
             population: 5503985,
@@ -3137,6 +3301,8 @@ const countries = [
         name: "Georgia",
         anthem: "Tavisupleba",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Tbilisi",
             population: 1118035,
@@ -3175,6 +3341,8 @@ const countries = [
         name: "Armenia",
         anthem: "Mer Hayrenik",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Yerevan",
             population: 1086400,
@@ -3210,6 +3378,8 @@ const countries = [
         name: "Azerbaijan",
         anthem: "Azərbaycan marşı",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Baku",
             population: 2293100,
@@ -3251,6 +3421,8 @@ const countries = [
         name: "Syria",
         anthem: "Humat al-Diyar",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Damascus",
             population: 2320000,
@@ -3289,6 +3461,8 @@ const countries = [
         name: "Lebanon",
         anthem: "Kulluna lil-watan",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Beirut",
             population: 2424000,
@@ -3324,6 +3498,8 @@ const countries = [
         name: "Israel",
         anthem: "Hatikvah",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Jerusalem",
             population: 936425,
@@ -3359,6 +3535,8 @@ const countries = [
         name: "Jordan",
         anthem: "As-salam al-malaki al-urduni",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Amman",
             population: 4007526,
@@ -3394,6 +3572,8 @@ const countries = [
         name: "Iraq",
         anthem: "Mawtini",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Baghdad",
             population: 7145000,
@@ -3432,6 +3612,8 @@ const countries = [
         name: "Iran",
         anthem: "Soroud-e Melli-e Jomhouri-e Eslami-e Iran",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Tehran",
             population: 9259000,
@@ -3472,6 +3654,8 @@ const countries = [
         name: "Kuwait",
         anthem: "Al-Nasheed Al-Watani",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Kuwait City",
             population: 2989000,
@@ -3507,6 +3691,8 @@ const countries = [
         name: "Saudi Arabia",
         anthem: "Aash Al Maleek",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Riyadh",
             population: 7676654,
@@ -3545,6 +3731,8 @@ const countries = [
         name: "Yemen",
         anthem: "United Republic",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Sana'a",
             population: 3937500,
@@ -3583,6 +3771,8 @@ const countries = [
         name: "Oman",
         anthem: "Nashid as-Salaam as-Sultani",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Muscat",
             population: 1560330,
@@ -3621,6 +3811,8 @@ const countries = [
         name: "United Arab Emirates",
         anthem: "Ishy Bilady",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Abu Dhabi",
             population: 1482816,
@@ -3656,6 +3848,8 @@ const countries = [
         name: "Qatar",
         anthem: "As Salam Al Amiri",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Doha",
             population: 2382000,
@@ -3691,6 +3885,8 @@ const countries = [
         name: "Bahrain",
         anthem: "Bahrainona",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Manama",
             population: 200000,
@@ -3726,6 +3922,8 @@ const countries = [
         name: "Afghanistan",
         anthem: "Milli Surood",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Kabul",
             population: 4273156,
@@ -3765,6 +3963,8 @@ const countries = [
         name: "Pakistan",
         anthem: "Qaumi Tarana",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Islamabad",
             population: 1095064,
@@ -3800,6 +4000,8 @@ const countries = [
         name: "India",
         anthem: "Jana Gana Mana",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "New Delhi",
             population: 32941000,
@@ -3840,6 +4042,8 @@ const countries = [
         name: "Nepal",
         anthem: "Sayaun Thunga Phool Ka",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Kathmandu",
             population: 1442271,
@@ -3875,6 +4079,8 @@ const countries = [
         name: "Bhutan",
         anthem: "Druk Tsendhen",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Thimphu",
             population: 114551,
@@ -3913,6 +4119,8 @@ const countries = [
         name: "Bangladesh",
         anthem: "Amar Sonar Bangla",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Dhaka",
             population: 22478116,
@@ -3948,6 +4156,8 @@ const countries = [
         name: "Sri Lanka",
         anthem: "Sri Lanka Matha",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Sri Jayawardenepura Kotte",
             population: 115826,
@@ -3983,6 +4193,8 @@ const countries = [
         name: "Maldives",
         anthem: "Gaumee salaam",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Malé",
             population: 252768,
@@ -4022,6 +4234,8 @@ const countries = [
         name: "Turkmenistan",
         anthem: "Garaşsyz, Bitarap Türkmenistanyň döwlet gimni",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Ashgabat",
             population: 1031992,
@@ -4057,6 +4271,8 @@ const countries = [
         name: "Uzbekistan",
         anthem: "O'zbekiston Respublikasining Davlat Madhiyasi",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Tashkent",
             population: 2571700,
@@ -4095,6 +4311,8 @@ const countries = [
         name: "Tajikistan",
         anthem: "Surudi Milli",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Dushanbe",
             population: 950000,
@@ -4130,6 +4348,8 @@ const countries = [
         name: "Kyrgyzstan",
         anthem: "Kyrgyz Respublikasynyn Mamlekettik Gimni",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Bishkek",
             population: 1074075,
@@ -4165,6 +4385,8 @@ const countries = [
         name: "Kazakhstan",
         anthem: "Menің Qazaqstanym",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Astana",
             population: 1136000,
@@ -4203,6 +4425,8 @@ const countries = [
         name: "Mongolia",
         anthem: "Mongol ulsyn töriin duulal",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Ulaanbaatar",
             population: 1598000,
@@ -4241,6 +4465,8 @@ const countries = [
         name: "China",
         anthem: "March of the Volunteers",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Beijing",
             population: 21893095,
@@ -4280,6 +4506,8 @@ const countries = [
         name: "North Korea",
         anthem: "Aegukka",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Pyongyang",
             population: 3255388,
@@ -4318,6 +4546,8 @@ const countries = [
         name: "South Korea",
         anthem: "Aegukga",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Seoul",
             population: 9776000,
@@ -4356,6 +4586,8 @@ const countries = [
         name: "Japan",
         anthem: "Kimigayo",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Tokyo",
             population: 13960000,
@@ -4396,6 +4628,8 @@ const countries = [
         name: "Taiwan",
         anthem: "National Anthem of the Republic of China",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Taipei",
             population: 2646204,
@@ -4434,6 +4668,8 @@ const countries = [
         name: "Myanmar",
         anthem: "Kaba Ma Kyei",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Naypyidaw",
             population: 1160000,
@@ -4472,6 +4708,8 @@ const countries = [
         name: "Thailand",
         anthem: "Phleng Chat Thai",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Bangkok",
             population: 10539415,
@@ -4517,6 +4755,8 @@ const countries = [
         name: "Laos",
         anthem: "Pheng Xat Lao",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Vientiane",
             population: 820000,
@@ -4555,6 +4795,8 @@ const countries = [
         name: "Vietnam",
         anthem: "Tiến Quân Ca",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Hanoi",
             population: 8435700,
@@ -4598,6 +4840,8 @@ const countries = [
         name: "Cambodia",
         anthem: "Nokoreach",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Phnom Penh",
             population: 2129371,
@@ -4637,6 +4881,8 @@ const countries = [
         name: "Malaysia",
         anthem: "Negaraku",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Kuala Lumpur",
             population: 1982112,
@@ -4675,6 +4921,8 @@ const countries = [
         name: "Brunei",
         anthem: "Allah Peliharakan Sultan",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Bandar Seri Begawan",
             population: 100700,
@@ -4710,6 +4958,8 @@ const countries = [
         name: "Singapore",
         anthem: "Majulah Singapura",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Singapore",
             population: 5637022,
@@ -4745,6 +4995,8 @@ const countries = [
         name: "Indonesia",
         anthem: "Indonesia Raya",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Jakarta",
             population: 10562088,
@@ -4786,6 +5038,8 @@ const countries = [
         name: "Timor-Leste",
         anthem: "Pátria",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Dili",
             population: 277279,
@@ -4824,6 +5078,8 @@ const countries = [
         name: "Philippines",
         anthem: "Lupang Hinirang",
         continent: "Asia",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Manila",
             population: 1846513,
@@ -4874,6 +5130,8 @@ const countries = [
         name: "Morocco",
         anthem: "Hymne Chérifien",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Rabat",
             population: 577827,
@@ -4912,6 +5170,8 @@ const countries = [
         name: "Algeria",
         anthem: "Kassaman",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Algiers",
             population: 3415811,
@@ -4954,6 +5214,8 @@ const countries = [
         name: "Tunisia",
         anthem: "Humat Al Hima",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Tunis",
             population: 1056247,
@@ -4992,6 +5254,8 @@ const countries = [
         name: "Libya",
         anthem: "Libya Libya Libya",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Tripoli",
             population: 1165900,
@@ -5031,6 +5295,8 @@ const countries = [
         name: "Egypt",
         anthem: "Bilady, Bilady, Bilady",
         continent: "Africa",
+        transcontinental: true,
+        continents: ["Africa", "Asia"],
         capital: {
             name: "Cairo",
             population: 10094000,
@@ -5070,6 +5336,8 @@ const countries = [
         name: "Mauritania",
         anthem: "Watani Anta Habibi",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Nouakchott",
             population: 1205000,
@@ -5108,6 +5376,8 @@ const countries = [
         name: "Mali",
         anthem: "Pour l'Afrique et pour toi, Mali",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Bamako",
             population: 2929109,
@@ -5143,6 +5413,8 @@ const countries = [
         name: "Niger",
         anthem: "La Nigérienne",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Niamey",
             population: 1360000,
@@ -5178,6 +5450,8 @@ const countries = [
         name: "Chad",
         anthem: "La Tchadienne",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "N'Djamena",
             population: 1477000,
@@ -5217,6 +5491,8 @@ const countries = [
         name: "Sudan",
         anthem: "Nahnu Djundullah Djundulwatan",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Khartoum",
             population: 6160000,
@@ -5256,6 +5532,8 @@ const countries = [
         name: "Eritrea",
         anthem: "Ertra, Ertra, Ertra",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Asmara",
             population: 963000,
@@ -5291,6 +5569,8 @@ const countries = [
         name: "Ethiopia",
         anthem: "Whedefit Gesgeshi Wude Henate Ethiopia",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Addis Ababa",
             population: 3638000,
@@ -5329,6 +5609,8 @@ const countries = [
         name: "Djibouti",
         anthem: "Jabuuti",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Djibouti City",
             population: 623891,
@@ -5364,6 +5646,8 @@ const countries = [
         name: "Somalia",
         anthem: "Qolobaa Calankeed",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Mogadishu",
             population: 2587000,
@@ -5402,6 +5686,8 @@ const countries = [
         name: "Kenya",
         anthem: "Ee Mungu Nguvu Yetu",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Nairobi",
             population: 4397073,
@@ -5442,6 +5728,8 @@ const countries = [
         name: "Uganda",
         anthem: "Oh Uganda, Land of Beauty",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Kampala",
             population: 1659600,
@@ -5477,6 +5765,8 @@ const countries = [
         name: "Rwanda",
         anthem: "Rwanda Nziza",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Kigali",
             population: 1132686,
@@ -5512,6 +5802,8 @@ const countries = [
         name: "Burundi",
         anthem: "Burundi Bwacu",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Gitega",
             population: 135467,
@@ -5550,6 +5842,8 @@ const countries = [
         name: "Tanzania",
         anthem: "Mungu ibariki Afrika",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Dodoma",
             population: 410956,
@@ -5589,6 +5883,8 @@ const countries = [
         name: "Mozambique",
         anthem: "Pátria Amada",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Maputo",
             population: 1101170,
@@ -5624,6 +5920,8 @@ const countries = [
         name: "Malawi",
         anthem: "Mulungu dalitsa Malawi",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Lilongwe",
             population: 1077116,
@@ -5663,6 +5961,8 @@ const countries = [
         name: "Zambia",
         anthem: "Stand and Sing of Zambia, Proud and Free",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Lusaka",
             population: 2731696,
@@ -5698,6 +5998,8 @@ const countries = [
         name: "Zimbabwe",
         anthem: "Blessed Be the Land of Zimbabwe",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Harare",
             population: 1606000,
@@ -5736,6 +6038,8 @@ const countries = [
         name: "Botswana",
         anthem: "Fatshe leno la rona",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Gaborone",
             population: 269689,
@@ -5774,6 +6078,8 @@ const countries = [
         name: "Namibia",
         anthem: "Namibia, Land of the Brave",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Windhoek",
             population: 431000,
@@ -5812,6 +6118,8 @@ const countries = [
         name: "South Africa",
         anthem: "Nkosi Sikelel' iAfrika",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Pretoria",
             population: 741651,
@@ -5847,6 +6155,8 @@ const countries = [
         name: "Lesotho",
         anthem: "Lesotho Fatše La Bo-ntata Rona",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Maseru",
             population: 330760,
@@ -5882,6 +6192,8 @@ const countries = [
         name: "Eswatini",
         anthem: "Nkulunkulu Mnikati wetibusiso temaSwati",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Mbabane",
             population: 94874,
@@ -5917,6 +6229,8 @@ const countries = [
         name: "Madagascar",
         anthem: "Ry Tanindrazanay malala ô",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Antananarivo",
             population: 1391433,
@@ -5955,6 +6269,8 @@ const countries = [
         name: "Comoros",
         anthem: "Udzima wa ya Masiwa",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Moroni",
             population: 62000,
@@ -5990,6 +6306,8 @@ const countries = [
         name: "Seychelles",
         anthem: "Koste Seselwa",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Victoria",
             population: 26450,
@@ -6030,6 +6348,8 @@ const countries = [
         name: "Mauritius",
         anthem: "Motherland",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Port Louis",
             population: 149194,
@@ -6068,6 +6388,8 @@ const countries = [
         name: "Cape Verde",
         anthem: "Cântico da Liberdade",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Praia",
             population: 159050,
@@ -6107,6 +6429,8 @@ const countries = [
         name: "Senegal",
         anthem: "Pincez Tous vos Koras, Frappez les Balafons",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Dakar",
             population: 3137196,
@@ -6145,6 +6469,8 @@ const countries = [
         name: "Gambia",
         anthem: "For The Gambia, Our Homeland",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Banjul",
             population: 31356,
@@ -6180,6 +6506,8 @@ const countries = [
         name: "Guinea-Bissau",
         anthem: "Esta É a Nossa Pátria Bem Amada",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Bissau",
             population: 558004,
@@ -6215,6 +6543,8 @@ const countries = [
         name: "Guinea",
         anthem: "Liberté",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Conakry",
             population: 1963000,
@@ -6250,6 +6580,8 @@ const countries = [
         name: "Sierra Leone",
         anthem: "High We Exalt Thee, Realm of the Free",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Freetown",
             population: 1236232,
@@ -6285,6 +6617,8 @@ const countries = [
         name: "Liberia",
         anthem: "All Hail, Liberia, Hail!",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Monrovia",
             population: 1010970,
@@ -6323,6 +6657,8 @@ const countries = [
         name: "Ivory Coast",
         anthem: "L'Abidjanaise",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Yamoussoukro",
             population: 317000,
@@ -6361,6 +6697,8 @@ const countries = [
         name: "Ghana",
         anthem: "God Bless Our Homeland Ghana",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Accra",
             population: 2514000,
@@ -6399,6 +6737,8 @@ const countries = [
         name: "Togo",
         anthem: "Terre de nos aïeux",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Lomé",
             population: 1477660,
@@ -6434,6 +6774,8 @@ const countries = [
         name: "Benin",
         anthem: "L'Aube Nouvelle",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Porto-Novo",
             population: 285753,
@@ -6469,6 +6811,8 @@ const countries = [
         name: "Nigeria",
         anthem: "Arise O Compatriots",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Abuja",
             population: 3464000,
@@ -6508,6 +6852,8 @@ const countries = [
         name: "Cameroon",
         anthem: "O Cameroon, Thou Cradle of Our Fathers",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Yaoundé",
             population: 3566000,
@@ -6543,6 +6889,8 @@ const countries = [
         name: "Central African Republic",
         anthem: "La Renaissance",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Bangui",
             population: 889231,
@@ -6581,6 +6929,8 @@ const countries = [
         name: "South Sudan",
         anthem: "South Sudan Oyee!",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Juba",
             population: 525953,
@@ -6619,6 +6969,8 @@ const countries = [
         name: "Democratic Republic of the Congo",
         anthem: "Debout Congolais",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Kinshasa",
             population: 14970460,
@@ -6658,6 +7010,8 @@ const countries = [
         name: "Republic of the Congo",
         anthem: "La Congolaise",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Brazzaville",
             population: 2230000,
@@ -6696,6 +7050,8 @@ const countries = [
         name: "Gabon",
         anthem: "La Concorde",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Libreville",
             population: 813000,
@@ -6731,6 +7087,8 @@ const countries = [
         name: "Equatorial Guinea",
         anthem: "Caminemos Pisando la Senda",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Malabo",
             population: 297000,
@@ -6766,6 +7124,8 @@ const countries = [
         name: "São Tomé and Príncipe",
         anthem: "Independência Total",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "São Tomé",
             population: 80000,
@@ -6801,6 +7161,8 @@ const countries = [
         name: "Angola",
         anthem: "Angola Avante",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Luanda",
             population: 8330000,
@@ -6839,6 +7201,8 @@ const countries = [
         name: "Burkina Faso",
         anthem: "Une Seule Nuit",
         continent: "Africa",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Ouagadougou",
             population: 2453496,
@@ -6882,6 +7246,8 @@ const countries = [
         name: "New Zealand",
         anthem: "God Defend New Zealand",
         continent: "Oceania",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Wellington",
             population: 215900,
@@ -6920,6 +7286,8 @@ const countries = [
         name: "Australia",
         anthem: "Advance Australia Fair",
         continent: "Oceania",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Canberra",
             population: 462213,
@@ -6958,6 +7326,8 @@ const countries = [
         name: "Papua New Guinea",
         anthem: "O Arise, All You Sons",
         continent: "Oceania",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Port Moresby",
             population: 383000,
@@ -6997,6 +7367,8 @@ const countries = [
         name: "Fiji",
         anthem: "God Bless Fiji",
         continent: "Oceania",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Suva",
             population: 93970,
@@ -7032,6 +7404,8 @@ const countries = [
         name: "Solomon Islands",
         anthem: "God Save Our Solomon Islands",
         continent: "Oceania",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Honiara",
             population: 84520,
@@ -7067,6 +7441,8 @@ const countries = [
         name: "Vanuatu",
         anthem: "Yumi, Yumi, Yumi",
         continent: "Oceania",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Port Vila",
             population: 51437,
@@ -7102,6 +7478,8 @@ const countries = [
         name: "Samoa",
         anthem: "The Banner of Freedom",
         continent: "Oceania",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Apia",
             population: 36735,
@@ -7137,6 +7515,8 @@ const countries = [
         name: "Tonga",
         anthem: "Ko e fasi 'o e tu'i 'o e 'Otu Tonga",
         continent: "Oceania",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Nukuʻalofa",
             population: 23658,
@@ -7172,6 +7552,8 @@ const countries = [
         name: "Kiribati",
         anthem: "Teirake Kaini Kiribati",
         continent: "Oceania",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "South Tarawa",
             population: 63017,
@@ -7207,6 +7589,8 @@ const countries = [
         name: "Micronesia",
         anthem: "Patriots of Micronesia",
         continent: "Oceania",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Palikir",
             population: 6647,
@@ -7242,6 +7626,8 @@ const countries = [
         name: "Palau",
         anthem: "Belau rekid",
         continent: "Oceania",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Ngerulmud",
             population: 391,
@@ -7280,6 +7666,8 @@ const countries = [
         name: "Marshall Islands",
         anthem: "Forever Marshall Islands",
         continent: "Oceania",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Majuro",
             population: 27797,
@@ -7318,6 +7706,8 @@ const countries = [
         name: "Tuvalu",
         anthem: "Tuvalu mo te Atua",
         continent: "Oceania",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Funafuti",
             population: 6320,
@@ -7353,6 +7743,8 @@ const countries = [
         name: "Nauru",
         anthem: "Nauru Bwiema",
         continent: "Oceania",
+        transcontintental: false,
+        continents: [],
         capital: {
             name: "Yaren",
             population: 1100,

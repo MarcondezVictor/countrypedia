@@ -68,7 +68,10 @@ function buildTable() {
     // filtrar por continente
     const filtered = activeContinent === "All"
         ? countries
-        : countries.filter(c => c.continent === activeContinent);
+        : countries.filter(c => 
+            c.continent === activeContinent ||
+            (c.transcontinental && c.continents.includes(activeContinent))
+        );
 
     // ordenar
     const sorted = sortCountries(filtered);
@@ -109,7 +112,7 @@ function buildTable() {
             <td style="color:${idhColor(country.idh)};font-weight:bold;">
                 ${country.idh}
             </td>
-            <td>${country.continent}</td>
+            <td>${country.transcontinental ? country.continents.join(" / ") : country.continent}</td>
         `;
 
         body.appendChild(tr);
@@ -195,7 +198,7 @@ function search() {
             <td>${country.population.toLocaleString()}</td>
             <td>${country.area.toLocaleString()} km²</td>
             <td>${country.idh}</td>
-            <td>${country.continent}</td>
+            <td>${country.transcontinental ? country.continents.join(" / ") : country.continent}</td>
         `;
         body.appendChild(tr);
     });
