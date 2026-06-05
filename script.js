@@ -6,6 +6,7 @@ const countries = [
 
     {
         iso: "br",
+        contributions: 0,
         name: "Brazil",
         anthem: "Hino Nacional Brasileiro",
         continent: "South America",
@@ -45,6 +46,7 @@ const countries = [
     
     {
         iso: "ar",
+        contributions: 0,
         name: "Argentina",
         anthem: "Himno Nacional Argentino",
         continent: "South America",
@@ -83,6 +85,7 @@ const countries = [
     },
     {
         iso: "bo",
+        contributions: 0,
         name: "Bolivia",
         anthem: "Canción Patriótica",
         continent: "South America",
@@ -119,6 +122,7 @@ const countries = [
     },
     {
         iso: "cl",
+        contributions: 0,
         name: "Chile",
         anthem: "Himno Nacional de Chile",
         continent: "South America",
@@ -156,6 +160,7 @@ const countries = [
     },
     {
         iso: "co",
+        contributions: 0,
         name: "Colombia",
         anthem: "Himno Nacional de Colombia",
         continent: "South America",
@@ -194,6 +199,7 @@ const countries = [
     },
     {
         iso: "ec",
+        contributions: 0,
         name: "Ecuador",
         anthem: "Salve, Oh Patria",
         continent: "South America",
@@ -232,6 +238,7 @@ const countries = [
     },
     {
         iso: "gy",
+        contributions: 0,
         name: "Guyana",
         anthem: "Dear Land of Guyana",
         continent: "South America",
@@ -269,6 +276,7 @@ const countries = [
     },
     {
         iso: "py",
+        contributions: 0,
         name: "Paraguay",
         anthem: "Himno Nacional de Paraguay",
         continent: "South America",
@@ -306,6 +314,7 @@ const countries = [
     },
     {
         iso: "pe",
+        contributions: 0,
         name: "Peru",
         anthem: "Himno Nacional del Perú",
         continent: "South America",
@@ -344,6 +353,7 @@ const countries = [
     },
     {
         iso: "sr",
+        contributions: 0,
         name: "Suriname",
         anthem: "God zij met ons Suriname",
         continent: "South America",
@@ -380,6 +390,7 @@ const countries = [
     },
     {
         iso: "uy",
+        contributions: 0,
         name: "Uruguay",
         anthem: "Himno Nacional de Uruguay",
         continent: "South America",
@@ -417,6 +428,7 @@ const countries = [
     },
     {
         iso: "ve",
+        contributions: 0,
         name: "Venezuela",
         anthem: "Gloria al Bravo Pueblo",
         continent: "South America",
@@ -460,6 +472,7 @@ const countries = [
 
     {
         iso: "ua",
+        contributions: 1,
         name: "Ukraine",
         anthem: "Shche ne vmerla Ukrainy",
         continent: "Europe",
@@ -498,6 +511,7 @@ const countries = [
     },
     {
         iso: "pt",
+        contributions: 0,
         name: "Portugal",
         anthem: "A Portuguesa",
         continent: "Europe",
@@ -535,6 +549,7 @@ const countries = [
     },
     {
         iso: "is",
+        contributions: 0,
         name: "Iceland",
         anthem: "Lofsöngur",
         continent: "Europe",
@@ -572,6 +587,7 @@ const countries = [
     },
     {
         iso: "no",
+        contributions: 0,
         name: "Norway",
         anthem: "Ja, vi elsker dette landet",
         continent: "Europe",
@@ -609,6 +625,7 @@ const countries = [
     },
     {
         iso: "se",
+        contributions: 0,
         name: "Sweden",
         anthem: "Du gamla, Du fria",
         continent: "Europe",
@@ -647,6 +664,7 @@ const countries = [
     },
     {
         iso: "fi",
+        contributions: 0,
         name: "Finland",
         anthem: "Maamme",
         continent: "Europe",
@@ -685,6 +703,7 @@ const countries = [
     },
     {
         iso: "dk",
+        contributions: 0,
         name: "Denmark",
         anthem: "Der er et yndigt land",
         continent: "Europe",
@@ -719,6 +738,7 @@ const countries = [
     },
     {
         iso: "ie",
+        contributions: 0,
         name: "Ireland",
         anthem: "Amhrán na bhFiann",
         continent: "Europe",
@@ -757,6 +777,7 @@ const countries = [
     },
     {
         iso: "gb",
+        contributions: 0,
         name: "United Kingdom",
         anthem: "God Save the King",
         continent: "Europe",
@@ -791,6 +812,7 @@ const countries = [
     },
     {
         iso: "nl",
+        contributions: 0,
         name: "Netherlands",
         anthem: "Het Wilhelmus",
         continent: "Europe",
@@ -828,6 +850,7 @@ const countries = [
     },
     {
         iso: "be",
+        contributions: 0,
         name: "Belgium",
         anthem: "La Brabançonne",
         continent: "Europe",
@@ -865,6 +888,7 @@ const countries = [
     },
     {
         iso: "lu",
+        contributions: 0,
         name: "Luxembourg",
         anthem: "Ons Heemecht",
         continent: "Europe",
@@ -902,6 +926,7 @@ const countries = [
     },
     {
         iso: "fr",
+        contributions: 0,
         name: "France",
         anthem: "La Marseillaise",
         continent: "Europe",
@@ -940,6 +965,7 @@ const countries = [
     },
     {
         iso: "mc",
+        contributions: 0,
         name: "Monaco",
         anthem: "Hymne Monégasque",
         continent: "Europe",
@@ -977,6 +1003,7 @@ const countries = [
     },
     {
         iso: "ad",
+        contributions: 0,
         name: "Andorra",
         anthem: "El Gran Carlemany",
         continent: "Europe",
@@ -1011,6 +1038,7 @@ const countries = [
     },
     {
         iso: "es",
+        contributions: 0,
         name: "Spain",
         anthem: "Marcha Real",
         continent: "Europe",
@@ -1048,6 +1076,7 @@ const countries = [
     },
     {
         iso: "de",
+        contributions: 0,
         name: "Germany",
         anthem: "Das Lied der Deutschen",
         continent: "Europe",
@@ -1085,6 +1114,7 @@ const countries = [
     },
     {
         iso: "ch",
+        contributions: 0,
         name: "Switzerland",
         anthem: "Schweizer Psalm",
         continent: "Europe",
@@ -1123,6 +1153,7 @@ const countries = [
     },
     {
         iso: "li",
+        contributions: 0,
         name: "Liechtenstein",
         anthem: "Oben am jungen Rhein",
         continent: "Europe",
@@ -1157,6 +1188,7 @@ const countries = [
     },
     {
         iso: "at",
+        contributions: 0,
         name: "Austria",
         anthem: "Land der Berge, Land am Strome",
         continent: "Europe",
@@ -1191,6 +1223,7 @@ const countries = [
     },
     {
         iso: "it",
+        contributions: 0,
         name: "Italy",
         anthem: "Il Canto degli Italiani",
         continent: "Europe",
@@ -1228,6 +1261,7 @@ const countries = [
     },
     {
         iso: "sm",
+        contributions: 0,
         name: "San Marino",
         anthem: "Inno Nazionale della Repubblica",
         continent: "Europe",
@@ -1262,6 +1296,7 @@ const countries = [
     },
     {
         iso: "va",
+        contributions: 0,
         name: "Vatican City",
         anthem: "Inno e Marcia Pontificale",
         continent: "Europe",
@@ -1296,6 +1331,7 @@ const countries = [
     },
     {
         iso: "mt",
+        contributions: 0,
         name: "Malta",
         anthem: "L-Innu Malti",
         continent: "Europe",
@@ -1337,6 +1373,7 @@ const countries = [
     },
     {
         iso: "si",
+        contributions: 0,
         name: "Slovenia",
         anthem: "Zdravljica",
         continent: "Europe",
@@ -1393,6 +1430,7 @@ const countries = [
     },
     {
         iso: "hr",
+        contributions: 0,
         name: "Croatia",
         anthem: "Lijepa naša domovino",
         continent: "Europe",
@@ -1431,6 +1469,7 @@ const countries = [
     },
     {
         iso: "ba",
+        contributions: 0,
         name: "Bosnia and Herzegovina",
         anthem: "Državna himna Bosne i Hercegovine",
         continent: "Europe",
@@ -1465,6 +1504,7 @@ const countries = [
     },
     {
         iso: "rs",
+        contributions: 0,
         name: "Serbia",
         anthem: "Bože pravde",
         continent: "Europe",
@@ -1503,6 +1543,7 @@ const countries = [
     },
     {
         iso: "me",
+        contributions: 0,
         name: "Montenegro",
         anthem: "Oj, svijetla majska zoro",
         continent: "Europe",
@@ -1541,6 +1582,7 @@ const countries = [
     },
     {
         iso: "xk",
+        contributions: 0,
         name: "Kosovo",
         anthem: "Europe",
         continent: "Europe",
@@ -1575,6 +1617,7 @@ const countries = [
     },
     {
         iso: "mk",
+        contributions: 0,
         name: "North Macedonia",
         anthem: "Denes nad Makedonija",
         continent: "Europe",
@@ -1609,6 +1652,7 @@ const countries = [
     },
     {
         iso: "al",
+        contributions: 0,
         name: "Albania",
         anthem: "Himni i Flamurit",
         continent: "Europe",
@@ -1643,6 +1687,7 @@ const countries = [
     },
     {
         iso: "gr",
+        contributions: 0,
         name: "Greece",
         anthem: "Hymn to Liberty",
         continent: "Europe",
@@ -1680,6 +1725,7 @@ const countries = [
     },
     {
         iso: "bg",
+        contributions: 0,
         name: "Bulgaria",
         anthem: "Mila Rodino",
         continent: "Europe",
@@ -1718,6 +1764,7 @@ const countries = [
     },
     {
         iso: "ro",
+        contributions: 0,
         name: "Romania",
         anthem: "Deșteaptă-te, române!",
         continent: "Europe",
@@ -1757,6 +1804,7 @@ const countries = [
     },
     {
         iso: "md",
+        contributions: 2,
         name: "Moldova",
         anthem: "Limba noastră",
         continent: "Europe",
@@ -1782,7 +1830,7 @@ const countries = [
         independence_year: 1991,
         national_animal: "Aurochs",
         coords: { lat: 47.4116, lon: 28.3699 },
-        famous_people: ["Maia Sandu", "Igor Dodon", "Mihai Eminescu", "Eugeniu Doga", "Natalia Barbu", "Vladimir Voronin"],
+        famous_people: ["Maia Sandu", "Igor Dodon", "Mihai Eminescu", "Eugen Doga", "Natalia Barbu", "Vladimir Voronin", "O-Zone"],
         famous_places: ["Orheiul Vechi", "Mileștii Mici Winery", "Cricova Winery", "Soroca Fortress", "Saharna Monastery", "Cathedral of Chișinău"],
         cuisine: ["Mămăligă", "Zeamă", "Plăcintă", "Sarmale", "Mititei", "Răcituri"],
         main_cities: ["Chișinău", "Tiraspol", "Bălți", "Bender", "Rîbnița", "Cahul"],
@@ -1796,6 +1844,7 @@ const countries = [
     },
     {
         iso: "hu",
+        contributions: 0,
         name: "Hungary",
         anthem: "Himnusz",
         continent: "Europe",
@@ -1834,6 +1883,7 @@ const countries = [
     },
     {
         iso: "sk",
+        contributions: 0,
         name: "Slovakia",
         anthem: "Nad Tatrou sa blýska",
         continent: "Europe",
@@ -1868,6 +1918,7 @@ const countries = [
     },
     {
         iso: "cz",
+        contributions: 0,
         name: "Czech Republic",
         anthem: "Kde domov můj",
         continent: "Europe",
@@ -1905,6 +1956,7 @@ const countries = [
     },
     {
         iso: "pl",
+        contributions: 0,
         name: "Poland",
         anthem: "Mazurek Dąbrowskiego",
         continent: "Europe",
@@ -1942,6 +1994,7 @@ const countries = [
     },
     {
         iso: "lt",
+        contributions: 0,
         name: "Lithuania",
         anthem: "Tautiška giesmė",
         continent: "Europe",
@@ -1976,6 +2029,7 @@ const countries = [
     },
     {
         iso: "lv",
+        contributions: 0,
         name: "Latvia",
         anthem: "Dievs, svētī Latviju!",
         continent: "Europe",
@@ -2010,6 +2064,7 @@ const countries = [
     },
     {
         iso: "ee",
+        contributions: 0,
         name: "Estonia",
         anthem: "Mu isamaa, mu õnn ja rõõm",
         continent: "Europe",
@@ -2047,6 +2102,7 @@ const countries = [
     },
     {
         iso: "by",
+        contributions: 0,
         name: "Belarus",
         anthem: "My Belarusy",
         continent: "Europe",
@@ -2081,6 +2137,7 @@ const countries = [
     },
     {
         iso: "ru",
+        contributions: 0,
         name: "Russia",
         anthem: "State Anthem of the Russian Federation",
         continent: "Europe",
@@ -2124,6 +2181,7 @@ const countries = [
     },
     {
         iso: "cy",
+        contributions: 0,
         name: "Cyprus",
         anthem: "Hymn to Liberty",
         continent: "Europe",
@@ -2163,6 +2221,7 @@ const countries = [
 
     {
         iso: "ca",
+        contributions: 0,
         name: "Canada",
         anthem: "O Canada",
         continent: "North America",
@@ -2183,7 +2242,7 @@ const countries = [
         timezone: ["UTC-8", "UTC-7", "UTC-6", "UTC-5", "UTC-4", "UTC-3:30"],
         internet_code: ".ca",
         phone_code: "+1",
-        borders: ["us"],
+        borders: ["us","fr","dk"],
         territories: [],
         independence_year: 1867,
         national_animal: "North American Beaver",
@@ -2200,6 +2259,7 @@ const countries = [
     },
     {
         iso: "mx",
+        contributions: 0,
         name: "Mexico",
         anthem: "Mexican National Anthem",
         continent: "North America",
@@ -2239,6 +2299,7 @@ const countries = [
     },
     {
         iso: "gt",
+        contributions: 0,
         name: "Guatemala",
         anthem: "Guatemala Feliz",
         continent: "North America",
@@ -2277,6 +2338,7 @@ const countries = [
     },
     {
         iso: "bz",
+        contributions: 0,
         name: "Belize",
         anthem: "Land of the Free",
         continent: "North America",
@@ -2311,6 +2373,7 @@ const countries = [
     },
     {
         iso: "hn",
+        contributions: 0,
         name: "Honduras",
         anthem: "Himno Nacional de Honduras",
         continent: "North America",
@@ -2348,6 +2411,7 @@ const countries = [
     },
     {
         iso: "sv",
+        contributions: 0,
         name: "El Salvador",
         anthem: "Himno Nacional de El Salvador",
         continent: "North America",
@@ -2385,6 +2449,7 @@ const countries = [
     },
     {
         iso: "ni",
+        contributions: 0,
         name: "Nicaragua",
         anthem: "Salve a ti, Nicaragua",
         continent: "North America",
@@ -2422,6 +2487,7 @@ const countries = [
     },
     {
         iso: "cr",
+        contributions: 0,
         name: "Costa Rica",
         anthem: "Noble patria, tu hermosa bandera",
         continent: "North America",
@@ -2456,6 +2522,7 @@ const countries = [
     },
     {
         iso: "pa",
+        contributions: 0,
         name: "Panama",
         anthem: "Himno Istmeño",
         continent: "North America",
@@ -2493,6 +2560,7 @@ const countries = [
     },
     {
         iso: "cu",
+        contributions: 0,
         name: "Cuba",
         anthem: "La Bayamesa",
         continent: "North America",
@@ -2530,6 +2598,7 @@ const countries = [
     },
     {
         iso: "jm",
+        contributions: 0,
         name: "Jamaica",
         anthem: "Jamaica, Land We Love",
         continent: "North America",
@@ -2567,6 +2636,7 @@ const countries = [
     },
     {
         iso: "ht",
+        contributions: 0,
         name: "Haiti",
         anthem: "La Dessalinienne",
         continent: "North America",
@@ -2601,6 +2671,7 @@ const countries = [
     },
     {
         iso: "do",
+        contributions: 0,
         name: "Dominican Republic",
         anthem: "Quisqueyanos valientes",
         continent: "North America",
@@ -2640,6 +2711,7 @@ const countries = [
     },
     {
         iso: "tt",
+        contributions: 0,
         name: "Trinidad and Tobago",
         anthem: "Forged from the Love of Liberty",
         continent: "North America",
@@ -2677,6 +2749,7 @@ const countries = [
     },
     {
         iso: "bb",
+        contributions: 0,
         name: "Barbados",
         anthem: "In Plenty and In Time of Need",
         continent: "North America",
@@ -2714,6 +2787,7 @@ const countries = [
     },
     {
         iso: "lc",
+        contributions: 0,
         name: "Saint Lucia",
         anthem: "Sons and Daughters of Saint Lucia",
         continent: "North America",
@@ -2748,6 +2822,7 @@ const countries = [
     },
     {
         iso: "vc",
+        contributions: 0,
         name: "Saint Vincent and the Grenadines",
         anthem: "Saint Vincent! Land So Beautiful!",
         continent: "North America",
@@ -2782,6 +2857,7 @@ const countries = [
     },
     {
         iso: "gd",
+        contributions: 0,
         name: "Grenada",
         anthem: "Hail Grenada",
         continent: "North America",
@@ -2816,6 +2892,7 @@ const countries = [
     },
     {
         iso: "ag",
+        contributions: 0,
         name: "Antigua and Barbuda",
         anthem: "Fair Antigua, We Salute Thee",
         continent: "North America",
@@ -2850,6 +2927,7 @@ const countries = [
     },
     {
         iso: "kn",
+        contributions: 0,
         name: "Saint Kitts and Nevis",
         anthem: "O Land of Beauty!",
         continent: "North America",
@@ -2888,6 +2966,7 @@ const countries = [
     },
     {
         iso: "dm",
+        contributions: 0,
         name: "Dominica",
         anthem: "Isle of Beauty, Isle of Splendour",
         continent: "North America",
@@ -2925,6 +3004,7 @@ const countries = [
     },
     {
         iso: "bs",
+        contributions: 0,
         name: "Bahamas",
         anthem: "March On, Bahamaland",
         continent: "North America",
@@ -2965,6 +3045,7 @@ const countries = [
     },
     {
         iso: "us",
+        contributions: 0,
         name: "United States",
         anthem: "The Star-Spangled Banner",
         continent: "North America",
@@ -3010,7 +3091,8 @@ const countries = [
 
     {
         iso: "tr",
-        name: "Turkey",
+        contributions: 1,
+        name: "Türkiye",
         anthem: "İstiklal Marşı",
         continent: "Asia",
         capital: {
@@ -3035,7 +3117,7 @@ const countries = [
         independence_year: 1923,
         national_animal: "Grey Wolf",
         coords: { lat: 38.9637, lon: 35.2433 },
-        famous_people: ["Mustafa Kemal Atatürk", "Orhan Pamuk", "Suleiman the Magnificent", "Tarkan", "Fatih Terim", "Merve Büyüksaraç"],
+        famous_people: ["Mustafa Kemal Atatürk", "Orhan Pamuk", "Suleiman the Magnificent", "Tarkan", "Fatih Terim", "Arda Güler"],
         famous_places: ["Hagia Sophia", "Cappadocia", "Ephesus", "Pamukkale", "Topkapi Palace", "Mount Ararat"],
         cuisine: ["Kebab", "Baklava", "Meze", "Börek", "Lahmacun", "Döner"],
         main_cities: ["Istanbul", "Ankara", "Izmir", "Bursa", "Adana", "Gaziantep"],
@@ -3051,6 +3133,7 @@ const countries = [
     },
     {
         iso: "ge",
+        contributions: 0,
         name: "Georgia",
         anthem: "Tavisupleba",
         continent: "Asia",
@@ -3088,6 +3171,7 @@ const countries = [
     },
     {
         iso: "am",
+        contributions: 0,
         name: "Armenia",
         anthem: "Mer Hayrenik",
         continent: "Asia",
@@ -3122,6 +3206,7 @@ const countries = [
     },
     {
         iso: "az",
+        contributions: 0,
         name: "Azerbaijan",
         anthem: "Azərbaycan marşı",
         continent: "Asia",
@@ -3162,6 +3247,7 @@ const countries = [
     },
     {
         iso: "sy",
+        contributions: 0,
         name: "Syria",
         anthem: "Humat al-Diyar",
         continent: "Asia",
@@ -3199,6 +3285,7 @@ const countries = [
     },
     {
         iso: "lb",
+        contributions: 0,
         name: "Lebanon",
         anthem: "Kulluna lil-watan",
         continent: "Asia",
@@ -3233,6 +3320,7 @@ const countries = [
     },
     {
         iso: "il",
+        contributions: 0,
         name: "Israel",
         anthem: "Hatikvah",
         continent: "Asia",
@@ -3267,6 +3355,7 @@ const countries = [
     },
     {
         iso: "jo",
+        contributions: 1,
         name: "Jordan",
         anthem: "As-salam al-malaki al-urduni",
         continent: "Asia",
@@ -3295,12 +3384,13 @@ const countries = [
         famous_people: ["King Hussein I", "King Abdullah II", "Rania of Jordan", "Noor of Jordan", "Hana Makki", "Zaha Hadid"],
         famous_places: ["Petra", "Wadi Rum", "Dead Sea", "Jerash", "Aqaba", "Madaba Mosaic Map"],
         cuisine: ["Mansaf", "Falafel", "Maqluba", "Knafeh", "Zarb", "Musakhan"],
-        main_cities: ["Amman", "Zarqa", "Irbid", "Russeifa", "Wadi as-Sir", "Aqaba"],
+        main_cities: ["Amman", "Zarqa", "Irbid", "Russeifa", "Karak", "Aqaba"],
         main_products: ["Phosphates", "Potash", "Pharmaceuticals", "Fertilizers", "Clothing", "Tourism"],
         subdivisions: ["Ajloun", "Aqaba", "Balqa", "Irbid", "Jerash", "Karak", "Ma'an", "Madaba", "Mafraq", "Amman", "Tafilah", "Zarqa"]
     },
     {
         iso: "iq",
+        contributions: 0,
         name: "Iraq",
         anthem: "Mawtini",
         continent: "Asia",
@@ -3338,6 +3428,7 @@ const countries = [
     },
     {
         iso: "ir",
+        contributions: 0,
         name: "Iran",
         anthem: "Soroud-e Melli-e Jomhouri-e Eslami-e Iran",
         continent: "Asia",
@@ -3377,6 +3468,7 @@ const countries = [
     },
     {
         iso: "kw",
+        contributions: 0,
         name: "Kuwait",
         anthem: "Al-Nasheed Al-Watani",
         continent: "Asia",
@@ -3411,6 +3503,7 @@ const countries = [
     },
     {
         iso: "sa",
+        contributions: 0,
         name: "Saudi Arabia",
         anthem: "Aash Al Maleek",
         continent: "Asia",
@@ -3448,6 +3541,7 @@ const countries = [
     },
     {
         iso: "ye",
+        contributions: 0,
         name: "Yemen",
         anthem: "United Republic",
         continent: "Asia",
@@ -3485,6 +3579,7 @@ const countries = [
     },
     {
         iso: "om",
+        contributions: 0,
         name: "Oman",
         anthem: "Nashid as-Salaam as-Sultani",
         continent: "Asia",
@@ -3522,6 +3617,7 @@ const countries = [
     },
     {
         iso: "ae",
+        contributions: 0,
         name: "United Arab Emirates",
         anthem: "Ishy Bilady",
         continent: "Asia",
@@ -3556,6 +3652,7 @@ const countries = [
     },
     {
         iso: "qa",
+        contributions: 0,
         name: "Qatar",
         anthem: "As Salam Al Amiri",
         continent: "Asia",
@@ -3590,6 +3687,7 @@ const countries = [
     },
     {
         iso: "bh",
+        contributions: 0,
         name: "Bahrain",
         anthem: "Bahrainona",
         continent: "Asia",
@@ -3624,6 +3722,7 @@ const countries = [
     },
     {
         iso: "af",
+        contributions: 0,
         name: "Afghanistan",
         anthem: "Milli Surood",
         continent: "Asia",
@@ -3662,6 +3761,7 @@ const countries = [
     },
     {
         iso: "pk",
+        contributions: 0,
         name: "Pakistan",
         anthem: "Qaumi Tarana",
         continent: "Asia",
@@ -3696,6 +3796,7 @@ const countries = [
     },
     {
         iso: "in",
+        contributions: 0,
         name: "India",
         anthem: "Jana Gana Mana",
         continent: "Asia",
@@ -3735,6 +3836,7 @@ const countries = [
     },
     {
         iso: "np",
+        contributions: 0,
         name: "Nepal",
         anthem: "Sayaun Thunga Phool Ka",
         continent: "Asia",
@@ -3769,6 +3871,7 @@ const countries = [
     },
     {
         iso: "bt",
+        contributions: 0,
         name: "Bhutan",
         anthem: "Druk Tsendhen",
         continent: "Asia",
@@ -3806,6 +3909,7 @@ const countries = [
     },
     {
         iso: "bd",
+        contributions: 0,
         name: "Bangladesh",
         anthem: "Amar Sonar Bangla",
         continent: "Asia",
@@ -3840,6 +3944,7 @@ const countries = [
     },
     {
         iso: "lk",
+        contributions: 0,
         name: "Sri Lanka",
         anthem: "Sri Lanka Matha",
         continent: "Asia",
@@ -3874,6 +3979,7 @@ const countries = [
     },
     {
         iso: "mv",
+        contributions: 0,
         name: "Maldives",
         anthem: "Gaumee salaam",
         continent: "Asia",
@@ -3912,6 +4018,7 @@ const countries = [
     },
     {
         iso: "tm",
+        contributions: 0,
         name: "Turkmenistan",
         anthem: "Garaşsyz, Bitarap Türkmenistanyň döwlet gimni",
         continent: "Asia",
@@ -3946,6 +4053,7 @@ const countries = [
     },
     {
         iso: "uz",
+        contributions: 0,
         name: "Uzbekistan",
         anthem: "O'zbekiston Respublikasining Davlat Madhiyasi",
         continent: "Asia",
@@ -3983,6 +4091,7 @@ const countries = [
     },
     {
         iso: "tj",
+        contributions: 0,
         name: "Tajikistan",
         anthem: "Surudi Milli",
         continent: "Asia",
@@ -4017,6 +4126,7 @@ const countries = [
     },
     {
         iso: "kg",
+        contributions: 0,
         name: "Kyrgyzstan",
         anthem: "Kyrgyz Respublikasynyn Mamlekettik Gimni",
         continent: "Asia",
@@ -4051,6 +4161,7 @@ const countries = [
     },
     {
         iso: "kz",
+        contributions: 0,
         name: "Kazakhstan",
         anthem: "Menің Qazaqstanym",
         continent: "Asia",
@@ -4088,6 +4199,7 @@ const countries = [
     },
     {
         iso: "mn",
+        contributions: 0,
         name: "Mongolia",
         anthem: "Mongol ulsyn töriin duulal",
         continent: "Asia",
@@ -4125,6 +4237,7 @@ const countries = [
     },
     {
         iso: "cn",
+        contributions: 0,
         name: "China",
         anthem: "March of the Volunteers",
         continent: "Asia",
@@ -4163,6 +4276,7 @@ const countries = [
     },
     {
         iso: "kp",
+        contributions: 0,
         name: "North Korea",
         anthem: "Aegukka",
         continent: "Asia",
@@ -4200,6 +4314,7 @@ const countries = [
     },
     {
         iso: "kr",
+        contributions: 0,
         name: "South Korea",
         anthem: "Aegukga",
         continent: "Asia",
@@ -4237,6 +4352,7 @@ const countries = [
     },
     {
         iso: "jp",
+        contributions: 0,
         name: "Japan",
         anthem: "Kimigayo",
         continent: "Asia",
@@ -4276,6 +4392,7 @@ const countries = [
     },
     {
         iso: "tw",
+        contributions: 0,
         name: "Taiwan",
         anthem: "National Anthem of the Republic of China",
         continent: "Asia",
@@ -4313,6 +4430,7 @@ const countries = [
     },
     {
         iso: "mm",
+        contributions: 0,
         name: "Myanmar",
         anthem: "Kaba Ma Kyei",
         continent: "Asia",
@@ -4350,6 +4468,7 @@ const countries = [
     },
     {
         iso: "th",
+        contributions: 0,
         name: "Thailand",
         anthem: "Phleng Chat Thai",
         continent: "Asia",
@@ -4394,6 +4513,7 @@ const countries = [
     },
     {
         iso: "la",
+        contributions: 0,
         name: "Laos",
         anthem: "Pheng Xat Lao",
         continent: "Asia",
@@ -4431,6 +4551,7 @@ const countries = [
     },
     {
         iso: "vn",
+        contributions: 0,
         name: "Vietnam",
         anthem: "Tiến Quân Ca",
         continent: "Asia",
@@ -4473,6 +4594,7 @@ const countries = [
     },
     {
         iso: "kh",
+        contributions: 0,
         name: "Cambodia",
         anthem: "Nokoreach",
         continent: "Asia",
@@ -4511,6 +4633,7 @@ const countries = [
     },
     {
         iso: "my",
+        contributions: 0,
         name: "Malaysia",
         anthem: "Negaraku",
         continent: "Asia",
@@ -4548,6 +4671,7 @@ const countries = [
     },
     {
         iso: "bn",
+        contributions: 0,
         name: "Brunei",
         anthem: "Allah Peliharakan Sultan",
         continent: "Asia",
@@ -4582,6 +4706,7 @@ const countries = [
     },
     {
         iso: "sg",
+        contributions: 0,
         name: "Singapore",
         anthem: "Majulah Singapura",
         continent: "Asia",
@@ -4616,6 +4741,7 @@ const countries = [
     },
     {
         iso: "id",
+        contributions: 0,
         name: "Indonesia",
         anthem: "Indonesia Raya",
         continent: "Asia",
@@ -4656,6 +4782,7 @@ const countries = [
     },
     {
         iso: "tl",
+        contributions: 0,
         name: "Timor-Leste",
         anthem: "Pátria",
         continent: "Asia",
@@ -4693,6 +4820,7 @@ const countries = [
     },
     {
         iso: "ph",
+        contributions: 0,
         name: "Philippines",
         anthem: "Lupang Hinirang",
         continent: "Asia",
@@ -4742,6 +4870,7 @@ const countries = [
 
     {
         iso: "ma",
+        contributions: 0,
         name: "Morocco",
         anthem: "Hymne Chérifien",
         continent: "Africa",
@@ -4779,6 +4908,7 @@ const countries = [
     },
     {
         iso: "dz",
+        contributions: 0,
         name: "Algeria",
         anthem: "Kassaman",
         continent: "Africa",
@@ -4820,6 +4950,7 @@ const countries = [
     },
     {
         iso: "tn",
+        contributions: 0,
         name: "Tunisia",
         anthem: "Humat Al Hima",
         continent: "Africa",
@@ -4857,6 +4988,7 @@ const countries = [
     },
     {
         iso: "ly",
+        contributions: 0,
         name: "Libya",
         anthem: "Libya Libya Libya",
         continent: "Africa",
@@ -4895,6 +5027,7 @@ const countries = [
     },
     {
         iso: "eg",
+        contributions: 0,
         name: "Egypt",
         anthem: "Bilady, Bilady, Bilady",
         continent: "Africa",
@@ -4933,6 +5066,7 @@ const countries = [
     },
     {
         iso: "mr",
+        contributions: 0,
         name: "Mauritania",
         anthem: "Watani Anta Habibi",
         continent: "Africa",
@@ -4970,6 +5104,7 @@ const countries = [
     },
     {
         iso: "ml",
+        contributions: 0,
         name: "Mali",
         anthem: "Pour l'Afrique et pour toi, Mali",
         continent: "Africa",
@@ -5004,6 +5139,7 @@ const countries = [
     },
     {
         iso: "ne",
+        contributions: 0,
         name: "Niger",
         anthem: "La Nigérienne",
         continent: "Africa",
@@ -5038,6 +5174,7 @@ const countries = [
     },
     {
         iso: "td",
+        contributions: 0,
         name: "Chad",
         anthem: "La Tchadienne",
         continent: "Africa",
@@ -5076,6 +5213,7 @@ const countries = [
     },
     {
         iso: "sd",
+        contributions: 0,
         name: "Sudan",
         anthem: "Nahnu Djundullah Djundulwatan",
         continent: "Africa",
@@ -5114,6 +5252,7 @@ const countries = [
     },
     {
         iso: "er",
+        contributions: 0,
         name: "Eritrea",
         anthem: "Ertra, Ertra, Ertra",
         continent: "Africa",
@@ -5148,6 +5287,7 @@ const countries = [
     },
     {
         iso: "et",
+        contributions: 0,
         name: "Ethiopia",
         anthem: "Whedefit Gesgeshi Wude Henate Ethiopia",
         continent: "Africa",
@@ -5185,6 +5325,7 @@ const countries = [
     },
     {
         iso: "dj",
+        contributions: 0,
         name: "Djibouti",
         anthem: "Jabuuti",
         continent: "Africa",
@@ -5219,6 +5360,7 @@ const countries = [
     },
     {
         iso: "so",
+        contributions: 0,
         name: "Somalia",
         anthem: "Qolobaa Calankeed",
         continent: "Africa",
@@ -5256,6 +5398,7 @@ const countries = [
     },
     {
         iso: "ke",
+        contributions: 0,
         name: "Kenya",
         anthem: "Ee Mungu Nguvu Yetu",
         continent: "Africa",
@@ -5295,6 +5438,7 @@ const countries = [
     },
     {
         iso: "ug",
+        contributions: 0,
         name: "Uganda",
         anthem: "Oh Uganda, Land of Beauty",
         continent: "Africa",
@@ -5329,6 +5473,7 @@ const countries = [
     },
     {
         iso: "rw",
+        contributions: 0,
         name: "Rwanda",
         anthem: "Rwanda Nziza",
         continent: "Africa",
@@ -5363,6 +5508,7 @@ const countries = [
     },
     {
         iso: "bi",
+        contributions: 0,
         name: "Burundi",
         anthem: "Burundi Bwacu",
         continent: "Africa",
@@ -5400,6 +5546,7 @@ const countries = [
     },
     {
         iso: "tz",
+        contributions: 0,
         name: "Tanzania",
         anthem: "Mungu ibariki Afrika",
         continent: "Africa",
@@ -5438,6 +5585,7 @@ const countries = [
     },
     {
         iso: "mz",
+        contributions: 0,
         name: "Mozambique",
         anthem: "Pátria Amada",
         continent: "Africa",
@@ -5472,6 +5620,7 @@ const countries = [
     },
     {
         iso: "mw",
+        contributions: 0,
         name: "Malawi",
         anthem: "Mulungu dalitsa Malawi",
         continent: "Africa",
@@ -5510,6 +5659,7 @@ const countries = [
     },
     {
         iso: "zm",
+        contributions: 0,
         name: "Zambia",
         anthem: "Stand and Sing of Zambia, Proud and Free",
         continent: "Africa",
@@ -5544,6 +5694,7 @@ const countries = [
     },
     {
         iso: "zw",
+        contributions: 0,
         name: "Zimbabwe",
         anthem: "Blessed Be the Land of Zimbabwe",
         continent: "Africa",
@@ -5581,6 +5732,7 @@ const countries = [
     },
     {
         iso: "bw",
+        contributions: 0,
         name: "Botswana",
         anthem: "Fatshe leno la rona",
         continent: "Africa",
@@ -5618,6 +5770,7 @@ const countries = [
     },
     {
         iso: "na",
+        contributions: 0,
         name: "Namibia",
         anthem: "Namibia, Land of the Brave",
         continent: "Africa",
@@ -5655,6 +5808,7 @@ const countries = [
     },
     {
         iso: "za",
+        contributions: 0,
         name: "South Africa",
         anthem: "Nkosi Sikelel' iAfrika",
         continent: "Africa",
@@ -5689,6 +5843,7 @@ const countries = [
     },
     {
         iso: "ls",
+        contributions: 0,
         name: "Lesotho",
         anthem: "Lesotho Fatše La Bo-ntata Rona",
         continent: "Africa",
@@ -5723,6 +5878,7 @@ const countries = [
     },
     {
         iso: "sz",
+        contributions: 0,
         name: "Eswatini",
         anthem: "Nkulunkulu Mnikati wetibusiso temaSwati",
         continent: "Africa",
@@ -5757,6 +5913,7 @@ const countries = [
     },
     {
         iso: "mg",
+        contributions: 0,
         name: "Madagascar",
         anthem: "Ry Tanindrazanay malala ô",
         continent: "Africa",
@@ -5794,6 +5951,7 @@ const countries = [
     },
     {
         iso: "km",
+        contributions: 0,
         name: "Comoros",
         anthem: "Udzima wa ya Masiwa",
         continent: "Africa",
@@ -5828,6 +5986,7 @@ const countries = [
     },
     {
         iso: "sc",
+        contributions: 0,
         name: "Seychelles",
         anthem: "Koste Seselwa",
         continent: "Africa",
@@ -5867,6 +6026,7 @@ const countries = [
     },
     {
         iso: "mu",
+        contributions: 0,
         name: "Mauritius",
         anthem: "Motherland",
         continent: "Africa",
@@ -5904,6 +6064,7 @@ const countries = [
     },
     {
         iso: "cv",
+        contributions: 0,
         name: "Cape Verde",
         anthem: "Cântico da Liberdade",
         continent: "Africa",
@@ -5942,6 +6103,7 @@ const countries = [
     },
     {
         iso: "sn",
+        contributions: 0,
         name: "Senegal",
         anthem: "Pincez Tous vos Koras, Frappez les Balafons",
         continent: "Africa",
@@ -5979,6 +6141,7 @@ const countries = [
     },
     {
         iso: "gm",
+        contributions: 0,
         name: "Gambia",
         anthem: "For The Gambia, Our Homeland",
         continent: "Africa",
@@ -6013,6 +6176,7 @@ const countries = [
     },
     {
         iso: "gw",
+        contributions: 0,
         name: "Guinea-Bissau",
         anthem: "Esta É a Nossa Pátria Bem Amada",
         continent: "Africa",
@@ -6047,6 +6211,7 @@ const countries = [
     },
     {
         iso: "gn",
+        contributions: 0,
         name: "Guinea",
         anthem: "Liberté",
         continent: "Africa",
@@ -6081,6 +6246,7 @@ const countries = [
     },
     {
         iso: "sl",
+        contributions: 0,
         name: "Sierra Leone",
         anthem: "High We Exalt Thee, Realm of the Free",
         continent: "Africa",
@@ -6115,6 +6281,7 @@ const countries = [
     },
     {
         iso: "lr",
+        contributions: 0,
         name: "Liberia",
         anthem: "All Hail, Liberia, Hail!",
         continent: "Africa",
@@ -6152,6 +6319,7 @@ const countries = [
     },
     {
         iso: "ci",
+        contributions: 0,
         name: "Ivory Coast",
         anthem: "L'Abidjanaise",
         continent: "Africa",
@@ -6189,6 +6357,7 @@ const countries = [
     },
     {
         iso: "gh",
+        contributions: 0,
         name: "Ghana",
         anthem: "God Bless Our Homeland Ghana",
         continent: "Africa",
@@ -6226,6 +6395,7 @@ const countries = [
     },
     {
         iso: "tg",
+        contributions: 0,
         name: "Togo",
         anthem: "Terre de nos aïeux",
         continent: "Africa",
@@ -6260,6 +6430,7 @@ const countries = [
     },
     {
         iso: "bj",
+        contributions: 0,
         name: "Benin",
         anthem: "L'Aube Nouvelle",
         continent: "Africa",
@@ -6294,6 +6465,7 @@ const countries = [
     },
     {
         iso: "ng",
+        contributions: 0,
         name: "Nigeria",
         anthem: "Arise O Compatriots",
         continent: "Africa",
@@ -6332,6 +6504,7 @@ const countries = [
     },
     {
         iso: "cm",
+        contributions: 0,
         name: "Cameroon",
         anthem: "O Cameroon, Thou Cradle of Our Fathers",
         continent: "Africa",
@@ -6366,6 +6539,7 @@ const countries = [
     },
     {
         iso: "cf",
+        contributions: 0,
         name: "Central African Republic",
         anthem: "La Renaissance",
         continent: "Africa",
@@ -6403,6 +6577,7 @@ const countries = [
     },
     {
         iso: "ss",
+        contributions: 0,
         name: "South Sudan",
         anthem: "South Sudan Oyee!",
         continent: "Africa",
@@ -6440,6 +6615,7 @@ const countries = [
     },
     {
         iso: "cd",
+        contributions: 0,
         name: "Democratic Republic of the Congo",
         anthem: "Debout Congolais",
         continent: "Africa",
@@ -6478,6 +6654,7 @@ const countries = [
     },
     {
         iso: "cg",
+        contributions: 0,
         name: "Republic of the Congo",
         anthem: "La Congolaise",
         continent: "Africa",
@@ -6515,6 +6692,7 @@ const countries = [
     },
     {
         iso: "ga",
+        contributions: 0,
         name: "Gabon",
         anthem: "La Concorde",
         continent: "Africa",
@@ -6549,6 +6727,7 @@ const countries = [
     },
     {
         iso: "gq",
+        contributions: 0,
         name: "Equatorial Guinea",
         anthem: "Caminemos Pisando la Senda",
         continent: "Africa",
@@ -6583,6 +6762,7 @@ const countries = [
     },
     {
         iso: "st",
+        contributions: 0,
         name: "São Tomé and Príncipe",
         anthem: "Independência Total",
         continent: "Africa",
@@ -6617,6 +6797,7 @@ const countries = [
     },
     {
         iso: "ao",
+        contributions: 0,
         name: "Angola",
         anthem: "Angola Avante",
         continent: "Africa",
@@ -6654,6 +6835,7 @@ const countries = [
     },
     {
         iso: "bf",
+        contributions: 0,
         name: "Burkina Faso",
         anthem: "Une Seule Nuit",
         continent: "Africa",
@@ -6696,6 +6878,7 @@ const countries = [
 
         {
         iso: "nz",
+        contributions: 0,
         name: "New Zealand",
         anthem: "God Defend New Zealand",
         continent: "Oceania",
@@ -6733,6 +6916,7 @@ const countries = [
     },
     {
         iso: "au",
+        contributions: 0,
         name: "Australia",
         anthem: "Advance Australia Fair",
         continent: "Oceania",
@@ -6770,6 +6954,7 @@ const countries = [
     },
     {
         iso: "pg",
+        contributions: 0,
         name: "Papua New Guinea",
         anthem: "O Arise, All You Sons",
         continent: "Oceania",
@@ -6808,6 +6993,7 @@ const countries = [
     },
     {
         iso: "fj",
+        contributions: 0,
         name: "Fiji",
         anthem: "God Bless Fiji",
         continent: "Oceania",
@@ -6842,6 +7028,7 @@ const countries = [
     },
     {
         iso: "sb",
+        contributions: 0,
         name: "Solomon Islands",
         anthem: "God Save Our Solomon Islands",
         continent: "Oceania",
@@ -6876,6 +7063,7 @@ const countries = [
     },
     {
         iso: "vu",
+        contributions: 0,
         name: "Vanuatu",
         anthem: "Yumi, Yumi, Yumi",
         continent: "Oceania",
@@ -6910,6 +7098,7 @@ const countries = [
     },
     {
         iso: "ws",
+        contributions: 0,
         name: "Samoa",
         anthem: "The Banner of Freedom",
         continent: "Oceania",
@@ -6944,6 +7133,7 @@ const countries = [
     },
     {
         iso: "to",
+        contributions: 0,
         name: "Tonga",
         anthem: "Ko e fasi 'o e tu'i 'o e 'Otu Tonga",
         continent: "Oceania",
@@ -6978,6 +7168,7 @@ const countries = [
     },
     {
         iso: "ki",
+        contributions: 0,
         name: "Kiribati",
         anthem: "Teirake Kaini Kiribati",
         continent: "Oceania",
@@ -7012,6 +7203,7 @@ const countries = [
     },
     {
         iso: "fm",
+        contributions: 0,
         name: "Micronesia",
         anthem: "Patriots of Micronesia",
         continent: "Oceania",
@@ -7046,6 +7238,7 @@ const countries = [
     },
     {
         iso: "pw",
+        contributions: 0,
         name: "Palau",
         anthem: "Belau rekid",
         continent: "Oceania",
@@ -7083,6 +7276,7 @@ const countries = [
     },
     {
         iso: "mh",
+        contributions: 0,
         name: "Marshall Islands",
         anthem: "Forever Marshall Islands",
         continent: "Oceania",
@@ -7120,6 +7314,7 @@ const countries = [
     },
     {
         iso: "tv",
+        contributions: 0,
         name: "Tuvalu",
         anthem: "Tuvalu mo te Atua",
         continent: "Oceania",
@@ -7154,6 +7349,7 @@ const countries = [
     },
     {
         iso: "nr",
+        contributions: 0,
         name: "Nauru",
         anthem: "Nauru Bwiema",
         continent: "Oceania",

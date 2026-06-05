@@ -1110,6 +1110,10 @@ footer {
 .countries-table td:nth-child(7),
 .countries-table th:nth-child(7) { width: 130px; }  /* continent */
 
+.countries-table thead {
+    border-bottom: 2px solid var(--border-darker);
+}
+
 .countries-table th {
     background: var(--titlebar);
     color: var(--text-white);
@@ -1141,7 +1145,7 @@ footer {
 }
 
 .countries-table tr:hover img {
-    background-color: var(--titlebar);
+    background-color: var(--titlebar) !important;
 }
 
 .countries-table tr:hover td {

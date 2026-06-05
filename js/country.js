@@ -229,6 +229,11 @@ function buildCountryPage() {
         <div class="statusbar">
             <span class="statusbar-item">${country.name} — ${country.continent}</span>
             <span class="statusbar-item">Population: ${country.population.toLocaleString()}</span>
+            <span class="statusbar-item">
+                ${country.contributions > 0 
+                    ? `Community contributions: ${country.contributions}` 
+                    : "Be the first to contribute!"}
+            </span>
         </div>
     `;
 }
