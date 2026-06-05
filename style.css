@@ -342,6 +342,9 @@ main {
     margin: 24px auto;
     max-width: 1200px;
 
+    /* FIX: impede que o conteúdo ultrapasse os cantos da janela */
+    overflow: hidden;
+
     /* raised-outer para a janela principal */
     border-top:    2px solid var(--border-light);
     border-left:   2px solid var(--border-light);
@@ -422,6 +425,12 @@ main {
 /* Área de conteúdo da janela */
 .window-content {
     padding: 8px;
+
+    /* FIX RESPONSIVIDADE: permite scroll horizontal quando o
+       conteúdo (ex: tabela) é mais largo que o ecrã, em vez de
+       esticar a página toda */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* scroll suave no iOS */
 }
 
 
@@ -688,6 +697,13 @@ footer {
 
 /* Tablet */
 @media (max-width: 768px) {
+    /* FIX: margem reduzida da janela já no tablet
+       (antes só existia a 480px, deixando a janela colada
+        aos bordos entre 481px e 768px) */
+    .window {
+        margin: 12px 8px;
+    }
+
     /* Links da navbar escondem-se */
     .navbar-links {
         display: none;
@@ -738,6 +754,19 @@ footer {
         overflow-x: auto;
         flex-wrap: nowrap;
         padding-bottom: 0;
+    }
+}
+
+/* Mobile pequeno — navbar deixava de caber abaixo de ~380px */
+@media (max-width: 380px) {
+    /* esconde o texto do logo, mantém só o ícone */
+    .navbar-logo span {
+        display: none;
+    }
+
+    /* impede que o input force a navbar a transbordar */
+    .navbar-search {
+        min-width: 0;
     }
 }
 
@@ -983,7 +1012,6 @@ footer {
 
 /* Tablet */
 @media (max-width: 768px) {
-    /* colunas passam a ser uma em cima da outra */
     .country-columns {
         flex-direction: column;
     }
@@ -1014,6 +1042,39 @@ footer {
         width: 160px;
         height: 107px;
     }
+}
+
+/* Mobile — tabela de países */
+@media (max-width: 640px) {
+    .countries-table th:nth-child(4),
+    .countries-table td:nth-child(4),
+    .countries-table th:nth-child(5),
+    .countries-table td:nth-child(5),
+    .countries-table th:nth-child(6),
+    .countries-table td:nth-child(6),
+    .countries-table th:nth-child(7),
+    .countries-table td:nth-child(7) {
+        display: none;
+    }
+
+    .countries-table th:nth-child(2),
+    .countries-table td:nth-child(2) { width: 55%; }
+
+    .countries-table th:nth-child(3),
+    .countries-table td:nth-child(3) { width: auto; }
+
+    /* corta texto longo com ...
+       (removido o max-width: 0 que conflituava com width em
+       table-layout: fixed e fazia as colunas colapsar) */
+    .countries-table td:nth-child(2),
+    .countries-table td:nth-child(3) {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .countries-table th:nth-child(1),
+    .countries-table td:nth-child(1) { width: 36px; }
 }
 
 /* ------------------------------------------------------------
