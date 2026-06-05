@@ -2337,7 +2337,7 @@ const countries = [
 
     {
         iso: "ca",
-        contributions: 0,
+        contributions: 1,
         name: "Canada",
         anthem: "O Canada",
         continent: "North America",
