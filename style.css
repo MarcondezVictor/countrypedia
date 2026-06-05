@@ -555,7 +555,6 @@ main {
 }
 
 .country-card:hover {
-    /* seleção azul ao hover — estilo Win95 */
     background: var(--titlebar);
     color: var(--text-white);
 
@@ -565,17 +564,66 @@ main {
     border-right:  2px solid var(--border-dark);
 }
 
+.country-card:hover img {
+    background-color: var(--titlebar);
+}
+
 /* Bandeira dentro do card */
 .country-card img {
     width: 48px;
     height: 32px;
-    object-fit: cover;
+    object-fit: contain;
+    background-color: var(--bg);
+    border: none;
+}
 
-    /* inset na bandeira — parece emoldurada */
-    border-top:    1px solid var(--border-dark);
-    border-left:   1px solid var(--border-dark);
-    border-bottom: 1px solid var(--border-light);
-    border-right:  1px solid var(--border-light);
+.countries-table img {
+    width: 32px;
+    height: 21px;
+    object-fit: contain;
+    background-color: var(--bg);
+    border: none;
+    display: block;
+}
+
+.border-link img {
+    width: 24px;
+    height: 16px;
+    object-fit: contain;
+    background-color: var(--bg);
+    border: none;
+}
+
+.border-link:hover {
+    background: var(--titlebar);
+    color: var(--text-white);
+}
+
+.border-link:hover img {
+    background-color: var(--titlebar);
+}
+
+.country-card:hover {
+    background: var(--titlebar);
+    color: var(--text-white);
+
+    border-top:    2px solid var(--border-light);
+    border-left:   2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-dark);
+    border-right:  2px solid var(--border-dark);
+}
+
+.country-card:hover img {
+    background-color: var(--titlebar);
+}
+
+.country-flag-large {
+    width: 180px;
+    height: 120px;
+    object-fit: contain;
+    flex-shrink: 0;
+    background-color: var(--bg);
+    border: none;
 }
 
 /* Nome do país */
@@ -715,14 +763,10 @@ footer {
 .country-flag-large {
     width: 180px;
     height: 120px;
-    object-fit: cover;
-    flex-shrink: 0; /* impede a bandeira de encolher */
-
-    /* inset para parecer emoldurada */
-    border-top:    2px solid var(--border-dark);
-    border-left:   2px solid var(--border-dark);
-    border-bottom: 2px solid var(--border-light);
-    border-right:  2px solid var(--border-light);
+    object-fit: contain;
+    flex-shrink: 0;
+    background-color: var(--bg);
+    border: none;
 }
 
 .country-header-info {
@@ -927,14 +971,10 @@ footer {
 .border-link img {
     width: 24px;
     height: 16px;
-    object-fit: cover;
-
-    border-top:    1px solid var(--border-dark);
-    border-left:   1px solid var(--border-dark);
-    border-bottom: 1px solid var(--border-light);
-    border-right:  1px solid var(--border-light);
+    object-fit: contain;
+    background-color: var(--bg);
+    border: none;
 }
-
 
 /* ============================================================
    RESPONSIVIDADE — country page
@@ -1038,6 +1078,10 @@ footer {
     cursor: pointer;
 }
 
+.countries-table tr:hover img {
+    background-color: var(--titlebar);
+}
+
 .countries-table tr:hover td {
     color: white;
 }
@@ -1045,12 +1089,10 @@ footer {
 .countries-table img {
     width: 32px;
     height: 21px;
-    object-fit: cover;
+    object-fit: contain;
+    background-color: var(--bg);
+    border: none;
     display: block;
-    border-top:    1px solid var(--border-dark);
-    border-left:   1px solid var(--border-dark);
-    border-bottom: 1px solid var(--border-light);
-    border-right:  1px solid var(--border-light);
 }
 
 /* ------------------------------------------------------------
@@ -1102,7 +1144,7 @@ footer {
 /* ------------------------------------------------------------
    CONTINENTES
    ------------------------------------------------------------ */
-   
+
 .continents-grid {
     display: flex;
     flex-wrap: wrap;
