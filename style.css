@@ -1015,6 +1015,18 @@ footer {
     border: none;
 }
 
+.country-map {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 16px;
+    background: #ffffff;              /* white well, not teal */
+    border-top: 2px solid var(--border-dark);
+    border-left: 2px solid var(--border-dark);
+    border-right: 2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-light);
+}
+
 /* ============================================================
    RESPONSIVIDADE — country page
    ============================================================ */

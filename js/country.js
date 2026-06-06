@@ -122,6 +122,16 @@ function buildCountryPage() {
             <div class="country-col-right">
 
                 <div class="country-section">
+                    <div class="window-titlebar"><span>Country Map</span></div>
+                    <img 
+                        src="../maps/${country.name.replace(/\s/g, "")}.svg" 
+                        alt="${country.name} location map"
+                        class="country-map"
+                        onerror="this.parentElement.style.display='none'"
+                    >
+                </div>
+
+                <div class="country-section">
                     <div class="window-titlebar"><span>General Data</span></div>
                     <table class="country-table">
                         <tr><td>Capital</td><td>${country.capital.name}</td></tr>
@@ -159,7 +169,7 @@ function buildCountryPage() {
                     <div class="window-titlebar"><span>Borders</span></div>
                     <div class="country-borders">
                         ${country.borders.length === 0 
-                            ? "<p style='padding:8px;font-size:var(--text-sm);'>No land borders</p>"
+                            ? "<p style='padding:8px;font-size:var(--text-sm);'>Island Nation</p>"
                             : country.borders.map(b => {
                                 const neighbor = countries.find(c => c.iso === b);
                                 return neighbor 
