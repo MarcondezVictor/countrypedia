@@ -50,6 +50,21 @@
                     <span>Countries improved: <strong id="totalCountries">0</strong></span>
                 </div>
 
+                <!-- CTA -->
+                <div style="padding: 10px 12px; border-bottom: 2px solid var(--border-dark); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+                    <p style="margin: 0; font-size: var(--text-sm);">
+                        Want to help? Found something wrong or missing on a country page? 
+                        Comment on our Reddit post, and your country climbs the leaderboard!
+                        <strong id="needsHelp"></strong>
+                    </p>
+
+                    <button class="raised" 
+                        onclick="window.open(REDDIT_POST, '_blank')"
+                        style="padding: 4px 14px; font-size: var(--text-sm); background: var(--bg); white-space: nowrap; cursor: pointer;">
+                        Improve a country page
+                    </button>
+                </div>
+
                 <div class="sort-bar">
                     <span>Sort by:</span>
                     <select id="sortSelect" onchange="changeSort()">
@@ -95,6 +110,8 @@
 
     <script src="../script.js"></script>
     <script>
+        const REDDIT_POST = "https://www.reddit.com/r/geography/comments/1txshv0";
+
         document.addEventListener("DOMContentLoaded", () => {
             buildContinentFilter();
             buildContributors();
@@ -161,6 +178,9 @@
             document.getElementById("totalContribs").textContent = totalContribs;
             document.getElementById("totalCountries").textContent =
                 countries.filter(c => c.contributions && c.contributions > 0).length;
+
+            const needsHelp = countries.filter(c => !c.contributions || c.contributions === 0).length;
+            document.getElementById("needsHelp").textContent = ` ${needsHelp} countries still need help.`;
 
             // --- PODIUM TOP 3 ---
             const podium = document.getElementById("podium");

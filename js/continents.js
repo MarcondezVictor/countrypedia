@@ -155,14 +155,15 @@ function randomCountry() {
 document.addEventListener("DOMContentLoaded", () => {
     buildContinents();
 
+    const params = new URLSearchParams(window.location.search);
+    const preselected = params.get("continent");
+    if (preselected) openContinent(preselected);
+
     document.getElementById("searchInput").addEventListener("keydown", (e) => {
         if (e.key === "Enter") search();
     });
 
-        // --- HAMBURGER ---
     document.getElementById("hamburger").addEventListener("click", () => {
         document.getElementById("navLinks").classList.toggle("open");
     });
-
 });
-

@@ -68,10 +68,10 @@ function buildCountryPage() {
                 <h1 class="country-name">${country.name}</h1>
                 <p class="country-demonym">${country.demonym}</p>
                 <div class="country-tags">
-                    ${country.transcontinental 
-                        ? country.continents.map(c => `<span class="tag">${c}</span>`).join("") 
-                        : `<span class="tag">${country.continent}</span>`
-                    }
+                ${country.transcontinental 
+                    ? country.continents.map(c => `<a href="continents.html?continent=${encodeURIComponent(c)}" class="tag tag-link">${c}</a>`).join("") 
+                    : `<a href="continents.html?continent=${encodeURIComponent(country.continent)}" class="tag tag-link">${country.continent}</a>`
+                }
                     <span class="tag">${country.capital.name}</span>
                     <span class="tag">${country.government}</span>
                 </div>
@@ -180,16 +180,30 @@ function buildCountryPage() {
                     </ul>
                 </div>
 
+                ${country.territories.length > 0 ? `
+                    <div class="country-section">
+                        <div class="window-titlebar"><span>Territories</span></div>
+                        <ul class="country-list">
+                            ${country.territories.map(t => `<li>${t}</li>`).join("")}
+                        </ul>
+                    </div>
+                ` : ""}
+
             </div>
         </div>
 
-        <div style="padding: 6px 8px; border-top: 1px solid var(--border-dark);">
+        <div style="padding: 6px 8px; border-top: 1px solid var(--border-dark); display: flex; align-items: center; gap: 8px;">
+            <button class="raised" onclick="improveCountry()" 
+                style="padding: 3px 12px; font-size: var(--text-sm); background: var(--bg);">
+                Improve this page
+            </button>
             <button class="raised" onclick="shareCountry()" 
                 style="padding: 3px 12px; font-size: var(--text-sm); background: var(--bg);">
                 Share this country
             </button>
-            <span id="shareMsg" style="font-size: var(--text-sm); margin-left: 8px; color: var(--text-muted);"></span>
+            <span id="shareMsg" style="font-size: var(--text-sm); color: var(--text-muted);"></span>
         </div>
+
 
         <div class="statusbar">
             <span class="statusbar-item">${country.name} — ${country.transcontinental ? country.continents.join(" / ") : country.continent}</span>
@@ -217,6 +231,12 @@ function shareCountry() {
         const msg = document.getElementById("shareMsg");
         msg.textContent = "Copy this link: " + window.location.href;
     });
+}
+
+const REDDIT_POST = "https://www.reddit.com/r/geography/comments/1txshv0";
+
+function improveCountry() {
+    window.open(REDDIT_POST, "_blank");
 }
 
 // --- HAMBURGER ---

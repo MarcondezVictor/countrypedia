@@ -596,6 +596,15 @@ main {
     display: block;
 }
 
+.tag-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+.tag-link:hover {
+    background: var(--titlebar);
+    color: white;
+}
+
 .border-link img {
     width: 24px;
     height: 16px;
