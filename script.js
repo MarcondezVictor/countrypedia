@@ -6,7 +6,7 @@ const countries = [
 
     {
         iso: "br",
-        contributions: 0,
+        contributions: 1,
         name: "Brazil",
         anthem: "Hino Nacional Brasileiro",
         continent: "South America",
