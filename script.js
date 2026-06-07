@@ -496,7 +496,7 @@ const countries = [
 
     {
         iso: "ua",
-        contributions: 1,
+        contributions: 2,
         name: "Ukraine",
         anthem: "Shche ne vmerla Ukrainy",
         continent: "Europe",
@@ -531,7 +531,7 @@ const countries = [
         main_products: ["Steel", "Wheat", "Corn", "Sunflower oil", "Iron ore", "Machinery"],
         subdivisions: [
             "Cherkasy", "Chernihiv", "Chernivtsi", "Dnipropetrovsk", "Donetsk", "Ivano-Frankivsk", "Kharkiv", "Kherson", "Khmelnytskyi", 
-            "Kirovohrad", "Kyiv", "Luhansk", "Lviv", "Mykolaiv", "Odessa", "Poltava", "Rivne", "Sumy", "Ternopil", "Vinnytsia", "Volyn",
+            "Kirovohrad", "Kyiv", "Luhansk", "Lviv", "Mykolaiv", "Odesa", "Poltava", "Rivne", "Sumy", "Ternopil", "Vinnytsia", "Volyn",
             "Zakarpattia", "Zaporizhzhia", "Zhytomyr"
         ]
     },
@@ -817,7 +817,7 @@ const countries = [
     },
     {
         iso: "gb",
-        contributions: 0,
+        contributions: 1,
         name: "United Kingdom",
         anthem: "God Save the King",
         continent: "Europe",
@@ -840,7 +840,7 @@ const countries = [
         timezone: ["UTC+0"],
         internet_code: ".uk",
         phone_code: "+44",
-        borders: ["ie"],
+        borders: ["ie", "es"],
         territories: ["Gibraltar", "Falkland Islands", "Bermuda", "Cayman Islands", "British Virgin Islands", "Turks and Caicos", "Saint Helena", "Montserrat", "Anguilla", "British Indian Ocean Territory"],
         independence_year: 1707,
         national_animal: "Lion",
@@ -1092,7 +1092,7 @@ const countries = [
     },
     {
         iso: "es",
-        contributions: 0,
+        contributions: 1,
         name: "Spain",
         anthem: "Marcha Real",
         continent: "Europe",
@@ -1115,7 +1115,7 @@ const countries = [
         timezone: ["UTC+1"],
         internet_code: ".es",
         phone_code: "+34",
-        borders: ["pt", "fr", "ad", "gi", "ma"],
+        borders: ["pt", "fr", "ad", "gi", "ma", "gb"],
         territories: [],
         independence_year: 1479,
         national_animal: "Bull",
@@ -3767,7 +3767,7 @@ const countries = [
     },
     {
         iso: "ye",
-        contributions: 0,
+        contributions: 1,
         name: "Yemen",
         anthem: "United Republic",
         continent: "Asia",
@@ -3795,7 +3795,7 @@ const countries = [
         independence_year: 1990,
         national_animal: "Arabian Leopard",
         coords: { lat: 15.5527, lon: 48.5164 },
-        famous_people: ["Ali Abdullah Saleh", "Abd Rabbuh Mansur Hadi", "Queen of Sheba", "Haile Selassie", "Jamal al-Din al-Afghani", "Tawakkol Karman"],
+        famous_people: ["Ali Abdullah Saleh", "Abd Rabbuh Mansur Hadi", "Queen of Sheba", "Abdullah al-Baradouni", "Queen Arwa al-Sulayhi", "Tawakkol Karman"],
         famous_places: ["Old City Sana'a", "Socotra Island", "Shibam Skyscrapers", "Al Hudaydah", "Wadi Hadramawt", "Al Saleh Mosque"],
         cuisine: ["Saltah", "Fahsa", "Mandi", "Aseed", "Bint al-Sahn", "Zurbian"],
         main_cities: ["Sana'a", "Aden", "Taiz", "Al Hudaydah", "Ibb", "Dhamar"],
@@ -4421,7 +4421,7 @@ const countries = [
     },
     {
         iso: "kz",
-        contributions: 0,
+        contributions: 1,
         name: "Kazakhstan",
         anthem: "Menің Qazaqstanym",
         continent: "Asia",
@@ -4438,7 +4438,7 @@ const countries = [
         demonym: "Kazakhstani",
         government: "Unitary presidential republic",
         area: 2724900,
-        population: 19398618,
+        population: 20400000,
         gdp_per_capita: 10390,
         idh: 0.802,
         timezone: ["UTC+5", "UTC+6"],
@@ -4664,7 +4664,7 @@ const countries = [
     },
     {
         iso: "tw",
-        contributions: 0,
+        contributions: 1,
         name: "Taiwan",
         anthem: "National Anthem of the Republic of China",
         continent: "Asia",
@@ -4675,7 +4675,7 @@ const countries = [
             population: 2646204,
             coords: { lat: 25.0330, lon: 121.5654 }
         },
-        languages: ["Mandarin"],
+        languages: ["Mandarin", "Hokkien", "Hakka", "Eastern Min"],
         currency: "New Taiwan Dollar (NT$)",
         religion: ["Buddhism", "Taoism"],
         demonym: "Taiwanese",
@@ -4692,7 +4692,7 @@ const countries = [
         independence_year: 1912,
         national_animal: "Formosan Black Bear",
         coords: { lat: 23.6978, lon: 120.9605 },
-        famous_people: ["Chiang Kai-shek", "Teresa Teng", "Jay Chou", "Ang Lee", "Zhang Ziyi", "Tsai Ing-wen"],
+        famous_people: ["Chiang Kai-shek", "Teresa Teng", "Jay Chou", "Ang Lee", "Tzuyu", "Tsai Ing-wen", "Rayasianboy"],
         famous_places: ["Taroko Gorge", "Sun Moon Lake", "Jiufen Old Street", "Taipei 101", "Alishan", "Kenting National Park"],
         cuisine: ["Beef Noodle Soup", "Bubble Tea", "Scallion Pancakes", "Oyster Vermicelli", "Stinky Tofu", "Pineapple Cake"],
         main_cities: ["Taipei", "Kaohsiung", "Taichung", "Tainan", "Hsinchu", "Keelung"],
@@ -5114,7 +5114,7 @@ const countries = [
     },
     {
         iso: "ph",
-        contributions: 1,
+        contributions: 2,
         name: "Philippines",
         anthem: "Lupang Hinirang",
         continent: "Asia",
@@ -5143,7 +5143,7 @@ const countries = [
         national_animal: "Philippine Eagle",
         coords: { lat: 12.8797, lon: 121.7740 },
         famous_people: ["Ferdinand Marcos", "Cory Aquino", "Manny Pacquiao", "Jose Rizal", "Lea Salonga", "Efren Peñaflorida"],
-        famous_places: ["Palawan", "Chocolate Hills", "Mayon Volcano", "Tubbataha Reef", "Intramuros", "Banaue Rice Terraces"],
+        famous_places: ["Palawan", "Chocolate Hills", "Mayon Volcano", "Tubbataha Reef", "Intramuros", "Banaue Rice Terraces", "Boracay", "Siargao"],
         cuisine: ["Adobo", "Sinigang", "Lechon", "Kare-Kare", "Halo-Halo", "Pancit"],
         main_cities: ["Manila", "Quezon City", "Davao", "Cebu", "Zamboanga", "Antipolo"],
         main_products: ["Electronics", "Garments", "Coconut Products", "Copper", "Bananas", "Sugar"],
@@ -6847,7 +6847,7 @@ const countries = [
     },
     {
         iso: "ng",
-        contributions: 0,
+        contributions: 1,
         name: "Nigeria",
         anthem: "Arise O Compatriots",
         continent: "Africa",
@@ -6858,7 +6858,7 @@ const countries = [
             population: 3464000,
             coords: { lat: 9.0765, lon: 7.3986 }
         },
-        languages: ["English"],
+        languages: ["English", "Hausa", "Yoruba", "Igbo", "Nigerian Pidgin"],
         currency: "Nigerian Naira (₦)",
         religion: ["Christianity", "Islam"],
         demonym: "Nigerian",
