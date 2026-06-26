@@ -1,38 +1,54 @@
 <!DOCTYPE html>
+<!-- Declara que é um documento HTML5 -->
 <html lang="en">
 <head>
+    <!-- charset: define que o ficheiro usa UTF-8 (suporta acentos, emojis, etc.) -->
     <meta charset ="UTF-8">
-    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <!-- viewport: faz o site se adaptar ao tamanho do ecrã do dispositivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World.com</title>
+    <!-- carrega o CSS do projeto com caminho relativo -->
     <link rel="stylesheet" href="style.css">
-    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-inner">
 
-            <!-- LOGO -->
+    <!-- ================================================
+         NAVBAR — barra de navegação fixa no topo
+         Usa Flexbox (ver .navbar-inner no CSS) pra
+         alinhar logo, pesquisa e links numa linha.
+         ================================================ -->
+    <nav class="navbar">
+        <div class="navbar-inner"> <!-- container flex da navbar -->
+
+            <!-- LOGO — <a> com <img> dentro: tag de imagem dentro de hiperligação -->
             <a href="index.html" class="navbar-logo">
-                <img src="images/logo.png" alt="world.com logo">
+                <img src="images/logo.png" alt="world.com logo"> <!-- <img> com caminho relativo -->
                 world.com
             </a>
 
-            <!-- BARRA DE PESQUISA -->
+            <!-- BARRA DE PESQUISA — input + botão lado a lado (flex) -->
             <div class="navbar-search">
+                <!-- input de texto onde o utilizador escreve o país a procurar -->
                 <input type="text" id="searchInput" placeholder="Search countries...">
+                <!-- botão chama a função search() ao clicar -->
                 <button onclick="search()">Search</button>
             </div>
 
-            <!-- LINKS -->
+            <!-- LINKS DE NAVEGAÇÃO
+                 <nav> dentro de <nav> é válido — este é o menu de páginas.
+                 Em mobile estes links ficam escondidos e aparecem ao clicar
+                 no botão hamburger. -->
             <nav class="navbar-links" id="navLinks">
+                <!-- <a> — tags de hiperligação com caminhos relativos -->
                 <a href="pages/countries.html">Countries</a>
                 <a href="pages/continents.html">Continents</a>
-                <a href="pages/contributors.html">Contributors</a>
-                <a href="pages/quiz.html">Quiz</a>
+                <a href="pages/stats.html">Rankings</a>
+                <a href="pages/compare.html">Compare</a>
                 <a href="#" onclick="randomCountry()">Random</a>
-            </nav> 
+            </nav>
 
-            <!-- HAMBURGER (só aparece em mobile) -->
+            <!-- BOTÃO HAMBURGER — só aparece em mobile (display:none no desktop).
+                 As três <span> representam as três linhas do ícone ☰ -->
             <button class="navbar-hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -41,14 +57,22 @@
         </div>
     </nav>
 
+    <!-- ================================================
+         CONTEÚDO PRINCIPAL
+         <main> é a área principal da página.
+         .container limita a largura e centra com margin:auto.
+         ================================================ -->
     <main class="container">
+
+        <!-- JANELA WIN95 — simula uma janela do Windows 95 -->
         <div class="window">
 
-            <!-- BARRA DE TÍTULO -->
+            <!-- BARRA DE TÍTULO DA JANELA — azul com nome e botões -->
             <div class="window-titlebar">
                 <div class="window-title">
                     <span>World.com — Country Encyclopedia</span>
                 </div>
+                <!-- botões decorativos da janela (minimizar, maximizar, fechar) -->
                 <div class ="window-buttons">
                     <button class="window-btn">_</button>
                     <button class="window-btn">□</button>
@@ -59,14 +83,15 @@
             <!-- CONTEÚDO DA JANELA -->
             <div class="window-content">
 
-                <!-- STATS BAR -->
+                <!-- STATS BAR — mostra contadores de países e continentes.
+                     Os valores são preenchidos pelo JS (buildStats() em app.js) -->
                 <div class="stats-bar">
                     <span>Countries: <strong id="totalCountries">0</strong></span>
                     <span>Continents: <strong id="totalContinents">0</strong></span>
-                    <span>Last updated: <strong>June of 2026</strong></span>
                 </div>
-                
-                <!-- BARRA DE ORDENAÇÃO -->
+
+                <!-- BARRA DE ORDENAÇÃO — <select> para escolher a ordem de exibição.
+                     onchange chama changeSort() em app.js cada vez que muda -->
                 <div class="sort-bar">
                     <span>Sort by:</span>
                     <select id="sortSelect" onchange="changeSort()">
@@ -81,24 +106,37 @@
                     </select>
                 </div>
 
-                <!-- TABS -->
-                <div class="tabs" id="tabs"></div> 
+                <!-- CAIXA "DID YOU KNOW?" — preenchida pelo JS com um país aleatório -->
+                <div class="did-you-know" id="didYouKnow"></div>
 
-                <!-- GRELHA -->
+                <!-- TABS DE CONTINENTE — container vazio preenchido pelo JS.
+                     buildTabs() em app.js cria os botões aqui -->
+                <div class="tabs" id="tabs"></div>
+
+                <!-- GRELHA DE PAÍSES — container vazio preenchido pelo JS.
+                     buildGrid() em app.js cria os cards aqui.
+                     Usa Flexbox (display:flex + flex-wrap) no CSS. -->
                 <div class="countries-grid" id="countriesGrid"></div>
-                
-                <!-- STATUS BAR -->
+
+                <!-- STATUS BAR — texto atualizado pelo JS com contagem de países -->
                 <div class="statusbar">
-                    <span class="statusbar-item" id="statusText">Loading...</span>                </div>
+                    <span class="statusbar-item" id="statusText">Loading...</span>
                 </div>
 
             </div>
         </div>
     </main>
+
+    <!-- RODAPÉ — informação simples no fundo da página -->
     <footer>
         <p>world.com &copy; 2026 - The Country Encyclopedia</p>
     </footer>
-    <script src="script.js"></script>
-    <script src="js/app.js"></script>
+
+    <!-- SCRIPTS — carregados no fim do body pra o HTML já estar pronto.
+         script.js TEM de vir primeiro: contém o array countries[]
+         que app.js usa imediatamente. -->
+    <script src="script.js"></script>   <!-- dados: array countries[] -->
+    <script src="js/app.js"></script>   <!-- lógica da home -->
+
 </body>
 </html>

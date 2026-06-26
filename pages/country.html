@@ -2,31 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- viewport: adapta ao ecrã do dispositivo -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- título genérico — o JS atualiza para o nome do país ao carregar -->
     <title>world.com</title>
+    <!-- CSS com caminho relativo (estamos em /pages/) -->
     <link rel="stylesheet" href="../style.css">
-    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
-    <!-- NAV BAR -->
+    <!-- ================================================
+         NAVBAR — barra de navegação.
+         Usa Flexbox (ver .navbar-inner no CSS).
+         Nesta página o search redireciona pra a home.
+         ================================================ -->
     <nav class="navbar">
         <div class="navbar-inner">
+            <!-- <a> com <img> — logo com caminho relativo -->
             <a href="../index.html" class="navbar-logo">
                 <img src="../images/logo.png" alt="world.com logo">
                 world.com
             </a>
+            <!-- campo de pesquisa — redireciona pra home com ?search= -->
             <div class="navbar-search">
                 <input type="text" id="searchInput" placeholder="Search countries...">
                 <button onclick="search()">Search</button>
             </div>
+            <!-- links de navegação -->
             <nav class="navbar-links" id="navLinks">
                 <a href="countries.html">Countries</a>
                 <a href="continents.html">Continents</a>
-                <a href="contributors.html">Contributors</a>
-                <a href="quiz.html">Quiz</a>
+                <a href="stats.html">Rankings</a>
+                <a href="compare.html">Compare</a>
                 <a href="#" onclick="randomCountry()">Random</a>
             </nav>
+            <!-- hamburger: abre o menu em mobile -->
             <button class="navbar-hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -35,9 +45,16 @@
         </div>
     </nav>
 
-    <!-- CONTEUDO GERADO PELO JS -->
+    <!-- ================================================
+         CONTEÚDO PRINCIPAL
+         A janela está quase vazia aqui — o JS (country.js)
+         injeta TODO o conteúdo em #windowContent depois de
+         ler o parâmetro ?iso= do URL.
+         ================================================ -->
     <main class="container">
         <div class="window" id="countryWindow">
+
+            <!-- barra de título — o JS atualiza o texto em #windowTitle -->
             <div class="window-titlebar">
                 <div class="window-title">
                     <span id="windowTitle">Loading...</span>
@@ -49,18 +66,25 @@
                 </div>
             </div>
 
+            <!-- container vazio onde o JS injeta o HTML do país.
+                 Inclui: cabeçalho, tabelas, listas, mapa, fronteiras... -->
             <div class="window-content" id="windowContent">
-                <!-- area onde o JS vai gerar o site -->
+                <!-- tudo gerado pelo country.js com innerHTML -->
             </div>
 
         </div>
     </main>
 
+    <!-- RODAPÉ -->
     <footer>
         <p>world.com &copy; 2026 - The Country Encyclopedia</p>
     </footer>
 
-    <script src="../script.js"></script>
-    <script src="../js/country.js"></script>
+    <!-- SCRIPTS — script.js primeiro (dados), depois country.js (lógica).
+         country.js executa imediatamente ao carregar (não espera DOMContentLoaded)
+         porque lê o URL e constrói a página logo. -->
+    <script src="../script.js"></script>       <!-- array countries[] -->
+    <script src="../js/country.js"></script>   <!-- lógica desta página -->
+
 </body>
 </html>

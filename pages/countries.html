@@ -2,30 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- viewport: adapta ao ecrã do dispositivo -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countries — world.com</title>
+    <!-- CSS com caminho relativo (estamos dentro de /pages/, por isso "../") -->
     <link rel="stylesheet" href="../style.css">
-    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
+    <!-- ================================================
+         NAVBAR — igual à home mas com "Countries" ativo.
+         Usa Flexbox internamente (ver .navbar-inner no CSS).
+         ================================================ -->
     <nav class="navbar">
         <div class="navbar-inner">
+            <!-- <a> com <img> — logo como hiperligação pra a home -->
             <a href="../index.html" class="navbar-logo">
-                <img src="../images/logo.png" alt="world.com logo">
+                <img src="../images/logo.png" alt="world.com logo"> <!-- caminho relativo com ../ -->
                 world.com
             </a>
+            <!-- campo de pesquisa: em tempo real atualiza a tabela -->
             <div class="navbar-search">
                 <input type="text" id="searchInput" placeholder="Search countries...">
                 <button onclick="search()">Search</button>
             </div>
+            <!-- links de navegação — "Countries" tem classe active (destaque azul) -->
             <nav class="navbar-links" id="navLinks">
                 <a href="countries.html" class="active">Countries</a>
                 <a href="continents.html">Continents</a>
-                <a href="contributors.html">Contributors</a>
-                <a href="quiz.html">Quiz</a>
+                <a href="stats.html">Rankings</a>
+                <a href="compare.html">Compare</a>
                 <a href="#" onclick="randomCountry()">Random</a>
             </nav>
+            <!-- hamburger: mostra o menu em mobile -->
             <button class="navbar-hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -34,9 +43,13 @@
         </div>
     </nav>
 
+    <!-- ================================================
+         CONTEÚDO PRINCIPAL — janela Win95 com a tabela
+         ================================================ -->
     <main class="container">
         <div class="window">
 
+            <!-- barra de título da janela -->
             <div class="window-titlebar">
                 <div class="window-title">
                     <span>Countries List</span>
@@ -50,9 +63,11 @@
 
             <div class="window-content">
 
-                <!-- BARRA DE FERRAMENTAS -->
+                <!-- BARRA DE FERRAMENTAS — ordenação e filtro de continente.
+                     Os <select> chamam JS ao mudar (onchange). -->
                 <div class="sort-bar">
                     <span>Sort by:</span>
+                    <!-- <select> de ordenação — chama changeSort() em countries.js -->
                     <select id="sortSelect" onchange="changeSort()">
                         <option value="name-asc">Name A → Z</option>
                         <option value="name-desc">Name Z → A</option>
@@ -66,16 +81,24 @@
                         <option value="continent-desc">Continent Z → A</option>
                     </select>
                     <span>Continent:</span>
+                    <!-- <select> de continente — a opção "All" está no HTML,
+                         as restantes são adicionadas pelo JS (buildContinentFilter) -->
                     <select id="continentSelect" onchange="changeContinent()">
                         <option value="All">All</option>
                     </select>
+                    <!-- contador de resultados, preenchido pelo JS -->
                     <span id="resultCount" style="margin-left:auto;"></span>
                 </div>
 
-                <!-- TABELA -->
-                <table class="countries-table" id="countriesTable" >
+                <!-- TABELA DE PAÍSES
+                     <table> é usada aqui porque os dados são tabulares.
+                     - <thead> contém os cabeçalhos clicáveis para ordenar
+                     - <tbody> é preenchido dinamicamente pelo JS (buildTable)
+                     Os onclick nos <th> chamam setSort() em countries.js -->
+                <table class="countries-table" id="countriesTable">
                     <thead>
                         <tr>
+                            <!-- <th> — cabeçalho de coluna da tabela -->
                             <th>Flag</th>
                             <th onclick="setSort('name-asc', 'name-desc')">Country ↕</th>
                             <th onclick="setSort('name-asc', 'name-desc')">Capital ↕</th>
@@ -85,13 +108,14 @@
                             <th onclick="setSort('continent-asc', 'continent-desc')">Continent ↕</th>
                         </tr>
                     </thead>
+                    <!-- <tbody> vazio — o JS injeta as <tr> aqui -->
                     <tbody id="countriesBody"></tbody>
                 </table>
 
-                <!-- PAGINAÇÃO -->
+                <!-- PAGINAÇÃO — botões gerados pelo JS (buildPagination) -->
                 <div class="pagination" id="pagination"></div>
 
-                <!-- STATUS BAR -->
+                <!-- STATUS BAR — mostra quantos países estão visíveis -->
                 <div class="statusbar">
                     <span class="statusbar-item" id="statusText">Loading...</span>
                 </div>
@@ -100,12 +124,14 @@
         </div>
     </main>
 
+    <!-- RODAPÉ -->
     <footer>
         <p>world.com &copy; 2026 — The Country Encyclopedia</p>
     </footer>
 
-    <script src="../script.js"></script>
-    <script src="../js/countries.js"></script>
+    <!-- SCRIPTS — script.js primeiro (dados), depois countries.js (lógica) -->
+    <script src="../script.js"></script>       <!-- array countries[] -->
+    <script src="../js/countries.js"></script> <!-- lógica desta página -->
 
 </body>
 </html>

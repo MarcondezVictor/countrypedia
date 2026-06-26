@@ -2,30 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- viewport: adapta ao ecrã do dispositivo -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Continents — world.com</title>
+    <!-- CSS com caminho relativo (estamos em /pages/) -->
     <link rel="stylesheet" href="../style.css">
-    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
+    <!-- ================================================
+         NAVBAR — "Continents" marcado como ativo.
+         Usa Flexbox internamente (ver .navbar-inner no CSS).
+         ================================================ -->
     <nav class="navbar">
         <div class="navbar-inner">
+            <!-- <a> com <img> — logo como hiperligação pra a home -->
             <a href="../index.html" class="navbar-logo">
                 <img src="../images/logo.png" alt="world.com logo">
                 world.com
             </a>
+            <!-- pesquisa: redireciona pra countries ou pra o país direto -->
             <div class="navbar-search">
                 <input type="text" id="searchInput" placeholder="Search countries...">
                 <button onclick="search()">Search</button>
             </div>
+            <!-- links de navegação — "Continents" tem classe active -->
             <nav class="navbar-links" id="navLinks">
                 <a href="countries.html">Countries</a>
                 <a href="continents.html" class="active">Continents</a>
-                <a href="contributors.html">Contributors</a>
-                <a href="quiz.html">Quiz</a>
+                <a href="stats.html">Rankings</a>
+                <a href="compare.html">Compare</a>
                 <a href="#" onclick="randomCountry()">Random</a>
             </nav>
+            <!-- hamburger: abre o menu em mobile -->
             <button class="navbar-hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -36,11 +45,15 @@
 
     <main class="container">
 
-        <!-- JANELA DE CONTINENTES -->
+        <!-- ================================================
+             JANELA PRINCIPAL — cards de resumo por continente.
+             #continentsGrid é preenchido pelo JS (buildContinents).
+             Usa Flexbox (ver .continents-grid no CSS).
+             ================================================ -->
         <div class="window">
             <div class="window-titlebar">
                 <div class="window-title">
-                    <span>Continents Charts</span>
+                    <span>Continents</span>
                 </div>
                 <div class="window-buttons">
                     <button class="window-btn">_</button>
@@ -49,6 +62,7 @@
                 </div>
             </div>
             <div class="window-content">
+                <!-- container vazio — JS injeta os cards de continente aqui -->
                 <div class="continents-grid" id="continentsGrid"></div>
                 <div class="statusbar">
                     <span class="statusbar-item">6 continents</span>
@@ -56,17 +70,25 @@
             </div>
         </div>
 
-        <!-- JANELA DE PAÍSES DO CONTINENTE (aparece ao clicar) -->
+        <!-- ================================================
+             JANELA SECUNDÁRIA — países do continente clicado.
+             Começa escondida (display:none).
+             O JS (openContinent) mostra-a e preenche o grid.
+             ================================================ -->
         <div class="window" id="continentWindow" style="display:none; margin-top:8px;">
             <div class="window-titlebar">
                 <div class="window-title">
+                    <!-- título atualizado pelo JS com o nome do continente -->
                     <span id="continentWindowTitle">Countries</span>
                 </div>
                 <div class="window-buttons">
+                    <!-- botão ✕ chama closeContinentWindow() -->
                     <button class="window-btn" onclick="closeContinentWindow()">✕</button>
                 </div>
             </div>
             <div class="window-content">
+                <!-- grid de cards de países — preenchido por openContinent() -->
+                <!-- reutiliza .countries-grid e .country-card da home -->
                 <div class="countries-grid" id="continentCountriesGrid"></div>
                 <div class="statusbar">
                     <span class="statusbar-item" id="continentStatusText"></span>
@@ -76,12 +98,14 @@
 
     </main>
 
+    <!-- RODAPÉ -->
     <footer>
         <p>world.com &copy; 2026 — The Country Encyclopedia</p>
     </footer>
 
-    <script src="../script.js"></script>
-    <script src="../js/continents.js"></script>
+    <!-- SCRIPTS — script.js primeiro (dados), depois continents.js (lógica) -->
+    <script src="../script.js"></script>         <!-- array countries[] -->
+    <script src="../js/continents.js"></script>  <!-- lógica desta página -->
 
 </body>
 </html>

@@ -1,95 +1,120 @@
+/* ============================================================
+   style.css — folha de estilos do world.com
+   Tema: Windows 95 (bordas em relevo, cores cinzas e azul escuro)
+
+   ÍNDICE:
+   1. Variáveis globais (:root)
+   2. Reset
+   3. Base global (body, main)
+   4. Container
+   5. Efeitos Win95 (.raised, .inset)
+   6. Navbar
+   7. Janela Win95 (.window)
+   8. Stats bar
+   9. Tabs de continente
+   10. Grelha de países
+   11. Status bar
+   12. Footer
+   13. Responsividade (media queries)
+   14. Página de país (country page)
+   15. Tabela de países (countries.html)
+   16. Paginação
+   ============================================================ */
+
+
 /* ------------------------------------------------------------
-   VARIÁVEIS GLOBAIS
-   Definimos aqui todas as cores e valores que se repetem
-   no site. Mudar uma variável atualiza tudo automaticamente.
+   1. VARIÁVEIS GLOBAIS (:root)
+   Guardamos aqui as cores e fontes que se repetem.
+   Mudar uma variável atualiza tudo de uma vez.
    ------------------------------------------------------------ */
 
 :root {
-    /* Cores principais do Windows 95 */
-    --bg:           #c0c0c0;  /* cinzento base — fundo de tudo */
-    --bg-dark:      #808080;  /* cinzento escuro — sombras */
-    --bg-white:     #ffffff;  /* branco — fundos de inputs e listas */
-    --bg-desktop:   #008080;  /* verde azulado — cor do "desktop" Win95 */
+    /* --- Cores principais do Windows 95 --- */
+    --bg:           #c0c0c0;  /* cinzento base — fundo de painéis e botões */
+    --bg-dark:      #808080;  /* cinzento escuro — fundo de labels em tabelas */
+    --bg-white:     #ffffff;  /* branco — fundo de inputs e células de dados */
+    --bg-desktop:   #008080;  /* verde azulado — cor de fundo do "desktop" Win95 */
 
-    /* Cores de texto */
+    /* --- Cores de texto --- */
     --text:         #000000;  /* preto — texto principal */
     --text-white:   #ffffff;  /* branco — texto em fundos escuros */
-    --text-muted:   #808080;  /* cinzento — texto secundário */
+    --text-muted:   #808080;  /* cinzento — texto secundário / placeholder */
 
-    /* Barra de título (azul Win95) */
-    --titlebar:     #000080;  /* azul escuro — barra de título das janelas */
-    --titlebar-end: #1084d0;  /* azul claro — gradiente da barra de título */
+    /* --- Barra de título das janelas --- */
+    --titlebar:     #000080;  /* azul escuro — cor principal da titlebar */
+    --titlebar-end: #1084d0;  /* azul claro — fim do gradiente da titlebar */
 
-    /* Bordas — o truque principal do efeito Win95
-       raised = elemento parece saltar para fora
-       inset  = elemento parece estar afundado */
+    /* --- Bordas Win95 (truque do efeito 3D)
+       O efeito "raised" (saltar) usa branco em cima/esquerda e cinzento em baixo/direita.
+       O efeito "inset" (afundado) inverte as cores. --- */
     --border-light:  #ffffff;  /* branco — bordas de cima e esquerda (raised) */
     --border-dark:   #808080;  /* cinzento — bordas de baixo e direita (raised) */
-    --border-darker: #000000;  /* preto — bordas externas mais marcadas */
+    --border-darker: #000000;  /* preto — borda mais marcada (janela principal) */
 
-    /* Tipografia — Arial é o mais próximo do MS Sans Serif original */
-    --font: Arial, 'MS Sans Serif', sans-serif;
+    /* --- Tipografia --- */
+    --font: Arial, 'MS Sans Serif', sans-serif; /* Arial é o mais próximo da fonte Win95 */
 
-    /* Tamanhos de fonte */
-    --text-sm:   12px;
-    --text-base: 14px;  /* Win95 usava fontes pequenas */
-    --text-md:   16px;
-    --text-lg:   18px;
-    --text-xl:   24px;
+    /* --- Tamanhos de fonte --- */
+    --text-sm:   12px;  /* texto pequeno (labels, status bar) */
+    --text-base: 14px;  /* texto normal — Win95 usava fontes pequenas */
+    --text-md:   16px;  /* texto médio */
+    --text-lg:   18px;  /* texto grande */
+    --text-xl:   24px;  /* título do país */
 }
 
 
 /* ------------------------------------------------------------
-   RESET
-   Os browsers adicionam margens e paddings por padrão.
-   Aqui zeramos tudo para ter controlo total.
+   2. RESET
+   Os browsers adicionam margin e padding por padrão.
+   Zeramos tudo aqui pra ter controlo total.
+   BOX MODEL: box-sizing: border-box faz com que padding e border
+   sejam incluídos na largura/altura total — sem surpresas.
    ------------------------------------------------------------ */
 
 *, *::before, *::after {
-    /* box-sizing: border-box faz com que padding e border
-       sejam incluídos na largura/altura do elemento.
-       Sem isto os cálculos de layout ficam confusos */
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    box-sizing: border-box; /* BOX MODEL: inclui padding e border na largura total */
+    margin: 0;              /* BOX MODEL: remove margens padrão do browser */
+    padding: 0;             /* BOX MODEL: remove paddings padrão do browser */
 }
 
-/* Remove o sublinhado e cor padrão dos links */
+/* remove sublinhado e cor padrão dos links */
 a {
     text-decoration: none;
     color: inherit;
 }
 
-/* Remove os bullets das listas */
+/* remove os bullets das listas <ul> e <ol> */
 ul, ol {
     list-style: none;
 }
 
-/* Imagens nunca ultrapassam o container pai */
+/* imagens nunca ultrapassam o container pai */
 img {
     max-width: 100%;
     display: block;
 }
 
-/* Botões herdam a fonte do site (por padrão não herdam) */
+/* botões herdam a fonte do site (por padrão não herdam) */
 button {
     font-family: var(--font);
     cursor: pointer;
 }
 
-/* Inputs herdam a fonte do site */
+/* inputs herdam a fonte do site */
 input {
     font-family: var(--font);
 }
 
+
 /* ------------------------------------------------------------
-   BASE GLOBAL
-   Estilos aplicados ao corpo inteiro da página
+   3. BASE GLOBAL
+   Estilos aplicados ao <html> e ao <body>.
+   FLEXBOX: o body usa display:flex em coluna pra que o footer
+   fique sempre no fundo da página (com flex:1 no main).
    ------------------------------------------------------------ */
 
 html {
-    /* scroll-behavior smooth faz o scroll animado
-       quando se clica em âncoras (#secção) */
+    /* scroll suave ao clicar em links com âncora (#secção) */
     scroll-behavior: smooth;
 }
 
@@ -97,55 +122,51 @@ body {
     font-family: var(--font);
     font-size: var(--text-base);
     color: var(--text);
+    background-color: var(--bg-desktop); /* fundo verde do "desktop" Win95 */
 
-    /* O fundo do body é o verde do desktop Win95.
-       As "janelas" (containers) é que são cinzentas */
-    background-color: var(--bg-desktop);
+    min-height: 100vh; /* garante que o body ocupa pelo menos a altura total do ecrã */
 
-    min-height: 100vh;
+    /* FLEXBOX: coloca navbar, main e footer em coluna vertical */
     display: flex;
     flex-direction: column;
 }
 
 main {
-    flex: 1;
+    flex: 1; /* FLEXBOX: main ocupa todo o espaço restante entre navbar e footer */
 }
 
 
 /* ------------------------------------------------------------
-   CONTAINER
+   4. CONTAINER
    Limita a largura máxima do conteúdo e centra na página.
-   Usado em todas as secções para manter alinhamento.
+   BOX MODEL: margin: 0 auto centra horizontalmente.
+              padding: 0 16px dá respiro nas laterais.
    ------------------------------------------------------------ */
 
 .container {
     width: 100%;
     max-width: 1200px;
-
-    /* auto nas laterais centra o elemento horizontalmente */
-    margin: 0 auto;
-    padding: 0 16px;
+    margin: 0 auto;     /* BOX MODEL: centra o container horizontalmente */
+    padding: 0 16px;    /* BOX MODEL: espaço interno nas laterais */
 }
 
 
 /* ------------------------------------------------------------
-   EFEITOS WIN95
-   Classes reutilizáveis para o efeito de relevo.
-   Aplicar .raised a qualquer elemento dá-lhe o aspeto
-   de botão/painel Win95.
+   5. EFEITOS WIN95
+   Classes reutilizáveis que simulam o efeito 3D do Win95.
+   BOX MODEL: border é a ferramenta aqui — cor diferente em
+   cada lado cria a ilusão de profundidade.
    ------------------------------------------------------------ */
 
-/* Efeito raised — elemento parece saltar para fora da página
-   Branco em cima e esquerda, cinzento em baixo e direita */
+/* .raised — elemento parece saltar pra fora (branco em cima, cinzento em baixo) */
 .raised {
-    border-top:    2px solid var(--border-light);
-    border-left:   2px solid var(--border-light);
-    border-bottom: 2px solid var(--border-dark);
-    border-right:  2px solid var(--border-dark);
+    border-top:    2px solid var(--border-light);   /* BOX MODEL: borda de cima branca */
+    border-left:   2px solid var(--border-light);   /* BOX MODEL: borda esquerda branca */
+    border-bottom: 2px solid var(--border-dark);    /* BOX MODEL: borda baixo cinzenta */
+    border-right:  2px solid var(--border-dark);    /* BOX MODEL: borda direita cinzenta */
 }
 
-/* Efeito inset — elemento parece estar afundado na página
-   Invertemos as cores em relação ao raised */
+/* .inset — elemento parece estar afundado (invertemos as cores do raised) */
 .inset {
     border-top:    2px solid var(--border-dark);
     border-left:   2px solid var(--border-dark);
@@ -153,83 +174,81 @@ main {
     border-right:  2px solid var(--border-light);
 }
 
-/* Versão mais marcada do raised — borda dupla
-   O Win95 usava isto em janelas e painéis principais */
+/* .raised-outer — versão mais marcada pra janelas principais (borda dupla) */
 .raised-outer {
     border-top:    2px solid var(--border-light);
     border-left:   2px solid var(--border-light);
     border-bottom: 2px solid var(--border-darker);
     border-right:  2px solid var(--border-darker);
-    outline: 1px solid var(--border-dark);
+    outline: 1px solid var(--border-dark); /* contorno extra pra separar do fundo */
 }
 
 
 /* ------------------------------------------------------------
-   NAVBAR
-   A barra de navegação no topo da página.
-   Fica fixa (sticky) para acompanhar o scroll.
+   6. NAVBAR
+   Barra de navegação fixa no topo.
+   FLEXBOX: .navbar-inner usa display:flex pra colocar logo,
+   search bar e links na mesma linha, lado a lado.
+   BOX MODEL: padding define o espaço interno; border-bottom
+   separa a navbar do conteúdo.
    ------------------------------------------------------------ */
 
 .navbar {
     background-color: var(--bg);
-    padding: 4px 0;
-
-    /* sticky faz a navbar acompanhar o scroll sem sair do fluxo */
-    position: sticky;
+    padding: 4px 0;         /* BOX MODEL: espaço interno acima e abaixo */
+    position: sticky;       /* fica colada ao topo ao fazer scroll */
     top: 0;
-
-    /* z-index alto garante que fica por cima de tudo */
-    z-index: 100;
-
-    /* Borda inferior estilo Win95 */
-    border-bottom: 2px solid var(--border-dark);
+    z-index: 100;           /* fica por cima de todo o conteúdo da página */
+    border-bottom: 2px solid var(--border-dark);  /* BOX MODEL: linha separadora */
     outline: 1px solid var(--border-dark);
 }
 
 .navbar-inner {
-    /* flexbox para alinhar logo, pesquisa e links na mesma linha */
+    /* FLEXBOX: alinha logo, search e links numa linha horizontal */
     display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 4px 16px;
+    align-items: center;    /* FLEXBOX: centra verticalmente todos os itens */
+    gap: 8px;               /* FLEXBOX: espaço entre os itens */
+    padding: 4px 16px;      /* BOX MODEL: espaço interno lateral */
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto;         /* BOX MODEL: centra a navbar */
 }
 
-/* Logo do site */
+/* logo: <a> com <img> dentro */
 .navbar-logo {
     font-size: var(--text-lg);
     font-weight: bold;
     color: var(--text);
-    white-space: nowrap;
+    white-space: nowrap;  /* impede que o texto do logo quebre em duas linhas */
+
+    /* FLEXBOX: alinha ícone e texto do logo lado a lado */
     display: flex;
     align-items: center;
     gap: 6px;
 
-    /* padding e bordas dão aspeto de botão Win95 */
-    padding: 2px 8px;
+    padding: 2px 8px; /* BOX MODEL: espaço interno pra dar área de clique */
 }
 
 .navbar-logo:hover {
-    /* raised ao hover simula o botão a ser pressionado */
+    /* efeito raised ao passar o rato — simula botão Win95 */
     border-top:    2px solid var(--border-light);
     border-left:   2px solid var(--border-light);
     border-bottom: 2px solid var(--border-dark);
     border-right:  2px solid var(--border-dark);
-    /* compensamos o padding para não deslocar o layout */
-    margin: -2px;
+    margin: -2px; /* BOX MODEL: compensa a borda pra não deslocar o layout */
 }
 
+/* <img> dentro do logo */
 .navbar-logo img {
     width: 32px;
     height: 32px;
     object-fit: contain;
 }
 
-/* Barra de pesquisa na navbar */
+/* barra de pesquisa */
 .navbar-search {
-    /* flex: 1 faz a barra ocupar todo o espaço disponível */
-    flex: 1;
+    flex: 1; /* FLEXBOX: ocupa todo o espaço disponível entre logo e links */
+
+    /* FLEXBOX: alinha input e botão lado a lado */
     display: flex;
     align-items: center;
     gap: 4px;
@@ -237,14 +256,13 @@ main {
 
 .navbar-search input {
     width: 100%;
-    padding: 3px 6px;
+    padding: 3px 6px;        /* BOX MODEL: espaço interno do input */
     font-size: var(--text-base);
     background: var(--bg-white);
     color: var(--text);
     border: none;
     outline: none;
-
-    /* inset nos inputs — parecem estar afundados */
+    /* efeito inset — input parece afundado */
     border-top:    2px solid var(--border-dark);
     border-left:   2px solid var(--border-dark);
     border-bottom: 2px solid var(--border-light);
@@ -252,13 +270,12 @@ main {
 }
 
 .navbar-search button {
-    padding: 3px 10px;
+    padding: 3px 10px;    /* BOX MODEL: espaço interno do botão */
     background: var(--bg);
     color: var(--text);
     border: none;
     font-size: var(--text-base);
-
-    /* raised nos botões */
+    /* efeito raised — botão parece saltar */
     border-top:    2px solid var(--border-light);
     border-left:   2px solid var(--border-light);
     border-bottom: 2px solid var(--border-dark);
@@ -266,28 +283,28 @@ main {
 }
 
 .navbar-search button:active {
-    /* quando se clica inverte o efeito — simula pressionar */
+    /* ao clicar inverte o efeito — simula pressionar o botão */
     border-top:    2px solid var(--border-dark);
     border-left:   2px solid var(--border-dark);
     border-bottom: 2px solid var(--border-light);
     border-right:  2px solid var(--border-light);
 }
 
-/* Links de navegação */
+/* links de navegação */
 .navbar-links {
+    /* FLEXBOX: coloca os links lado a lado */
     display: flex;
     align-items: center;
     gap: 2px;
-    white-space: nowrap;
+    white-space: nowrap; /* impede quebra de linha */
 }
 
 .navbar-links a {
-    padding: 3px 10px;
+    padding: 3px 10px;    /* BOX MODEL: espaço interno de cada link */
     font-size: var(--text-base);
     color: var(--text);
     background: var(--bg);
-
-    /* raised nos links de navegação */
+    /* efeito raised nos links */
     border-top:    2px solid var(--border-light);
     border-left:   2px solid var(--border-light);
     border-bottom: 2px solid var(--border-dark);
@@ -295,10 +312,11 @@ main {
 }
 
 .navbar-links a:hover {
-    background-color: var(--titlebar);
+    background-color: var(--titlebar); /* fundo azul ao passar o rato */
     color: var(--text-white);
 }
 
+/* link da página atual — fundo azul e efeito inset (parece pressionado) */
 .navbar-links a.active {
     background: var(--titlebar);
     color: var(--text-white);
@@ -308,21 +326,25 @@ main {
     border-right:  2px solid var(--border-light);
 }
 
-/* Hamburguer — só aparece em mobile */
+/* botão hamburger — três linhas que abrem o menu em mobile
+   display:none aqui — aparece só com a media query de mobile */
 .navbar-hamburger {
-    display: none;
+    display: none; /* escondido no desktop, aparece em mobile */
+
+    /* FLEXBOX: empilha as três linhas verticalmente */
     flex-direction: column;
     gap: 4px;
-    padding: 4px;
+    padding: 4px;     /* BOX MODEL: espaço interno do botão */
     background: var(--bg);
     border: none;
-
+    /* efeito raised */
     border-top:    2px solid var(--border-light);
     border-left:   2px solid var(--border-light);
     border-bottom: 2px solid var(--border-dark);
     border-right:  2px solid var(--border-dark);
 }
 
+/* cada <span> é uma linha horizontal do ícone ☰ */
 .navbar-hamburger span {
     display: block;
     width: 20px;
@@ -332,20 +354,18 @@ main {
 
 
 /* ------------------------------------------------------------
-   JANELA WIN95
-   O elemento principal do site — simula uma janela do Win95.
-   Tem barra de título azul, área de conteúdo cinzenta.
+   7. JANELA WIN95
+   O elemento principal — simula uma janela do Windows 95.
+   BOX MODEL: border cria o efeito 3D; overflow:hidden impede
+   que o conteúdo ultrapasse os cantos.
    ------------------------------------------------------------ */
 
 .window {
     background: var(--bg);
-    margin: 24px auto;
+    margin: 24px auto;      /* BOX MODEL: margem vertical e centrado */
     max-width: 1200px;
-
-    /* FIX: impede que o conteúdo ultrapasse os cantos da janela */
-    overflow: hidden;
-
-    /* raised-outer para a janela principal */
+    overflow: hidden;       /* conteúdo interno não pode sair da janela */
+    /* efeito raised-outer: borda dupla pra a janela principal */
     border-top:    2px solid var(--border-light);
     border-left:   2px solid var(--border-light);
     border-bottom: 2px solid var(--border-darker);
@@ -353,42 +373,45 @@ main {
     outline: 1px solid var(--border-dark);
 }
 
-/* Barra de título da janela */
+/* barra de título azul da janela */
 .window-titlebar {
-    /* gradiente horizontal azul — característico do Win95/98 */
+    /* gradiente azul — característico do Win95/98 */
     background: linear-gradient(to right, var(--titlebar), var(--titlebar-end));
     color: var(--text-white);
     font-weight: bold;
     font-size: var(--text-base);
-    padding: 3px 6px;
+    padding: 3px 6px;        /* BOX MODEL: espaço interno da titlebar */
 
-    /* flex para alinhar título e botões */
+    /* FLEXBOX: título à esquerda, botões à direita */
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 4px;
-    user-select: none; /* impede selecionar o texto ao clicar */
+    user-select: none; /* impede selecionar o texto ao arrastar */
 }
 
 .window-title {
+    /* FLEXBOX: alinha ícone e texto do título */
     display: flex;
     align-items: center;
     gap: 6px;
 }
 
-/* Ícone na barra de título */
+/* ícone na barra de título (quando usado) */
 .window-icon {
     width: 16px;
     height: 16px;
     object-fit: contain;
 }
 
-/* Botões da janela (minimizar, maximizar, fechar) */
+/* container dos botões minimizar/maximizar/fechar */
 .window-buttons {
+    /* FLEXBOX: botões lado a lado */
     display: flex;
     gap: 2px;
 }
 
+/* cada botão da janela (_, □, ✕) */
 .window-btn {
     width: 16px;
     height: 14px;
@@ -399,61 +422,60 @@ main {
     border: none;
     line-height: 1;
     padding: 0;
+    /* FLEXBOX: centra o símbolo dentro do botão */
     display: flex;
     align-items: center;
     justify-content: center;
-
+    /* efeito raised */
     border-top:    2px solid var(--border-light);
     border-left:   2px solid var(--border-light);
     border-bottom: 2px solid var(--border-dark);
     border-right:  2px solid var(--border-dark);
 }
 
-/* botão fechar fica vermelho */
+/* botão fechar (✕) fica vermelho escuro */
 .window-btn:last-child {
     color: darkred;
     font-weight: 900;
 }
 
 .window-btn:active {
+    /* ao clicar inverte o efeito — simula pressionar */
     border-top:    2px solid var(--border-dark);
     border-left:   2px solid var(--border-dark);
     border-bottom: 2px solid var(--border-light);
     border-right:  2px solid var(--border-light);
 }
 
-/* Área de conteúdo da janela */
+/* área de conteúdo dentro da janela */
 .window-content {
-    padding: 8px;
-
-    /* FIX RESPONSIVIDADE: permite scroll horizontal quando o
-       conteúdo (ex: tabela) é mais largo que o ecrã, em vez de
-       esticar a página toda */
-    overflow-x: auto;
+    padding: 8px;            /* BOX MODEL: espaço interno da área de conteúdo */
+    overflow-x: auto;        /* scroll horizontal se o conteúdo for mais largo */
     -webkit-overflow-scrolling: touch; /* scroll suave no iOS */
 }
 
 
 /* ------------------------------------------------------------
-   STATS
-   Linha de estatísticas no topo da home.
-   Ex: 9 países | 5 continentes
+   8. STATS BAR
+   Linha de estatísticas no topo da home (total de países, etc.)
+   FLEXBOX: itens lado a lado com flex-wrap pra não quebrar.
+   BOX MODEL: padding e border em cada item dão o look Win95.
    ------------------------------------------------------------ */
 
 .stats-bar {
+    /* FLEXBOX: itens em linha, com quebra se não couber */
     display: flex;
     gap: 2px;
-    padding: 4px 8px;
+    flex-wrap: wrap;         /* FLEXBOX: quebra linha se não couber */
+    padding: 4px 8px;        /* BOX MODEL: espaço interno */
     background: var(--bg);
-    border-bottom: 1px solid var(--border-dark);
+    border-bottom: 1px solid var(--border-dark); /* BOX MODEL: linha separadora */
     font-size: var(--text-sm);
-    flex-wrap: wrap;
 }
 
 .stats-bar span {
-    padding: 2px 8px;
-
-    /* inset nos items de stat */
+    padding: 2px 8px;        /* BOX MODEL: espaço interno de cada item */
+    /* efeito inset — cada item parece afundado */
     border-top:    1px solid var(--border-dark);
     border-left:   1px solid var(--border-dark);
     border-bottom: 1px solid var(--border-light);
@@ -461,71 +483,74 @@ main {
 }
 
 .stats-bar strong {
-    color: var(--titlebar);
+    color: var(--titlebar); /* números em azul pra destacar */
 }
 
 
 /* ------------------------------------------------------------
-   TABS DE CONTINENTE
-   Filtro por continente acima da grelha.
-   A tab ativa fica "ligada" à área de conteúdo abaixo.
+   9. TABS DE CONTINENTE
+   Botões de filtro por continente acima da grelha.
+   FLEXBOX: tabs em linha com flex-wrap.
+   BOX MODEL: margin-bottom negativa pra "fundir" a tab ativa
+   com a borda do container abaixo dela.
    ------------------------------------------------------------ */
 
 .tabs {
+    /* FLEXBOX: tabs em linha, com quebra se não couber */
     display: flex;
     flex-wrap: wrap;
     gap: 0;
-    padding: 8px 8px 0;
-    border-bottom: 2px solid var(--border-dark);
+    padding: 8px 8px 0;     /* BOX MODEL: espaço em cima e nas laterais, zero em baixo */
+    border-bottom: 2px solid var(--border-dark); /* BOX MODEL: linha abaixo das tabs */
 }
 
 .tab-btn {
-    padding: 4px 12px;
+    padding: 4px 12px;      /* BOX MODEL: espaço interno de cada tab */
     font-size: var(--text-sm);
     background: var(--bg);
     color: var(--text);
     border: none;
     cursor: pointer;
     position: relative;
-
+    /* bordas em 3 lados — efeito raised na tab */
     border-top:    2px solid var(--border-light);
     border-left:   2px solid var(--border-light);
     border-right:  2px solid var(--border-dark);
-
-    /* sem borda em baixo para "fundir" com o conteúdo */
-    border-bottom: none;
-
-    /* margin-bottom negativa para cobrir a borda do container */
-    margin-bottom: -2px;
+    border-bottom: none; /* sem borda em baixo pra "fundir" com o conteúdo */
+    margin-bottom: -2px; /* BOX MODEL: negativo pra cobrir a borda do container */
 }
 
 .tab-btn:hover {
     background: var(--bg-white);
 }
 
-/* Tab ativa — fundo branco e sem borda inferior */
+/* tab ativa — fundo ligeiramente diferente e sem borda inferior */
 .tab-btn.active {
     background: var(--bg);
     font-weight: bold;
-    border-bottom: 2px solid var(--bg); /* esconde a borda de baixo */
+    border-bottom: 2px solid var(--bg); /* esconde a borda com a cor do fundo */
     z-index: 1; /* fica por cima da borda do container */
 }
 
 
 /* ------------------------------------------------------------
-   GRELHA DE PAÍSES
-   Layout em grelha estilo explorador de ficheiros Win95.
-   Cada país é um ícone com bandeira e nome.
+   10. GRELHA DE PAÍSES (home)
+   Layout do mosaico de bandeiras na home.
+   FLEXBOX: é aqui que uso display:flex com flex-wrap pra
+   criar a grelha responsiva — mais colunas em desktop,
+   menos em mobile (o card tem largura fixa).
+   BOX MODEL: padding interno do container e dos cards.
    ------------------------------------------------------------ */
 
-/* barra de ordenação */
+/* barra de ordenação (sort by) */
 .sort-bar {
+    /* FLEXBOX: label, select e outros itens em linha */
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 4px 8px;
+    padding: 4px 8px;        /* BOX MODEL: espaço interno */
     font-size: var(--text-sm);
-    border-bottom: 1px solid var(--border-dark);
+    border-bottom: 1px solid var(--border-dark); /* BOX MODEL: linha separadora */
 }
 
 .sort-bar select {
@@ -533,41 +558,48 @@ main {
     font-size: var(--text-sm);
     background: var(--bg-white);
     color: var(--text);
-    padding: 2px 4px;
+    padding: 2px 4px;        /* BOX MODEL: espaço interno do select */
+    /* efeito inset — select parece afundado */
     border-top:    2px solid var(--border-dark);
     border-left:   2px solid var(--border-dark);
     border-bottom: 2px solid var(--border-light);
     border-right:  2px solid var(--border-light);
 }
 
+/* CONTAINER DA GRELHA — aqui está o Flexbox principal da home */
 .countries-grid {
+    /* FLEXBOX: display:flex + flex-wrap cria uma grelha automática.
+       Os cards têm largura fixa (100px), o flex-wrap quebra linha
+       quando não cabem mais, adaptando o número de colunas ao ecrã. */
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    padding: 12px 8px;
-    justify-content: center;
+    gap: 8px;                /* FLEXBOX: espaço entre os cards */
+    padding: 12px 8px;       /* BOX MODEL: espaço interno do container */
+    justify-content: center; /* FLEXBOX: centra os cards horizontalmente */
 }
 
-/* Cada card de país */
+/* cada card de país — <a> com bandeira, nome, capital e população */
 .country-card {
-    /* largura fixa para manter a grelha uniforme */
-    width: 100px;
+    width: 110px;    /* ligeiramente mais largo para acomodar capital + população */
+
+    /* FLEXBOX: empilha bandeira e nome verticalmente */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
-    padding: 8px 4px;
+    gap: 3px;
+
+    padding: 8px 4px;        /* BOX MODEL: espaço interno do card */
     cursor: pointer;
     text-align: center;
-    border: 2px solid transparent; /* borda transparente para não deslocar ao hover */
+    border: 2px solid transparent; /* BOX MODEL: borda transparente evita salto ao hover */
     text-decoration: none;
     color: var(--text);
 }
 
 .country-card:hover {
-    background: var(--titlebar);
+    background: var(--titlebar); /* fundo azul ao passar o rato */
     color: var(--text-white);
-
+    /* efeito raised ao hover */
     border-top:    2px solid var(--border-light);
     border-left:   2px solid var(--border-light);
     border-bottom: 2px solid var(--border-dark);
@@ -575,18 +607,19 @@ main {
 }
 
 .country-card:hover img {
-    background-color: var(--titlebar);
+    background-color: var(--titlebar); /* fundo da bandeira muda com o card */
 }
 
-/* Bandeira dentro do card */
+/* <img> da bandeira dentro do card */
 .country-card img {
     width: 48px;
     height: 32px;
-    object-fit: contain;
+    object-fit: contain;    /* escala a imagem sem distorcer */
     background-color: var(--bg);
     border: none;
 }
 
+/* <img> da bandeira na tabela countries.html */
 .countries-table img {
     width: 32px;
     height: 21px;
@@ -596,15 +629,7 @@ main {
     display: block;
 }
 
-.tag-link {
-    text-decoration: none;
-    cursor: pointer;
-}
-.tag-link:hover {
-    background: var(--titlebar);
-    color: white;
-}
-
+/* links de fronteira com bandeira pequena (página de país) */
 .border-link img {
     width: 24px;
     height: 16px;
@@ -622,60 +647,93 @@ main {
     background-color: var(--titlebar);
 }
 
-.country-card:hover {
-    background: var(--titlebar);
-    color: var(--text-white);
-
-    border-top:    2px solid var(--border-light);
-    border-left:   2px solid var(--border-light);
-    border-bottom: 2px solid var(--border-dark);
-    border-right:  2px solid var(--border-dark);
-}
-
-.country-card:hover img {
-    background-color: var(--titlebar);
-}
-
+/* bandeira grande no cabeçalho da página de país */
 .country-flag-large {
     width: 180px;
     height: 120px;
     object-fit: contain;
-    flex-shrink: 0;
+    flex-shrink: 0;          /* FLEXBOX: não encolhe quando o espaço é pequeno */
     background-color: var(--bg);
     border: none;
 }
 
-/* Nome do país */
-.country-card span {
+/* nome do país — destaque, até 2 linhas */
+.card-name {
     font-size: var(--text-sm);
+    font-weight: bold;
     line-height: 1.2;
-    /* limita a 2 linhas e corta com ... */
-    display: -webkit-box ;
+    display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     word-break: break-word;
 }
 
+/* capital e população — texto menor e cinzento por baixo do nome */
+.card-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.2;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    text-align: center;
+}
+
+/* a cor do card-sub inverte ao hover para ficar legível no fundo azul */
+.country-card:hover .card-name,
+.country-card:hover .card-sub {
+    color: var(--text-white);
+}
+
+/* ---- CAIXA "DID YOU KNOW?" ---- */
+.did-you-know {
+    /* FLEXBOX: bandeira + texto lado a lado */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 10px;
+    font-size: var(--text-sm);
+    background: #d4d0c8;
+    /* efeito inset — caixa parece afundada, estilo Win95 */
+    border-top:    1px solid var(--border-dark);
+    border-left:   1px solid var(--border-dark);
+    border-bottom: 1px solid var(--border-light);
+    border-right:  1px solid var(--border-light);
+    margin: 6px 8px;
+}
+
+/* bandeira pequena na caixa — fundo cinzento claro para não perder bandeiras brancas */
+.did-you-know img {
+    width: 36px;
+    height: 24px;
+    object-fit: contain;
+    background: #d4d0c8;
+    flex-shrink: 0;   /* FLEXBOX: não encolhe mesmo que o texto seja longo */
+}
+
 
 /* ------------------------------------------------------------
-   BARRA DE STATUS
-   A barra em baixo da janela — estilo Win95.
-   Mostra informação contextual (ex: "9 países encontrados")
+   11. STATUS BAR
+   Barra de informação no rodapé da janela — estilo Win95.
+   FLEXBOX: itens em linha.
+   BOX MODEL: padding e border em cada item.
    ------------------------------------------------------------ */
 
 .statusbar {
+    /* FLEXBOX: itens de status lado a lado */
     display: flex;
     gap: 2px;
-    padding: 2px 4px;
-    border-top: 2px solid var(--border-dark);
+    padding: 2px 4px;        /* BOX MODEL: espaço interno */
+    border-top: 2px solid var(--border-dark); /* BOX MODEL: linha separadora acima */
     font-size: var(--text-sm);
 }
 
 .statusbar-item {
-    padding: 1px 6px;
-    flex: 1;
-
+    padding: 1px 6px;        /* BOX MODEL: espaço interno de cada item */
+    flex: 1;                 /* FLEXBOX: ocupa espaço disponível igualmente */
+    /* efeito inset — cada item parece afundado */
     border-top:    1px solid var(--border-dark);
     border-left:   1px solid var(--border-dark);
     border-bottom: 1px solid var(--border-light);
@@ -684,91 +742,152 @@ main {
 
 
 /* ------------------------------------------------------------
-   FOOTER
+   12. FOOTER
    Rodapé simples no fundo da página.
+   BOX MODEL: padding interno, border-top e margin-top.
    ------------------------------------------------------------ */
 
 footer {
     background: var(--bg);
     text-align: center;
-    padding: 8px;
+    padding: 8px;            /* BOX MODEL: espaço interno */
     font-size: var(--text-sm);
     color: var(--text-muted);
-    margin-top: 16px;
-    border-top: 2px solid var(--border-dark);
+    margin-top: 16px;        /* BOX MODEL: espaço acima do footer */
+    border-top: 2px solid var(--border-dark); /* BOX MODEL: linha separadora */
 }
 
 
 /* ============================================================
-   RESPONSIVIDADE
-   Adaptações para ecrãs mais pequenos.
+   13. RESPONSIVIDADE — media queries
+   Adaptações para ecrãs menores.
+   Quebramos em 4 pontos: 768px (tablet), 640px (tabela),
+   480px (mobile) e 380px (mobile pequeno).
    ============================================================ */
 
-/* Tablet */
+/* --- TABLET (≤ 768px) --- */
 @media (max-width: 768px) {
-    /* FIX: margem reduzida da janela já no tablet
-       (antes só existia a 480px, deixando a janela colada
-        aos bordos entre 481px e 768px) */
+
+    /* janela com menos margem lateral em tablet */
     .window {
-        margin: 12px 8px;
+        margin: 12px 8px; /* BOX MODEL: margem reduzida */
     }
 
-    /* Links da navbar escondem-se */
+    /* menu de links esconde-se e passa a ser dropdown */
     .navbar-links {
-        display: none;
-        position: fixed;
+        display: none;         /* escondido por padrão em mobile */
+        position: fixed;       /* fica por cima de todo o conteúdo */
         top: 40px;
         left: 0;
         right: 0;
         background: var(--bg);
+        /* FLEXBOX: links empilhados em coluna no dropdown */
         flex-direction: column;
-        padding: 4px;
+        padding: 4px;          /* BOX MODEL: espaço interno do dropdown */
         border-bottom: 2px solid var(--border-dark);
         z-index: 99;
     }
 
-    /* Quando o menu está aberto */
+    /* quando o JS adiciona a classe "open", o menu aparece */
     .navbar-links.open {
-        display: flex;
+        display: flex; /* FLEXBOX: ativa o menu dropdown */
     }
 
+    /* links ocupam largura total no dropdown */
     .navbar-links a {
         width: 100%;
         text-align: left;
     }
 
-    /* Hamburguer aparece */
+    /* botão hamburger aparece em tablet/mobile */
     .navbar-hamburger {
-        display: flex;
+        display: flex; /* FLEXBOX: ativa o botão hamburger */
     }
 
-    /* Cards um pouco menores */
+    /* cards ligeiramente menores em tablet */
+    .country-card {
+        width: 95px;
+    }
+}
+
+/* --- TABELA MOBILE (≤ 640px) ---
+   Esconde as colunas menos importantes da tabela de países
+   pra ela caber no ecrã pequeno. */
+@media (max-width: 640px) {
+    /* esconde colunas Population, Area, HDI e Continent */
+    .countries-table th:nth-child(4),
+    .countries-table td:nth-child(4),
+    .countries-table th:nth-child(5),
+    .countries-table td:nth-child(5),
+    .countries-table th:nth-child(6),
+    .countries-table td:nth-child(6),
+    .countries-table th:nth-child(7),
+    .countries-table td:nth-child(7) {
+        display: none;
+    }
+
+    /* Country (col 2) ocupa mais espaço com as outras escondidas */
+    .countries-table th:nth-child(2),
+    .countries-table td:nth-child(2) { width: 55%; }
+
+    .countries-table th:nth-child(3),
+    .countries-table td:nth-child(3) { width: auto; }
+
+    /* corta texto longo com "..." nas colunas restantes */
+    .countries-table td:nth-child(2),
+    .countries-table td:nth-child(3) {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    /* coluna da bandeira mais estreita */
+    .countries-table th:nth-child(1),
+    .countries-table td:nth-child(1) { width: 36px; }
+}
+
+/* --- MOBILE (≤ 480px) --- */
+@media (max-width: 480px) {
+
+    /* janela com margem mínima em mobile */
+    .window {
+        margin: 8px; /* BOX MODEL: margem ainda menor */
+    }
+
+    /* cards mais pequenos pra caber mais por linha */
     .country-card {
         width: 85px;
     }
-}
 
-/* Mobile */
-@media (max-width: 480px) {
-    .window {
-        margin: 8px;
-    }
-
-    .country-card {
-        width: 75px;
-    }
-
-    /* Tabs fazem scroll horizontal em vez de quebrar linha */
+    /* tabs de continente em scroll horizontal (não quebram linha) */
     .tabs {
         overflow-x: auto;
-        flex-wrap: nowrap;
+        flex-wrap: nowrap;   /* FLEXBOX: desativa a quebra de linha */
         padding-bottom: 0;
+    }
+
+    /* página de país: cabeçalho empilha em coluna */
+    .country-header {
+        flex-direction: column; /* FLEXBOX: bandeira por cima, info por baixo */
+        align-items: center;
+        text-align: center;
+    }
+
+    .country-tags {
+        justify-content: center; /* FLEXBOX: centra as tags */
+    }
+
+    /* bandeira ligeiramente maior quando está sozinha em cima */
+    .country-flag-large {
+        width: 160px;
+        height: 107px;
     }
 }
 
-/* Mobile pequeno — navbar deixava de caber abaixo de ~380px */
+/* --- MOBILE PEQUENO (≤ 380px) ---
+   Navbar deixa de caber — esconde o texto do logo. */
 @media (max-width: 380px) {
-    /* esconde o texto do logo, mantém só o ícone */
+    /* esconde o texto "world.com" do logo, mantém só o ícone */
     .navbar-logo span {
         display: none;
     }
@@ -779,99 +898,95 @@ footer {
     }
 }
 
+
 /* ============================================================
-   COUNTRY PAGE — estilos da página de detalhe de cada país
+   14. PÁGINA DE PAÍS (country page)
+   Estilos específicos da página de detalhe de cada país.
    ============================================================ */
 
-
-/* ------------------------------------------------------------
-   CABEÇALHO DO PAÍS
-   Bandeira grande + nome + tags no topo da página
+/* ---- CABEÇALHO DO PAÍS ----
+   FLEXBOX: bandeira grande + info do país lado a lado.
+   BOX MODEL: padding interno e border-bottom separador.
    ------------------------------------------------------------ */
 
 .country-header {
-    /* flex coloca bandeira e info lado a lado */
+    /* FLEXBOX: bandeira à esquerda, info à direita */
     display: flex;
     align-items: flex-start;
-    gap: 16px;
-    padding: 12px;
-    border-bottom: 2px solid var(--border-dark);
+    gap: 16px;              /* FLEXBOX: espaço entre bandeira e info */
+    padding: 12px;          /* BOX MODEL: espaço interno */
+    border-bottom: 2px solid var(--border-dark); /* BOX MODEL: linha separadora */
 }
 
-/* Bandeira grande no topo */
-.country-flag-large {
-    width: 180px;
-    height: 120px;
-    object-fit: contain;
-    flex-shrink: 0;
-    background-color: var(--bg);
-    border: none;
-}
-
+/* container da info ao lado da bandeira */
 .country-header-info {
+    /* FLEXBOX: empilha nome, gentílico e tags verticalmente */
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
-/* Nome do país grande */
+/* nome do país em grande */
 .country-name {
     font-size: var(--text-xl);
     font-weight: bold;
     color: var(--text);
 }
 
-/* Gentílico por baixo do nome */
+/* gentílico por baixo do nome */
 .country-demonym {
     font-size: var(--text-sm);
     color: var(--text-muted);
 }
 
-/* Container das tags */
+/* container das tags (continente, capital, governo) */
 .country-tags {
+    /* FLEXBOX: tags em linha com quebra */
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
-    margin-top: 4px;
+    gap: 4px;               /* FLEXBOX: espaço entre tags */
+    margin-top: 4px;        /* BOX MODEL: espaço acima das tags */
 }
 
-/* Cada tag individual — estilo botão Win95 */
+/* cada tag individual — estilo botão Win95 */
 .tag {
     font-size: var(--text-sm);
-    padding: 2px 8px;
+    padding: 2px 8px;       /* BOX MODEL: espaço interno da tag */
     background: var(--bg);
     color: var(--text);
-
+    /* efeito raised na tag */
     border-top:    2px solid var(--border-light);
     border-left:   2px solid var(--border-light);
     border-bottom: 2px solid var(--border-dark);
     border-right:  2px solid var(--border-dark);
 }
 
-/* ------------------------------------------------------------
-   LAYOUT DUAS COLUNAS
-   Coluna esquerda mais larga, direita mais estreita
+
+/* ---- LAYOUT DUAS COLUNAS ----
+   FLEXBOX: coluna esquerda (flex:3) + coluna direita (flex:2).
+   BOX MODEL: padding e gap entre colunas.
    ------------------------------------------------------------ */
 
 .country-columns {
+    /* FLEXBOX: coluna esquerda e direita lado a lado */
     display: flex;
-    gap: 8px;
-    padding: 8px;
+    gap: 8px;               /* FLEXBOX: espaço entre as colunas */
+    padding: 8px;           /* BOX MODEL: espaço interno */
     align-items: flex-start;
 }
 
 .country-col-left {
-    /* flex: 3 ocupa 3 partes do espaço disponível */
-    flex: 3;
+    flex: 3;                /* FLEXBOX: ocupa 3 partes do espaço (mais larga) */
+    /* FLEXBOX: empilha as secções verticalmente */
     display: flex;
     flex-direction: column;
     gap: 8px;
-    min-width: 0; /* evita overflow em ecrãs pequenos */
+    min-width: 0;           /* evita overflow em ecrãs pequenos */
 }
 
 .country-col-right {
-    /* flex: 2 ocupa 2 partes — coluna mais estreita */
-    flex: 2;
+    flex: 2;                /* FLEXBOX: ocupa 2 partes (mais estreita) */
+    /* FLEXBOX: empilha as secções verticalmente */
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -879,75 +994,71 @@ footer {
 }
 
 
-/* ------------------------------------------------------------
-   SECÇÕES
-   Cada bloco de conteúdo dentro das colunas
-   tem a sua própria janelinha com barra de título
+/* ---- SECÇÕES (blocos de conteúdo dentro das colunas) ----
+   BOX MODEL: border cria o efeito raised em cada bloco.
    ------------------------------------------------------------ */
 
 .country-section {
     background: var(--bg);
-
+    /* efeito raised — cada secção parece um painel Win95 */
     border-top:    2px solid var(--border-light);
     border-left:   2px solid var(--border-light);
     border-bottom: 2px solid var(--border-dark);
     border-right:  2px solid var(--border-dark);
 }
 
-/* a barra de título dentro de cada secção
-   reutiliza o .window-titlebar que já existe no CSS */
 
-
-/* ------------------------------------------------------------
-   TABELA DE DADOS GERAIS
+/* ---- TABELA DE DADOS GERAIS DO PAÍS ----
+   <table> com duas colunas: label (cinzento) | valor (branco).
+   BOX MODEL: padding nas células, border-bottom entre linhas.
    ------------------------------------------------------------ */
 
 .country-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: collapse; /* une as bordas de células adjacentes */
     font-size: var(--text-sm);
 }
 
 .country-table tr {
-    /* linha alternada para facilitar leitura */
-    border-bottom: 1px solid var(--border-dark);
+    border-bottom: 1px solid var(--border-dark); /* BOX MODEL: linha entre rows */
 }
 
 .country-table tr:last-child {
-    border-bottom: none;
+    border-bottom: none; /* sem borda na última linha */
 }
 
 .country-table td {
-    padding: 4px 8px;
+    padding: 4px 8px;    /* BOX MODEL: espaço interno de cada célula */
     vertical-align: top;
 }
 
-/* primeira coluna — label */
+/* primeira célula — label (fundo cinzento escuro, texto branco) */
 .country-table td:first-child {
     font-weight: bold;
     width: 45%;
-    color: var(--text);
     white-space: nowrap;
-
-    /* fundo ligeiramente diferente para destacar o label */
     background: var(--bg-dark);
     color: var(--text-white);
 }
 
-/* segunda coluna — valor */
+/* segunda célula — valor (fundo branco) */
 .country-table td:last-child {
     color: var(--text);
     background: var(--bg-white);
 }
 
 
-/* ------------------------------------------------------------
-   LISTAS — Famous People, Cuisine, Cities, etc.
+/* ---- LISTAS (pessoas, lugares, culinária, cidades...) ----
+   <ul> com <li> como "pills" (etiquetas arredondadas).
+   FLEXBOX: <ul> usa display:flex + flex-wrap pra as pills
+   ficarem lado a lado e quebrarem linha quando necessário.
+   BOX MODEL: padding em cada <li>.
    ------------------------------------------------------------ */
 
 .country-list {
     list-style: none;
-    padding: 6px 8px;
+    padding: 6px 8px;    /* BOX MODEL: espaço interno da lista */
+    /* FLEXBOX: pills em linha com quebra */
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
@@ -955,46 +1066,47 @@ footer {
 
 .country-list li {
     font-size: var(--text-sm);
-    padding: 2px 8px;
+    padding: 2px 8px;    /* BOX MODEL: espaço interno de cada pill */
     background: var(--bg-white);
-
-    /* inset para parecer afundado */
+    /* efeito inset — cada pill parece afundada */
     border-top:    1px solid var(--border-dark);
     border-left:   1px solid var(--border-dark);
     border-bottom: 1px solid var(--border-light);
     border-right:  1px solid var(--border-light);
 }
 
-/* versão mais pequena para subdivisões
-   que têm muitos items */
+/* versão menor pra listas com muitos itens (subdivisões) */
 .country-list-small li {
     font-size: 11px;
-    padding: 1px 6px;
+    padding: 1px 6px;    /* BOX MODEL: padding reduzido */
 }
 
 
-/* ------------------------------------------------------------
-   FRONTEIRAS — links para países vizinhos com bandeira
+/* ---- FRONTEIRAS — links pra países vizinhos ----
+   FLEXBOX: links em linha com flex-wrap.
+   BOX MODEL: padding em cada link.
    ------------------------------------------------------------ */
 
 .country-borders {
+    /* FLEXBOX: links de fronteira em linha com quebra */
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    padding: 8px;
+    padding: 8px;        /* BOX MODEL: espaço interno do container */
 }
 
-/* cada link de fronteira tem bandeira + nome */
+/* cada link de fronteira: bandeira pequena + nome do país */
 .border-link {
+    /* FLEXBOX: alinha bandeira e nome na mesma linha */
     display: flex;
     align-items: center;
     gap: 4px;
-    padding: 3px 8px;
+    padding: 3px 8px;    /* BOX MODEL: espaço interno */
     font-size: var(--text-sm);
     background: var(--bg);
     color: var(--text);
     text-decoration: none;
-
+    /* efeito raised */
     border-top:    2px solid var(--border-light);
     border-left:   2px solid var(--border-light);
     border-bottom: 2px solid var(--border-dark);
@@ -1006,7 +1118,7 @@ footer {
     color: var(--text-white);
 }
 
-/* bandeira pequena dentro do link de fronteira */
+/* <img> — bandeira pequena dentro do link de fronteira */
 .border-link img {
     width: 24px;
     height: 16px;
@@ -1015,26 +1127,14 @@ footer {
     border: none;
 }
 
-.country-map {
-    width: 100%;
-    height: auto;
-    display: block;
-    padding: 16px;
-    background: #ffffff;              /* white well, not teal */
-    border-top: 2px solid var(--border-dark);
-    border-left: 2px solid var(--border-dark);
-    border-right: 2px solid var(--border-light);
-    border-bottom: 2px solid var(--border-light);
-}
 
-/* ============================================================
-   RESPONSIVIDADE — country page
-   ============================================================ */
 
-/* Tablet */
+/* ---- RESPONSIVIDADE DA PÁGINA DE PAÍS ---- */
+
+/* Tablet (≤ 768px): colunas passam pra vertical */
 @media (max-width: 768px) {
     .country-columns {
-        flex-direction: column;
+        flex-direction: column; /* FLEXBOX: uma coluna só em tablet */
     }
 
     .country-flag-large {
@@ -1047,10 +1147,10 @@ footer {
     }
 }
 
-/* Mobile */
+/* Mobile (≤ 480px): cabeçalho em coluna e centrado */
 @media (max-width: 480px) {
     .country-header {
-        flex-direction: column;
+        flex-direction: column; /* FLEXBOX: bandeira por cima, info por baixo */
         align-items: center;
         text-align: center;
     }
@@ -1065,80 +1165,52 @@ footer {
     }
 }
 
-/* Mobile — tabela de países */
-@media (max-width: 640px) {
-    .countries-table th:nth-child(4),
-    .countries-table td:nth-child(4),
-    .countries-table th:nth-child(5),
-    .countries-table td:nth-child(5),
-    .countries-table th:nth-child(6),
-    .countries-table td:nth-child(6),
-    .countries-table th:nth-child(7),
-    .countries-table td:nth-child(7) {
-        display: none;
-    }
 
-    .countries-table th:nth-child(2),
-    .countries-table td:nth-child(2) { width: 55%; }
-
-    .countries-table th:nth-child(3),
-    .countries-table td:nth-child(3) { width: auto; }
-
-    /* corta texto longo com ...
-       (removido o max-width: 0 que conflituava com width em
-       table-layout: fixed e fazia as colunas colapsar) */
-    .countries-table td:nth-child(2),
-    .countries-table td:nth-child(3) {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-
-    .countries-table th:nth-child(1),
-    .countries-table td:nth-child(1) { width: 36px; }
-}
-
-/* ------------------------------------------------------------
-   TABELA DE PAÍSES — countries.html
-   ------------------------------------------------------------ */
+/* ============================================================
+   15. TABELA DE PAÍSES (countries.html)
+   <table> com larguras fixas em cada coluna pra manter
+   o alinhamento uniforme.
+   BOX MODEL: padding nas células, border entre linhas e colunas.
+   ============================================================ */
 
 .countries-table {
     width: 100%;
     border-collapse: collapse;
     font-size: var(--text-sm);
-    table-layout: fixed;
+    table-layout: fixed; /* colunas com larguras fixas — definidas abaixo */
 }
 
-/* larguras fixas aplicadas às colunas */
+/* larguras fixas de cada coluna */
 .countries-table td:nth-child(1),
-.countries-table th:nth-child(1) { width: 45px; }   /* flag */
+.countries-table th:nth-child(1) { width: 45px; }   /* bandeira */
 
 .countries-table td:nth-child(2),
-.countries-table th:nth-child(2) { width: 180px; }  /* country */
+.countries-table th:nth-child(2) { width: 180px; }  /* país */
 
 .countries-table td:nth-child(3),
 .countries-table th:nth-child(3) { width: 160px; }  /* capital */
 
 .countries-table td:nth-child(4),
-.countries-table th:nth-child(4) { width: 120px; }  /* population */
+.countries-table th:nth-child(4) { width: 120px; }  /* população */
 
 .countries-table td:nth-child(5),
-.countries-table th:nth-child(5) { width: 110px; }  /* area */
+.countries-table th:nth-child(5) { width: 110px; }  /* área */
 
 .countries-table td:nth-child(6),
-.countries-table th:nth-child(6) { width: 60px; }   /* hdi */
+.countries-table th:nth-child(6) { width: 60px; }   /* IDH */
 
 .countries-table td:nth-child(7),
-.countries-table th:nth-child(7) { width: 130px; }  /* continent */
+.countries-table th:nth-child(7) { width: 130px; }  /* continente */
 
 .countries-table thead {
     border-bottom: 2px solid var(--border-darker);
 }
 
+/* <th> — cabeçalhos clicáveis pra ordenar a tabela */
 .countries-table th {
     background: var(--titlebar);
     color: var(--text-white);
-    padding: 4px 8px;
+    padding: 4px 8px;    /* BOX MODEL: espaço interno dos cabeçalhos */
     text-align: left;
     cursor: pointer;
     user-select: none;
@@ -1147,18 +1219,20 @@ footer {
 }
 
 .countries-table th:hover {
-    background: var(--titlebar-end);
+    background: var(--titlebar-end); /* azul mais claro ao passar o rato */
 }
 
+/* <td> — célula de dados */
 .countries-table td {
-    padding: 3px 8px;
+    padding: 3px 8px;    /* BOX MODEL: espaço interno das células */
     border-bottom: 1px solid var(--border-dark);
     vertical-align: middle;
-    overflow: hidden;         /* corta texto que ultrapasse a largura */
-    white-space: nowrap;      /* impede quebra de linha */
-    text-overflow: ellipsis;  /* mostra ... se o texto for demasiado longo */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; /* corta texto longo com "..." */
 }
 
+/* linha inteira fica azul ao passar o rato */
 .countries-table tr:hover {
     background: #000080;
     color: white;
@@ -1173,6 +1247,7 @@ footer {
     color: white;
 }
 
+/* <img> da bandeira na tabela */
 .countries-table img {
     width: 32px;
     height: 21px;
@@ -1182,27 +1257,363 @@ footer {
     display: block;
 }
 
-/* ------------------------------------------------------------
-   PAGINAÇÃO
-   ------------------------------------------------------------ */
 
-.pagination {
+/* ============================================================
+   16. RANKINGS (stats.html)
+   Grid de 6 tabelas Top 10 — 2 colunas no desktop, 1 em mobile.
+   FLEXBOX: .rankings-grid usa display:flex + flex-wrap.
+   BOX MODEL: border em cada .ranking-window (efeito raised Win95).
+   ============================================================ */
+
+/* grid que contém as 6 janelas de ranking */
+.rankings-grid {
+    /* FLEXBOX: 2 colunas em desktop, quebra pra 1 em mobile */
     display: flex;
-    gap: 2px;
-    padding: 6px 8px;
     flex-wrap: wrap;
-    border-top: 1px solid var(--border-dark);
+    gap: 8px;
+    padding: 8px;           /* BOX MODEL: espaço interno do container */
 }
 
+/* cada janela de ranking — ocupa metade do espaço disponível */
+.ranking-window {
+    flex: 1 1 480px;        /* FLEXBOX: mínimo 480px, cresce igualmente */
+    /* efeito raised Win95 */
+    border-top:    2px solid var(--border-light);
+    border-left:   2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-dark);
+    border-right:  2px solid var(--border-dark);
+    overflow: hidden;
+}
+
+/* tabela dentro do ranking — sobrepõe larguras da .countries-table */
+.ranking-table {
+    table-layout: auto !important; /* colunas com largura automática */
+}
+
+.ranking-table td:nth-child(1) { width: 36px !important; text-align: center; } /* posição */
+.ranking-table td:nth-child(2) { width: 36px !important; }                     /* bandeira */
+.ranking-table td:nth-child(3) { width: auto !important; }                     /* país */
+.ranking-table td:nth-child(4) { width: auto !important; }                     /* valor */
+.ranking-table td:nth-child(5) { width: auto !important; }                     /* continente */
+
+/* em mobile as tabelas de ranking ficam em coluna única */
+@media (max-width: 768px) {
+    .ranking-window {
+        flex: 1 1 100%; /* FLEXBOX: ocupa largura total em mobile */
+    }
+}
+
+
+/* ============================================================
+   17. COMPARAÇÃO (compare.html)
+   Dois selects lado a lado + tabela de comparação.
+   FLEXBOX: .compare-selectors alinha os dois selects com o VS.
+   BOX MODEL: padding e border nos seletores e na tabela.
+   ============================================================ */
+
+/* variável de cor para célula vencedora */
+:root {
+    --win-color: #d4edda; /* verde claro pra destacar o vencedor */
+}
+
+/* container dos dois selects + separador VS */
+.compare-selectors {
+    /* FLEXBOX: select A | VS | select B lado a lado */
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    padding: 12px;          /* BOX MODEL: espaço interno */
+    border-bottom: 2px solid var(--border-dark);
+    flex-wrap: wrap;        /* FLEXBOX: empilha em mobile */
+}
+
+/* coluna de cada select (label + select) */
+.compare-selector-col {
+    /* FLEXBOX: label por cima do select */
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;                /* FLEXBOX: ocupa espaço igual */
+    min-width: 180px;
+}
+
+/* separador "VS" entre os dois selects */
+.compare-vs {
+    font-size: var(--text-xl);
+    font-weight: bold;
+    color: var(--titlebar);
+    padding-bottom: 4px;    /* BOX MODEL: alinha visualmente com os selects */
+    flex-shrink: 0;         /* FLEXBOX: não encolhe */
+}
+
+/* estilo dos <select> de país */
+.compare-select {
+    font-family: var(--font);
+    font-size: var(--text-sm);
+    background: var(--bg-white);
+    color: var(--text);
+    padding: 4px 6px;       /* BOX MODEL: espaço interno */
+    width: 100%;
+    /* efeito inset — select parece afundado */
+    border-top:    2px solid var(--border-dark);
+    border-left:   2px solid var(--border-dark);
+    border-bottom: 2px solid var(--border-light);
+    border-right:  2px solid var(--border-light);
+}
+
+/* tabela de comparação lado a lado */
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+    /* table-layout:fixed garante que as 3 colunas mantêm sempre
+       a mesma largura, independentemente do conteúdo de cada país */
+    table-layout: fixed;
+}
+
+/* larguras fixas das 3 colunas: campo | país A | país B */
+.compare-table colgroup col:nth-child(1) { width: 150px; }
+.compare-table colgroup col:nth-child(2) { width: 50%;   }
+.compare-table colgroup col:nth-child(3) { width: 50%;   }
+
+.compare-table th {
+    background: var(--titlebar);
+    color: var(--text-white);
+    padding: 6px 8px;       /* BOX MODEL: espaço interno dos cabeçalhos */
+    text-align: left;
+    /* overflow:hidden + text-overflow impede que nomes longos estiquem a coluna */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* coluna do campo (primeira coluna) */
+.compare-field-col {
+    width: 150px;
+}
+
+.compare-table td {
+    padding: 4px 8px;       /* BOX MODEL: espaço interno das células */
+    border-bottom: 1px solid var(--border-dark);
+    vertical-align: middle;
+    /* evita que conteúdo longo quebre o layout */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* label de cada campo (ex: "Population", "Area") */
+.compare-label {
+    font-weight: bold;
+    background: var(--bg-dark) !important;
+    color: var(--text-white) !important;
+    white-space: nowrap;
+}
+
+/* cabeçalho de cada país na tabela — bandeira + nome */
+.compare-header {
+    /* FLEXBOX: bandeira e nome lado a lado */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+}
+
+/* bandeira no cabeçalho da comparação —
+   background azul pra bandeiras sem área de cor própria (ex: JP, CH) */
+.compare-flag {
+    width: 32px;
+    height: 21px;
+    object-fit: contain;
+    background: var(--titlebar); /* azul igual ao fundo do <th> */
+    flex-shrink: 0;         /* FLEXBOX: não encolhe */
+}
+
+/* em mobile a coluna de campo esconde-se pra poupar espaço */
+@media (max-width: 480px) {
+    .compare-field-col,
+    .compare-label { display: none; }
+    .compare-selectors { flex-direction: column; align-items: stretch; }
+    .compare-vs { text-align: center; padding: 0; }
+}
+
+
+/* ============================================================
+   18. SOBRE (about.html)
+   Página estática com secções de texto.
+   BOX MODEL: padding e border em cada secção.
+   ============================================================ */
+
+/* cada bloco de conteúdo na página Sobre */
+.about-section {
+    /* efeito raised — cada secção é um painel Win95 */
+    border-top:    2px solid var(--border-light);
+    border-left:   2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-dark);
+    border-right:  2px solid var(--border-dark);
+    margin: 8px;            /* BOX MODEL: margem entre secções */
+}
+
+/* área de texto dentro de cada secção */
+.about-body {
+    padding: 12px 16px;     /* BOX MODEL: espaço interno generoso pra leitura */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;               /* FLEXBOX: espaço entre parágrafos */
+    font-size: var(--text-sm);
+    line-height: 1.6;
+}
+
+/* lista de funcionalidades/campos */
+.about-list {
+    list-style: disc;       /* bullets visíveis nesta lista */
+    padding-left: 20px;     /* BOX MODEL: indentação pra os bullets */
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: var(--text-sm);
+}
+
+/* tabela de tecnologias */
+.about-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+}
+
+.about-table th {
+    background: var(--titlebar);
+    color: var(--text-white);
+    padding: 4px 8px;       /* BOX MODEL: espaço interno */
+    text-align: left;
+}
+
+.about-table td {
+    padding: 4px 8px;       /* BOX MODEL: espaço interno */
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.about-table td:first-child {
+    background: var(--bg-dark);
+    color: var(--text-white);
+    white-space: nowrap;
+    width: 160px;
+}
+
+
+/* ============================================================
+   19. CONTINENTES (continents.html)
+   Cards de resumo por continente.
+   FLEXBOX: .continents-grid usa display:flex + flex-wrap pra
+   os cards ficarem lado a lado e quebrarem linha sozinhos.
+   BOX MODEL: padding e border em cada card.
+   ============================================================ */
+
+/* grid de cards de continente */
+.continents-grid {
+    /* FLEXBOX: cards em linha com quebra automática */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px;        /* BOX MODEL: espaço interno do container */
+}
+
+/* cada card de continente */
+.continent-card {
+    flex: 1 1 320px;      /* FLEXBOX: cresce/encolhe, mínimo 320px */
+    background: var(--bg);
+    cursor: pointer;
+    transition: none;
+}
+
+.continent-card:hover {
+    background: var(--bg-white);
+}
+
+/* cabeçalho azul do card — imagem + nome do continente */
+.continent-card-header {
+    background: var(--titlebar);
+    color: var(--text-white);
+    padding: 4px 8px;     /* BOX MODEL: espaço interno */
+    /* FLEXBOX: imagem e nome lado a lado */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+}
+
+/* <img> do continente no cabeçalho — filtro branco pra contrastar com azul */
+.continent-img {
+    width: 48px;
+    height: 32px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.continent-name {
+    font-size: var(--text-md);
+}
+
+/* <table> de estatísticas dentro do card */
+.continent-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+}
+
+.continent-table tr {
+    border-bottom: 1px solid var(--border-dark); /* BOX MODEL: linha entre rows */
+}
+
+.continent-table tr:last-child {
+    border-bottom: none;
+}
+
+.continent-table td {
+    padding: 3px 8px;     /* BOX MODEL: espaço interno das células */
+}
+
+/* primeira célula — label em cinzento */
+.continent-table td:first-child {
+    color: var(--text-muted);
+    width: 50%;
+}
+
+/* rodapé do card com instrução de clique */
+.continent-card-footer {
+    padding: 4px 8px;     /* BOX MODEL: espaço interno */
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-dark);
+    text-align: right;
+}
+
+/* ============================================================
+   20. PAGINAÇÃO (countries.html)
+   Botões Prev / números / Next em baixo da tabela.
+   FLEXBOX: botões em linha com flex-wrap.
+   BOX MODEL: padding em cada botão, border-top separador.
+   ============================================================ */
+
+.pagination {
+    /* FLEXBOX: botões de paginação em linha com quebra */
+    display: flex;
+    gap: 2px;
+    padding: 6px 8px;    /* BOX MODEL: espaço interno */
+    flex-wrap: wrap;
+    border-top: 1px solid var(--border-dark); /* BOX MODEL: linha separadora */
+}
+
+/* botão de página individual */
 .page-btn {
-    padding: 2px 8px;
+    padding: 2px 8px;    /* BOX MODEL: espaço interno */
     font-family: var(--font);
     font-size: var(--text-sm);
     background: var(--bg);
     color: var(--text);
     border: none;
     cursor: pointer;
-
+    /* efeito raised */
     border-top:    2px solid var(--border-light);
     border-left:   2px solid var(--border-light);
     border-bottom: 2px solid var(--border-dark);
@@ -1214,6 +1625,7 @@ footer {
     color: var(--text-white);
 }
 
+/* página atual — fundo azul e efeito inset (parece pressionado) */
 .page-btn.active {
     background: var(--titlebar);
     color: var(--text-white);
@@ -1223,81 +1635,8 @@ footer {
     border-right:  2px solid var(--border-light);
 }
 
+/* botão desativado (Prev na página 1, Next na última) */
 .page-btn:disabled {
     opacity: 0.4;
     cursor: not-allowed;
-}
-
-/* ------------------------------------------------------------
-   CONTINENTES
-   ------------------------------------------------------------ */
-
-.continents-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding: 12px;
-}
-
-.continent-card {
-    flex: 1 1 320px;
-    background: var(--bg);
-    cursor: pointer;
-    transition: none;
-}
-
-.continent-card:hover {
-    background: var(--bg-white);
-}
-
-.continent-card-header {
-    background: var(--titlebar);
-    color: var(--text-white);
-    padding: 4px 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: bold;
-}
-
-.continent-img {
-    width: 48px;
-    height: 32px;
-    object-fit: contain;
-    filter: brightness(0) invert(1); /* fica branco para contrastar com o fundo azul */
-}
-
-.continent-name {
-    font-size: var(--text-md);
-}
-
-.continent-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: var(--text-sm);
-}
-
-.continent-table tr {
-    border-bottom: 1px solid var(--border-dark);
-}
-
-.continent-table tr:last-child {
-    border-bottom: none;
-}
-
-.continent-table td {
-    padding: 3px 8px;
-}
-
-.continent-table td:first-child {
-    color: var(--text-muted);
-    width: 50%;
-}
-
-.continent-card-footer {
-    padding: 4px 8px;
-    font-size: var(--text-sm);
-    color: var(--text-muted);
-    border-top: 1px solid var(--border-dark);
-    text-align: right;
 }

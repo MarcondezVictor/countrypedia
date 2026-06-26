@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Countries — world.com</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="../index.html" class="navbar-logo">
+                <img src="../images/logo.png" alt="world.com logo">
+                world.com
+            </a>
+            <div class="navbar-search">
+                <input type="text" id="searchInput" placeholder="Search countries...">
+                <button onclick="search()">Search</button>
+            </div>
+            <nav class="navbar-links" id="navLinks">
+                <a href="countries.html">Countries</a>
+                <a href="continents.html">Continents</a>
+                <a href="stats.html">Rankings</a>
+                <a href="compare.html" class="active">Compare</a>
+                <a href="#" onclick="randomCountry()">Random</a>
+            </nav>
+            <button class="navbar-hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="window">
+
+            <div class="window-titlebar">
+                <div class="window-title">
+                    <span>Compare Countries</span>
+                </div>
+                <div class="window-buttons">
+                    <button class="window-btn">_</button>
+                    <button class="window-btn">□</button>
+                    <button class="window-btn">✕</button>
+                </div>
+            </div>
+
+            <div class="window-content">
+
+                <!-- SELETOR DE PAÍSES — dois <select> lado a lado.
+                     O JS (populateSelects) preenche as <option> dinamicamente
+                     com todos os países ordenados alfabeticamente.
+                     Cada mudança num select chama buildComparison(). -->
+                <div class="compare-selectors">
+
+                    <div class="compare-selector-col">
+                        <label for="selectA" style="font-size:var(--text-sm);font-weight:bold;">
+                            Country A
+                        </label>
+                        <!-- <select> — tag de lista suspensa. Opções criadas pelo JS. -->
+                        <select id="selectA" class="compare-select">
+                            <option value="">— Select a country —</option>
+                        </select>
+                    </div>
+
+                    <!-- separador visual entre os dois selects -->
+                    <div class="compare-vs">VS</div>
+
+                    <div class="compare-selector-col">
+                        <label for="selectB" style="font-size:var(--text-sm);font-weight:bold;">
+                            Country B
+                        </label>
+                        <select id="selectB" class="compare-select">
+                            <option value="">— Select a country —</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!-- RESULTADO DA COMPARAÇÃO — preenchido pelo JS (buildComparison).
+                     Contém a <table> com os dados lado a lado.
+                     Células a verde = valor mais alto nesse campo. -->
+                <div id="compareOutput"></div>
+
+                <div class="statusbar">
+                    <span class="statusbar-item">Select two countries to compare</span>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>world.com &copy; 2026 — The Country Encyclopedia</p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../js/compare.js"></script>
+
+</body>
+</html>

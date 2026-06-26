@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rankings — world.com</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="../index.html" class="navbar-logo">
+                <img src="../images/logo.png" alt="world.com logo">
+                world.com
+            </a>
+            <div class="navbar-search">
+                <input type="text" id="searchInput" placeholder="Search countries...">
+                <button onclick="search()">Search</button>
+            </div>
+            <nav class="navbar-links" id="navLinks">
+                <a href="countries.html">Countries</a>
+                <a href="continents.html">Continents</a>
+                <a href="stats.html" class="active">Rankings</a>
+                <a href="compare.html">Compare</a>
+                <a href="#" onclick="randomCountry()">Random</a>
+            </nav>
+            <button class="navbar-hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="window">
+
+            <div class="window-titlebar">
+                <div class="window-title">
+                    <span>World Rankings — Top 10</span>
+                </div>
+                <div class="window-buttons">
+                    <button class="window-btn">_</button>
+                    <button class="window-btn">□</button>
+                    <button class="window-btn">✕</button>
+                </div>
+            </div>
+
+            <div class="window-content">
+
+                <!-- GRID DE RANKINGS — 2 colunas no desktop, 1 em mobile.
+                     Cada célula contém uma janela Win95 com uma tabela Top 10.
+                     O JS (buildRanking) injeta as <table> nos #rank-* abaixo. -->
+                <div class="rankings-grid">
+
+                    <!-- MAIS POPULOSOS -->
+                    <div class="ranking-window">
+                        <div class="window-titlebar">
+                            <div class="window-title"><span>🌍 Most Populous Countries</span></div>
+                        </div>
+                        <div class="window-content" id="rank-population"></div>
+                    </div>
+
+                    <!-- MAIOR ÁREA -->
+                    <div class="ranking-window">
+                        <div class="window-titlebar">
+                            <div class="window-title"><span>📐 Largest Countries by Area</span></div>
+                        </div>
+                        <div class="window-content" id="rank-area"></div>
+                    </div>
+
+                    <!-- IDH MAIS ALTO -->
+                    <div class="ranking-window">
+                        <div class="window-titlebar">
+                            <div class="window-title"><span>📈 Highest Human Development Index</span></div>
+                        </div>
+                        <div class="window-content" id="rank-idh-high"></div>
+                    </div>
+
+                    <!-- PIB PER CAPITA MAIS ALTO -->
+                    <div class="ranking-window">
+                        <div class="window-titlebar">
+                            <div class="window-title"><span>💰 Highest GDP per Capita</span></div>
+                        </div>
+                        <div class="window-content" id="rank-gdp"></div>
+                    </div>
+
+                    <!-- MAIS FRONTEIRAS -->
+                    <div class="ranking-window">
+                        <div class="window-titlebar">
+                            <div class="window-title"><span>🗺️ Most Bordering Countries</span></div>
+                        </div>
+                        <div class="window-content" id="rank-borders"></div>
+                    </div>
+
+                    <!-- IDH MAIS BAIXO -->
+                    <div class="ranking-window">
+                        <div class="window-titlebar">
+                            <div class="window-title"><span>📉 Lowest Human Development Index</span></div>
+                        </div>
+                        <div class="window-content" id="rank-idh-low"></div>
+                    </div>
+
+                </div>
+
+                <div class="statusbar">
+                    <span class="statusbar-item" id="statusText">Loading...</span>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>world.com &copy; 2026 — The Country Encyclopedia</p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../js/stats.js"></script>
+
+</body>
+</html>
