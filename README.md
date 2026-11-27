@@ -8,17 +8,11 @@
 
 🔗 **Live site:** [marcondezvictor.github.io/Countrypedia](https://marcondezvictor.github.io/Countrypedia/)
 
-<p align="center">
-  <img src="docs/screenshots/home.png" alt="Home — all 197 countries with flags, search and continent tabs" width="100%">
-</p>
-
-| Country profile | Compare countries |
+| Home | Country profile |
 |---|---|
-| ![Country profile — Japan](docs/screenshots/country.png) | ![Comparing Brazil and Moldova](docs/screenshots/compare.png) |
-
-<p align="center">
-  <img src="docs/screenshots/continents.png" alt="Continents overview with stats per continent" width="100%">
-</p>
+| ![Home — all 197 countries with flags, search and continent tabs](docs/screenshots/home.png) | ![Country profile — Japan](docs/screenshots/country.png) |
+| **Continents** | **Compare countries** |
+| ![Continents overview with stats per continent](docs/screenshots/continents.png) | ![Comparing Brazil and Moldova](docs/screenshots/compare.png) |
 
 ---
 
