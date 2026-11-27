@@ -6,7 +6,7 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
-🔗 **Live site:** [marcondezvictor.github.io/Countrypedia](https://marcondezvictor.github.io/Countrypedia/)
+🔗 **Live site:** [marcondezvictor.github.io/countrypedia](https://marcondezvictor.github.io/countrypedia/)
 
 | Home | Country profile |
 |:---:|:---:|
@@ -36,8 +36,8 @@ All country data lives in a single JavaScript dataset, and flags are local SVG f
 ## Run locally
 
 ```bash
-git clone https://github.com/MarcondezVictor/Countrypedia.git
-cd Countrypedia
+git clone https://github.com/MarcondezVictor/countrypedia.git
+cd countrypedia
 ```
 
 Then open `index.html` in your browser — or serve the folder for cleaner paths:
