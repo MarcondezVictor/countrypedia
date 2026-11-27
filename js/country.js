@@ -78,7 +78,7 @@ if (!country) {
 // ============================================================
 function buildCountryPage() {
     // atualiza o <title> do browser e a barra de título da janela
-    document.title = `${country.name} — world.com`;
+    document.title = `${country.name} — Countrypedia`;
     document.getElementById("windowTitle").textContent =
         `${country.name} — Country Profile`;
 

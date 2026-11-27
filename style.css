@@ -1,5 +1,5 @@
 /* ============================================================
-   style.css — folha de estilos do world.com
+   style.css — folha de estilos do Countrypedia
    Tema: Windows 95 (bordas em relevo, cores cinzas e azul escuro)
 
    ÍNDICE:
@@ -887,7 +887,7 @@ footer {
 /* --- MOBILE PEQUENO (≤ 380px) ---
    Navbar deixa de caber — esconde o texto do logo. */
 @media (max-width: 380px) {
-    /* esconde o texto "world.com" do logo, mantém só o ícone */
+    /* esconde o texto "Countrypedia" do logo, mantém só o ícone */
     .navbar-logo span {
         display: none;
     }
