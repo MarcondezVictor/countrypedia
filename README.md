@@ -9,7 +9,7 @@
 🔗 **Live site:** [marcondezvictor.github.io/Countrypedia](https://marcondezvictor.github.io/Countrypedia/)
 
 | Home | Country profile |
-|---|---|
+|:---:|:---:|
 | ![Home — all 197 countries with flags, search and continent tabs](docs/screenshots/home.png) | ![Country profile — Japan](docs/screenshots/country.png) |
 | **Continents** | **Compare countries** |
 | ![Continents overview with stats per continent](docs/screenshots/continents.png) | ![Comparing Brazil and Moldova](docs/screenshots/compare.png) |
