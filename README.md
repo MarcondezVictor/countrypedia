@@ -69,4 +69,4 @@ images/           # logo and continent images
 
 **Victor Hugo** — [github.com/MarcondezVictor](https://github.com/MarcondezVictor)
 
-_Built as the final project for the Internet Technologies course at Instituto Politécnico de Tomar._
+_Built as the final project for the Internet Technologies course at Polytechnic University of Tomar._
